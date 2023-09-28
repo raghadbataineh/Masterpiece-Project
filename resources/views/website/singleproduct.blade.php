@@ -1,79 +1,20 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="../assets/css/responsive.css">
-      
-     
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style_singleproduct.css">
-    <link rel="stylesheet" href="../assets/css/slick_singleproduct.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min_singleproduct.css">
+@extends('website_layouts.master')
+
+@section('title','')
+
+
+@section('css')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="../assets/css/slick_singleproduct.css">
+<link rel="stylesheet" href="../assets/css/bootstrap.min_singleproduct.css">
+@endsection
 
 
 
-  </head>
-  <body>
-    <div class="container-fluid">
-        <div class="header_section">
-           <div class="container">
-              <nav class="navbar navbar-light bg-light justify-content-between">
-                 <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="../html/shopping.html">Home</a>
-                    <a href="../html/directory.html">Directory</a>
-                    <a href="about.html">About</a>
-                    <!-- <a href="blog.html">Blog</a> -->
-                    <a href="shop.html">Shop</a>
-                    <a href="contacts.html">Contacts</a>
-                 </div>
-                 <form class="form-inline ">
-                    <div class="login_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left10">Call : +01 1234567890</span></a></div>
-                 </form>
-                 <a class="logo" href="index.html"><img src="images/logo.png"></a></a>
-                 <span class="toggle" onclick="openNav()"><i class="fa fa-bars"></i></span>
-                 <div class="login_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left10">Email : Demo@gmail.com</span></a></div>
-              </nav>
-           </div>
-        </div>
-     </div>
-     <!-- layout main section start -->
-    <div class="container-fluid">
-        <div class="layout_main">
-           <!-- banner section start -->
-           <div class="banner_section">
-              <div class="container">
-                 <div class="menu_main">
-                    <div class="custome_menu">
-                       <ul>
-                         <ul>
-                            <li class="active"><a href="../html/shopping.html">Home</a></li>
-                            <li><a href="../html/directory.html">Directory</a></li>
-                             <li><a href="../html/categories.html">Catogries</a></li>
-                            <!-- <li><a href="shop.html">Shop</a></li> -->
-                            <li><a href="../html/aboutus.html">About</a></li>
-                            <li><a href="../html/contactus.html">Contacts</a></li>
-                         </ul>
-                    </div>
-                    <div class="login_menu">
-                       <ul>
-                          <li><a href="#">Login</a></li>
-                          <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                       </ul>
-                    </div>
-                 </div>
-              </div>
-           </div>
+@section('content')
+
+
            <!-- banner section end -->
      <!-- blog section start
      <div class="blog_section">
@@ -242,6 +183,10 @@
 								</div>
 								<button class="add-to-cart-btn" id="addToCartButton"><i class="fa fa-shopping-cart"></i> add to cart</button>
 								<button class="add-to-cart-btn" id="viewCartButton" style="display: none"><i class="fa fa-shopping-cart"></i> View cart</button>
+								<a href="link_to_your_cart_page" class="add-to-cart-btn" id="viewCartButton" style="display: none">
+									<i class="fa fa-shopping-cart"></i> View cart
+								  </a>
+								  
 
 							</div>
 
@@ -629,59 +574,7 @@
 		<!-- /Section -->
 
     <!-- footer section start -->
-    <div class="footer_section">
-        <div class="container">
-           <div class="footer_sectio_2">
-              <div class="row">
-                 <div class="col-lg-3 col-md-6">
-                    <h2 class="footer_logo">Foodfinda</h2>
-                    <p class="footer_text">Embark on a journey of shopping discovery in our digital mall, where every path leads to extraordinary finds and endless shopping possibilities</p>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                    <h2 class="useful_text">Navigation</h2>
-                    <div class="footer_menu">
-                       <ul>
-                          <li class="active"><a href="index.html">Home</a></li>
-                          <li><a href="about.html">About</a></li>
-                          <li><a href="location.html">Location</a></li>
-                          <li><a href="service.html">Services</a></li>
-                          <li><a href="features.html">Features</a></li>
-                       </ul>
-                    </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                    <h2 class="useful_text">Contact Info</h2>
-                    <p class="address_text">Office Address</p>
-                    <div class="map_icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left15">Loram ipusm New York, NY 36524</span></a></div>
-                    <p class="address_text">Customer Service:</p>
-                    <div class="map_icon"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left15">( +01 1234567890 )</span></a></div>
-                    <div class="map_icon"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left15">demo@gmail.com</span></a></div>
-                 </div>
-                 <div class="col-lg-3 col-md-6">
-                    <h2 class="useful_text">Discover</h2>
-                    <div class="subscribe_menu">
-                       <ul>
-                          <li><a href="#">Help</a></li>
-                          <li><a href="#">How It Works</a></li>
-                          <li><a href="#">subscribe</a></li>
-                          <li><a href="contact.html">Contact Us</a></li>
-                       </ul>
-                    </div>
-                    <div class="social_icon">
-                       <ul>
-                          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                       </ul>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
-     <!-- footer section end -->
-  </div>
+   
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -689,25 +582,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     	<!-- jQuery Plugins -->
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/bootstrap.min.js"></script>
-		<script src="../assets/js/slick.min.js"></script>
-		<script src="../assets/js/nouislider.min.js"></script>
-		<script src="../assets/js/jquery.zoom.min.js"></script>
-		<script src="../assets/js/main.js"></script>
-		<script>
-			const addTocart=document.getElementById('addToCartButton');
-			const viewcart=document.getElementById('viewCartButton');
+		<script src="{{ asset ('assets/js/jquery.min.js')}}"></script>
+		<script src="{{ asset ('assets/js/bootstrap.min.js')}}"></script>
+		<script src="{{ asset ('assets/js/slick.min.js')}}"></script>
+		<script src="{{ asset ('assets/js/nouislider.min.js')}}"></script>
+		<script src="{{ asset ('assets/js/jquery.zoom.min.js')}}"></script>
+		<script src="{{ asset ('assets/js/main.js')}}"></script>
+	
+@endsection
 
-			addTocart.addEventListener ('click', function(){
-				addTocart.style.display='none';
-				viewcart.style.display='inline-block';
-			})
+@section('scripts')
+<script>
+	const addTocart=document.getElementById('addToCartButton');
+	const viewcart=document.getElementById('viewCartButton');
 
-			viewcart.addEventListener ('click', function(){
-				window.location.href='cart.html';
-			})
+	addTocart.addEventListener ('click', function(){
+		addTocart.style.display='none';
+		viewcart.style.display='inline-block';
+	})
 
-		</script>
-  </body>
-</html>
+	viewcart.addEventListener ('click', function(){
+		window.location.href='cart.html';
+	})
+
+</script>
+@endsection

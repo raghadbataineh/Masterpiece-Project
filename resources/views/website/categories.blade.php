@@ -31,7 +31,7 @@
                       <div class="blog_taital_main">
                         <img src="../assets/img/crispy-chicken-logo.png" alt="">
                          <h1 class="blog_text">Crispy Chicken</h1>
-                         <div class="readmore_btn"><a href="single page.html">Read More</a></div>
+                         <div class="readmore_btn"><a href="{{ route ('singlepage') }}">Read More</a></div>
                       </div>
                    </div>
                    

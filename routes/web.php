@@ -47,9 +47,25 @@ Route::get('/floors', function () {
 })->name('directory');
 
 
-Route::get('/categories', function () {
+Route::get('/categories',  function () {
     return view('website.categories');
 })->name('categories');
+
+Route::get('/singlepage',  function () {
+    return view('website.single page');
+})->name('singlepage');
+
+Route::get('/ordermenue',  function () {
+    return view('website.ordermenue');
+})->name('ordermenue');
+
+Route::get('/singleproduct',  function () {
+    return view('website.singleproduct');
+})->name('singleproduct');
+
+// Route::get('/addtocart',  function () {
+//     return view('website.cart');
+// })->name('cart');
 
 
 
