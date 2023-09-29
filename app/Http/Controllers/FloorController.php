@@ -23,17 +23,38 @@ class FloorController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.floors.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
+   
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'shop_id' => 'required|exists:services,id',
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Example image validation
+        ]);
 
+        // Handle image upload if needed
+        if ($request->hasFile('image')) {
+            $imageName = 'image.' . $request->file('image')->extension();
+            $imagePath = $request->file('image')->storeAs('public/assets/img', $imageName);
+        }
+
+        ServicePrice::create([
+            'service_id' => $request->input('service_id'),
+            'type' => $request->input('type'),
+            'price' => $request->input('price'),
+            'image' => $imagePath ?? null, // Store the image path if uploaded, otherwise null
+        ]);
+
+        return redirect('ServicePrice')->with('success', 'Service Price Added!');
+    }
     /**
      * Display the specified resource.
      */

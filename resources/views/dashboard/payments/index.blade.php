@@ -67,19 +67,19 @@
                 @php
                      $i=1;
                 @endphp
-                @foreach ($paymentsWithUsers as $paymentWithUser)
+                @foreach ($payments as $payment)
                 {{-- {{dd($userWithPayment)}} --}}
                    <tr>
                     <th scope="row">{{$i}}</th>
                     <td>
-                        {{$paymentWithUser->user->name}}
+                        {{$payment->user->name}}
                   </td>
-                    <td>{{$paymentWithUser->donater_phone}}</td>
-                    <td>{{$paymentWithUser->donater_address}}</td>
-                    <td>{{$paymentWithUser->donater_kit}}</td>
-                    <td style="max-width: 30ch;">{{$paymentWithUser->donater_message}}</td>
-                    <td>{{$paymentWithUser->Amount}}</td>
-                    <td>{{$paymentWithUser->Currency}}</td>
+                    <td>{{$payment->donater_phone}}</td>
+                    <td>{{$payment->donater_address}}</td>
+                    <td>{{$payment->donater_kit}}</td>
+                    <td style="max-width: 30ch;">{{$payment->donater_message}}</td>
+                    <td>{{$payment->Amount}}</td>
+                    <td>{{$payment->Currency}}</td>
 
                     <td class="project-actions text-right">
 

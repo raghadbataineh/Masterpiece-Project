@@ -20,18 +20,41 @@
 <div class="card">
         <div class="card-header">Create new Partner </div>
         <div class="card-body">
-            <form action="{{ route('partners.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('floor.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                
                 <div class="form-group">
-                    <label for="UserName">Partner Image</label>
-                    <input type="file" name="image" class="form-control" placeholder="Partner Image">
+                    <label for="UserName">Floor Image</label>
+                    <input type="file" name="image" class="form-control" placeholder="Floor Image">
                     <span>@error('image'){{$message}} @enderror</span>
+
+                </div>
+                <div class="form-group">
+                    <label for="UserName">Floor Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Floor Name">
+                    <span>@error('name'){{$message}} @enderror</span>
+
+                </div>
+                {{-- <div class="form-group">
+                    <label for="UserName">Floors Shops</label>
+                    <input type="file" name="shop" class="form-control" placeholder="Floor Shops">
+                    <span>@error('shop'){{$message}} @enderror</span>
+
+                </div> --}}
+              
+                <div class="form-group">
+                    <label for="UserName">Floors Shops</label>
+                    <select name="service_id" id="service_id" class="form-control">
+                        @foreach ($floors as $floor)
+                            <option value="{{ $floor->id }}">{{ $floor->name }}</option>
+                        @endforeach
+                    </select> 
+                     <span>@error('shop'){{$message}} @enderror</span>
 
                 </div>
               
                     <br>
-                    <input type="submit" value="Add Partner" class="btn btn-success"><br>
+                    <input type="submit" value="Add Floor" class="btn btn-success"><br>
                 </div>
             </form>
         </div>

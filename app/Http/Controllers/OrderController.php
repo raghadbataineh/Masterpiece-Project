@@ -15,8 +15,8 @@ class OrderController extends Controller
 
         // $userOrders = Order::where('user_id', $userId)->get();
         // $userOrders = Order::with('user')->get();
-      $userOrders = Order::with('user')->paginate(10); // Change 10 to the desired number of orders per page
-    return view('dashboard/orders/index', compact('userOrders'));
+      $orders = Order::with('user')->paginate(10); // Change 10 to the desired number of orders per page
+    return view('dashboard/orders/index', compact('orders'));
 
 
     }

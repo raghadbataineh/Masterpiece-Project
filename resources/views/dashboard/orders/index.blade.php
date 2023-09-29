@@ -58,12 +58,12 @@
                     <th>
                         quantity
                     </th>
-                    <th>
+                    {{-- <th>
                         start_date
                     </th>
                     <th>
                         end_date
-                    </th>
+                    </th> --}}
                     <th>
                         order_status
                     </th>
@@ -78,21 +78,16 @@
                 <tr>
 
                     <th scope="row">{{$i}}</th>
-                    <td><img src="{{ url('/images/' . $order->image) }}" alt="" width="70%"></td>
+                    <td><img src="{{ url('/images/' . $order->product->image) }}" alt="" width="150px"></td>
 
-                     <td>{{$order->title}}</td>
+                     <td>{{$order->user->name}}</td>
+                     <td>{{$order->shop->name}}</td>
+                     <td>{{$order->product->name}}</td>
                     {{-- <td>{{$order->description}}</td> --}}
-                    <td>
-                        <div class="description-wrapper">
-                            <span class="short-description">{{ Str::limit($order->description, 100) }}</span>
-                            <span class="full-description" style="display: none;">{{ $order->description }}</span>
-                        </div>
-                        <a href="#" class="read-more">Read More</a>
-                    </td>
-
-                    <td>{{$order->target_money}}</td>
-                    <td>{{$order->raised_money}}</td>
-                    <td>{{$order->start_date}}</td>
+                   
+                    <td>{{$order->quantity}}</td>
+                    <td>{{$order->order_status}}</td>
+                    {{-- <td>{{$order->start_date}}</td>
                     <td>{{$order->end_date}}</td>
                     <td>{{$order->active}}</td>
                     <td class="project-actions text-right">
@@ -111,7 +106,7 @@
                             <i class="fas fa-trash">
                             </i>Delete</button>
                           </form>
-                    </td>
+                    </td> --}}
 
 
 

@@ -49,6 +49,9 @@
                     <th >
                         Admin Name
                     </th>
+                    <th >
+                        Admin Phone
+                    </th>
                     <th>
                         Admin Email
                     </th>
@@ -67,6 +70,7 @@
                     <td><img src="{{ url('/images/' . $admin->image) }}" alt="" width="100px" height="100px"></td>
 
                     <td>{{$admin->name}}</td>
+                    <td>{{$admin->phone}}</td>
                     <td>{{$admin->email}}</td>
                     <td class="project-actions text-right">
 

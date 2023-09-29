@@ -5,9 +5,12 @@
 
 @section('css')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="">
-<link rel="stylesheet" href="../assets/css/slick_singleproduct.css">
-<link rel="stylesheet" href="../assets/css/bootstrap.min_singleproduct.css">
+
+<link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}">
+
+
 @endsection
 
 
@@ -15,74 +18,7 @@
 @section('content')
 
 
-           <!-- banner section end -->
-     <!-- blog section start
-     <div class="blog_section">
-        <div class="container">
-           <div class="row">
-              <div class="col-sm-12">
-                 <h1 class="blog_taital">McDonald's</h1>
-              </div>
-           </div>
-        </div>
-     </div>
-     <div class="blog_section_2 layout_padding">
-        <div class="container">
-           <div class="row">
-              <div class="col-md-6">
-                 <div class="blog_img"><img src="../assets/img/cheesburger.jfif"></div>
-                 <div class="main_img">
-                   <img class="sub_img" src="../assets/img/mc1.jpg" alt="">
-                   <img class="sub_img" src="../assets/img/mc2.jpg" alt="">
-                   <img class="sub_img" src="../assets/img/mc3.jpg" alt="">
-                 </div>
-              </div>
-              
-              <div class="col-md-6">
-                 <div class="blog_taital_main">
-                    <h1 class="blog_text">McCrispy™ </h1>
-                    <p class="lorem_text">
-                        The McDonald's McCrispy™ is a southern-style fried chicken sandwich that's crispy, juicy and tender perfection.
-                         It's topped with crinkle-cut pickles and served on a toasted, buttered potato roll. The McCrispy™ has 470 calories.
-                    </p> 
-                    <br> <br>                        
-                    <div class="text">
-                      <p>Category : <a href="">Food</a> </p>
-                      <p>Floor : <a href="">First Floor</a></p>
-                      <p>Shop Number : 12 </p>
-                      <p>Phone Number : 0790801566</p> 
-                    </div>
-                    <div class="readmore_btn"><a href="#">Add to cart</a></div>
-                 </div>
-              </div>
-             
-          
-           </div>
-        </div>
-     </div>
-     <div class="container">
-        <h1>Ingredients in the McCrispy™</h1>
-        <div class="gradient">
-            <div class="gradient_photo">
-                <img src="../assets/img/fillet.jfif" alt="">
-                <p>Crispy Chicken Fillet</p>
-            </div>
-            <div class="gradient_photo">
-                <img src="../assets/img/roll.jfif" alt="">
-                <p>Potato Roll</p>
-            </div>
-            <div class="gradient_photo">
-                <img src="../assets/img/pickle.jfif" alt="">
-                <p>Crinkle Cut Pickle</p>
-            </div>
-            <div class="gradient_photo">
-                <img src="../assets/img/butter.jfif" alt="">
-                <p>Salted Butter</p>
-            </div>
-            
-        </div>        
-     </div> -->
-     <!-- blog section end -->
+     
 
      <!-- SECTION -->
 		<div class="section">
@@ -183,7 +119,7 @@
 								</div>
 								<button class="add-to-cart-btn" id="addToCartButton"><i class="fa fa-shopping-cart"></i> add to cart</button>
 								<button class="add-to-cart-btn" id="viewCartButton" style="display: none"><i class="fa fa-shopping-cart"></i> View cart</button>
-								<a href="link_to_your_cart_page" class="add-to-cart-btn" id="viewCartButton" style="display: none">
+								<a href="{{ route ('cartpage') }}" class="add-to-cart-btn" id="viewCartButton" style="display: none">
 									<i class="fa fa-shopping-cart"></i> View cart
 								  </a>
 								  

@@ -35,6 +35,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'phone' => 'required',
             'email' => 'required|email|unique:admins',
             'password' => [
                 'required',
@@ -46,6 +47,7 @@ class UserController extends Controller
         $users = new User();
 
         $users->name = $request->input('name');
+        $users->phone = $request->input('phone');
         $users->email = $request->input('email');
         $users->password = Hash::make ($request->input('password'));
 
@@ -53,7 +55,7 @@ class UserController extends Controller
 
         $users->save();
 
-        return redirect()->route('users.index')->with('success', 'User created successfully');
+        return redirect()->route('user.index')->with('success', 'User created successfully');
     }
 
     /**
@@ -67,24 +69,42 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
-    }
+        $users = User::findOrFail($id);
+
+        return view('dashboard.users.edit', compact('users'));    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user , $id)
     {
-        //
-    }
+        $users = User::findOrFail($id);
+
+        $users->name = $request->input('title');
+        $users->phone = $request->input('description');
+        $users->email = $request->input('type');
+
+       
+
+
+        $users->save();
+
+        return redirect()->route('user.index')->with('success', 'user updated successfully');    }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return back()->with('success', 'User deleted successfully.');
     }
 }
+
+
+
+
+
+

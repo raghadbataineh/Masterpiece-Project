@@ -138,6 +138,16 @@
                 </a>
 
               </li>
+
+              <li class="nav-item">
+                <a href="{{ route('category.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Category
+                  </p>
+                </a>
+
+              </li>
               <li class="nav-item">
                 <a href="{{ route('shop.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
@@ -187,15 +197,7 @@
                 </a>
 
               </li>
-              <li class="nav-item">
-                <a href="{{ route('category.index') }}" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>
-                    Category
-                  </p>
-                </a>
-
-              </li>
+            
               <li class="nav-item">
                 <a href="{{ route('order.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>

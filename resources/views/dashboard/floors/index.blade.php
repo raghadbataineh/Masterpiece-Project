@@ -80,14 +80,14 @@
                             Edit
                         </a>
 
-                        <form action="{{route('floor.destroy',$floor->id)}}"  method="POST"  style="display: inline;">
+                        {{-- <form action="{{route('floor.destroy',$floor->id)}}"  method="POST"  style="display: inline;">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger"
                             onclick="return confirm('Are you sure you want to delete this admin?')">
                             <i class="fas fa-trash">
                             </i>Delete</button>
-                          </form>
+                          </form> --}}
                     </td>
                 </tr>
                 @php

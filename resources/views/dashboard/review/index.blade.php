@@ -20,7 +20,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Cart</h3>
+        <h3 class="card-title">review</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -36,23 +36,23 @@
                   <th class="text-center">
                     #
                 </th>
+
                   <th class="text-center">
                     User
                 </th>
-                  <th>
-                    Product Name
-                 </th>
+
+                  <th class="text-center">
+                    product review
+                </th>
+                 
                     <th>
-                        Product Image
+                        Comment
                     </th>
                     <th>
-                        Quantity
+                        Rating
                     </th>
-                    <th>
-                        Total Price
-                    </th>
+                   
                     
-                  
                     <th>
                         Actions
                     </th>
@@ -62,39 +62,37 @@
                 @php
                      $i=1;
                 @endphp
-                    @foreach ($carts as $cart)
+                    @foreach ($reviews as $review)
                     <tr>
                       <td>{{$i}}</td>
-                    <td>{{ $cart->user->name }}</td>
-                    <td>{{ $cart->product->name }}</td>
-                    {{-- <td>{{ $cart->product->image }}</td> --}}
+                    <td>{{ $review->user->name }}</td>
+                    {{-- <td>{{ $review->product->name }}</td> --}}
 
 
-
-                    <td><img src="{{ url('/images/' . $cart->product->image ) }}" width="150px" alt=""></td>
-                    <td>{{ $cart->quantity }}</td>
+                    <td>{{ $review->comment }}</td>
                    
                      
                  
-                    <td>{{ $cart->total_Price }}</td>
+                    <td>{{ $review->rating }}</td>
                     <td>action</td>
-                    {{-- <td>{{ $cart->phone }}</td> --}}
-                    {{-- <td class="project-actions">
+                    {{-- <td>{{ $review->phone }}</td> --}}
+                    <td class="project-actions">
 
-                      <form action="{{route('carts.destroy',$cart->id)}}"  method="POST"  style="display: inline;">
+                      <form action="{{route('review.destroy',$review->id)}}"  method="POST"  style="display: inline;">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger" style="display: flex;"
-                        onclick="return confirm('Are you sure you want to delete this cart?')">Delete</button>
+                        onclick="return confirm('Are you sure you want to delete this review?')">Delete</button>
                       </form>
 
 
-                    </td> --}}
+                    </td>
                 </tr>
-                @endforeach
                 @php
-                    $i++;
-                @endphp
+                $i++;
+            @endphp
+                @endforeach
+               
             </tbody>
         </table>
       </div>

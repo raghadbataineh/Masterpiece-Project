@@ -38,6 +38,13 @@
 
                 </div>
                 <div class="form-group">
+                    <label for="UserName">Admin phone</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Admin Phone">
+                    <span>@error('phone'){{$message}} @enderror</span>
+
+
+                </div>
+                <div class="form-group">
                     <label for="UserName">Admin Image</label>
                     <input type="file" name="image" class="form-control" placeholder="Admin Image">
                     <span>@error('image'){{$message}} @enderror</span>

@@ -25,16 +25,16 @@ use App\Http\Controllers\dashhome;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard/welcome-dashboard');
-// });
+Route::get('/', function () {
+    return view('dashboard/welcome-dashboard');
+});
 
 
 // Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/categories', 'CategoriesController@index')->name('categories');
 // Route::get('/about', 'AboutController@index')->name('about');
 // Route::get('/contacts', 'ContactsController@index')->name('contacts');
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('website.home');
 })->name('home');
 
@@ -75,7 +75,7 @@ Route::get('/about', function () {
 
 Route::get('/cartpage', function () {
     return view('website.cart');
-})->name('cart');
+})->name('cartpage');
 
 
 

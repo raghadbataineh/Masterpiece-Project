@@ -40,6 +40,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'phone' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif |max:2048',
             // Add any desired image validation rules
             'email' => 'required|email|unique:admins',
@@ -54,6 +55,7 @@ class AdminController extends Controller
 
         $admins->name = $request->input('name');
         $admins->email = $request->input('email');
+        $admins->phone = $request->input('phone');
         $admins->password = Hash::make ($request->input('password'));
 
         if ($request->hasFile('image')) {
@@ -67,7 +69,7 @@ class AdminController extends Controller
 
         $admins->save();
 
-        return redirect()->route('admins.index')->with('success', 'Admin created successfully');
+        return redirect()->route('admin.index')->with('success', 'Admin created successfully');
     }
 
     /**
