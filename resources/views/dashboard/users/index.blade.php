@@ -50,6 +50,12 @@
                         User Email
                     </th>
                     <th>
+                        User Phone
+                    </th>
+                    <th>
+                        User Address
+                    </th>
+                    <th>
                         Action
                     </th>
                 </tr>
@@ -63,6 +69,11 @@
                     <th scope="row">{{$i}}</th>
                     <td>{{$user->name}}</td>
                     <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
+                    </td>
+                    <td>{{$user->phone}}</td>
+                    <td>{{$user->address}}</td>
+
+                    
                     </td>
                     <td class="project-actions text-right" style="display: flex; justify-contnet:center">
 

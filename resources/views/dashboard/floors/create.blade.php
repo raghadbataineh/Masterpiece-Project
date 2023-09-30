@@ -18,7 +18,7 @@
 
 {{-- form --}}
 <div class="card">
-        <div class="card-header">Create new Partner </div>
+        <div class="card-header">Create new Floor </div>
         <div class="card-body">
             <form action="{{ route('floor.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -42,9 +42,9 @@
 
                 </div> --}}
               
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="UserName">Floors Shops</label>
-                    <select name="service_id" id="service_id" class="form-control">
+                    <select name="shop_id" id="service_id" class="form-control">
                         @foreach ($floors as $floor)
                             <option value="{{ $floor->id }}">{{ $floor->name }}</option>
                         @endforeach
@@ -52,7 +52,7 @@
                      <span>@error('shop'){{$message}} @enderror</span>
 
                 </div>
-              
+               --}}
                     <br>
                     <input type="submit" value="Add Floor" class="btn btn-success"><br>
                 </div>

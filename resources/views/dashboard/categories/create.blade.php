@@ -22,10 +22,10 @@
             <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control" 
-                        placeholder="Title">
-                        @error('title')
+                    <label for="ategory name">Category name</label>
+                    <input type="text" name="name" class="form-control" 
+                        placeholder="category name">
+                        @error('name')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                 </div>
@@ -47,20 +47,16 @@
 
                     
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="description">Type </label>
-                    {{-- <input type="text" name="type" class="form-control"
-                        placeholder="Type">
-                        @error('type')
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror --}}
+                  
                         <br>
                         <select name="type" id="">
                             <option value="learning">learning</option>
                             <option value="school suplies">school suplies</option>
                             <option value="service">service</option>
                         </select>
-                </div>
+                </div> --}}
 
                 <br>
                     <input type="submit" value="Add Category" class="btn btn-success"><br>

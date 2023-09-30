@@ -22,7 +22,7 @@
 @endif
  <!-- Main content -->
  <section class="content">
-    <a class="btn btn-primary  mb-3" href="{{route('category.create') }}">Add Shop </a>
+    <a class="btn btn-primary  mb-3" href="{{route('shop.create') }}">Add Shop </a>
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
@@ -44,6 +44,9 @@
                     </th>
                     <th>
                        shop name
+                    </th>
+                    <th>
+                       shop Image
                     </th>
                     <th>
                        Floor
@@ -74,45 +77,47 @@
                 @php
                      $i=1;
                 @endphp
-                @foreach ($shopsWithCategories as $shopsWithCategory)
+                @foreach ($shops as $shop)
 
                 <tr>
                     <th scope="row">{{$i}}</th>
-                    {{-- <td><img src="{{ url('/images/' . $shopsWithCategory->image) }}" alt="" width="100px" height="100px"></td> --}}
 
-                     <td>{{$shopsWithCategory->name}}</td>
-                     <td>{{$shopsWithCategory->floor->floor_name}}</td>
-
-                     <td>{{$shopsWithCategory->category->name}}</td>
-                    <td><img src="{{ url('/images/' . $shopsWithCategory->category->image) }}" alt="" width="100px" height="100px"></td>
-
-                     <td>{{$shopsWithCategory->location}}</td>
-
-
-                     <td>{{$shopsWithCategory->phone}}</td>
-                    {{-- <td>
-                        <div class="description-wrapper">
-                            <span class="short-description">{{ Str::limit($shopsWithCategory->description, 100) }}</span>
-                            <span class="full-description" style="display: none;">{{ $shopsWithCategory->description }}</span>
+                     <td>{{$shop->name}}</td>
+                     <td><img src="{{ url('/images/' . $shop->image) }}" alt="" width="100px" height="100px"></td>
+                     <td>
+                        <div class="description-wrapper" style="width: 100px">
+                            <span class="short-description">{{ Str::limit($shop->description, 100) }}</span>
+                            <span class="full-description" style="display: none;">{{ $shop->description }}</span>
                         </div>
                         <a href="#" class="read-more">Read More</a>
-                    </td> --}}
+                    </td>
 
-                    <td>{{$shopsWithCategory->opening_hours}}</td>
+
+                     <td>{{$shop->floor->floor_name}}</td>
+
+                     <td>{{$shop->category->name}}</td>
+                    <td><img src="{{ url('/images/' . $shop->category->image) }}" alt="" width="100px" height="100px"></td>
+
+                     <td>{{$shop->location}}</td>
+
+
+                     <td>{{$shop->phone}}</td>
+              
+                    <td>{{$shop->opening_hours}}</td>
 
                     <td class="project-actions text-right">
 
-                        <a class="btn btn-info " href="{{ route('category.edit', $shopsWithCategory->id) }}">
+                        <a class="btn btn-info " href="{{ route('category.edit', $shop->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
                         </a>
 
-                        <form action="{{route('category.destroy',$shopsWithCategory->id)}}"  method="POST"  style="display: inline;">
+                        <form action="{{route('category.destroy',$shop->id)}}"  method="POST"  style="display: inline;">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger"
-                            onclick="return confirm('Are you sure you want to delete this shopsWithCategory?')">
+                            onclick="return confirm('Are you sure you want to delete this shop?')">
                             <i class="fas fa-trash">
                             </i>
                             Delete</button>

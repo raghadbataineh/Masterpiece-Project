@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->string('rating');
+            $table->date('date');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            
 
             $table->timestamps();
         });

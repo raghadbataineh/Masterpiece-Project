@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->mediumText('image');
+            // $table->unsignedBigInteger('shop_id');
+            // $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
+
         });
     }
 

@@ -38,23 +38,28 @@
                         #
                     </th>
                     <th>
-                        Donater Name
+                        buyer Name
+                     </th>
+                    <th>
+                        buyer phone
+                     </th>
+                    <th>
+                        buyer address
                      </th>
                     <th >
-                       Donater Phone
+                      payment_method
                     </th>
                     <th>
-                       Donater Address
+                      payment_amount
                     </th>
                     <th>
-                        Donater Kit
+                      payment_status
                      </th>
                     <th>
-                       Donater message
+                      payment_date
                     </th>
-                    <th>
-                        Amount
-                    </th>
+                   
+                   
                     <th>
                         Currency
                     </th>
@@ -74,11 +79,18 @@
                     <td>
                         {{$payment->user->name}}
                   </td>
-                    <td>{{$payment->donater_phone}}</td>
-                    <td>{{$payment->donater_address}}</td>
-                    <td>{{$payment->donater_kit}}</td>
-                    <td style="max-width: 30ch;">{{$payment->donater_message}}</td>
-                    <td>{{$payment->Amount}}</td>
+                    <td>
+                        {{$payment->user->phone}}
+                  </td>
+                    <td>
+                        {{$payment->user->address}}
+                  </td>
+                    <td>{{$payment->payment_method}}</td>
+                    <td>{{$payment->payment_amount}}</td>
+                    <td>{{$payment->payment_method}}</td>
+                    <td >{{$payment->payment_amount}}</td>
+                    <td>{{$payment->payment_status}}</td>
+                    <td>{{$payment->payment_date}}</td>
                     <td>{{$payment->Currency}}</td>
 
                     <td class="project-actions text-right">

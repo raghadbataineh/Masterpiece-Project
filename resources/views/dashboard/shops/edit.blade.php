@@ -22,8 +22,8 @@
         @method('PUT')
         <input type="hidden" name="id" value="{{ $categories->id }}">
         <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" name="title" value="{{ $categories->title }}">
+            <label>Category name</label>
+            <input type="text" class="form-control" name="name" value="{{ $categories->name }}">
         </div>
         <div class="form-group">
                 <label>Description</label>
@@ -33,18 +33,7 @@
                 <label>Image</label>
                 <input type="file" class="form-control" name="image" value="{{ $categories->image }}">
             </div>
-            <div class="form-group">
-                <label>Type</label>
-                {{-- <input type="text" class="form-control" name="type" value="{{ $categories->type }}"> --}}
-                <select name="type" id="">
-                    {{-- <option value="{{ $categories->type }}">learning</option>
-                    <option value="{{ $categories->type }}">school suplies</option>
-                    <option value="{{ $categories->type }}">service</option> --}}
-                    <option value="learning">learning</option>
-                    <option value="school suplies">school suplies</option>
-                    <option value="service">service</option>
-                </select>
-            </div>
+          
         <div class="form-group">
                 
          

@@ -18,15 +18,14 @@ return new class extends Migration
             $table->decimal('payment_amount', 10, 2);
             $table->string('payment_status');
             $table->timestamp('payment_date');
-            $table->string('payment_gateway_response')->nullable();
-            $table->string('transaction_id')->unique();
-            $table->string('billing_information')->nullable();
+            // $table->string('payment_gateway_response')->nullable();
+            // $table->string('transaction_id')->unique();
+            // $table->string('billing_information')->nullable();
             $table->string('currency');
-            $table->text('payment_description')->nullable();
+            // $table->text('payment_description')->nullable();
             $table->string('payment_type')->nullable();
-            $table->string('refund_status')->nullable();
-            $table->decimal('refund_amount', 10, 2)->nullable();
-            // Add any additional columns as needed
+            // $table->string('refund_status')->nullable();
+            // $table->decimal('refund_amount', 10, 2)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

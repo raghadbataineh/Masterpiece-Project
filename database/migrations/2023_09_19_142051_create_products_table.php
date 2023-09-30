@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('description');
             $table->float('price');
             $table->string('image');
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
             $table->timestamps();
             $table->unsignedBigInteger('shop_id');
 

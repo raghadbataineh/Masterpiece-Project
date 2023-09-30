@@ -42,6 +42,13 @@
 
                 </div>
                 <div class="form-group">
+                    <label for="UserName">User address</label>
+                    <input type="text" name="address" class="form-control" 
+                        placeholder="User Phone">
+                        <span>@error('address'){{$message}} @enderror</span>
+
+                </div>
+                <div class="form-group">
                     <label for="UserEmail">User Email </label>
                     <input type="email" name="email" class="form-control"
                         placeholder="User Email">

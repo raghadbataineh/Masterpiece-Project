@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description');
             $table->string('image');
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
             $table->string('location');
             $table->string('phone');
             $table->string('opening_hours');

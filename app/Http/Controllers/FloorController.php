@@ -13,7 +13,7 @@ class FloorController extends Controller
     public function index()
     {
         // $floors=Floor::all();
-        $floors = Floor::with('shops')->get();
+        $floors = Floor::all();
 
         return view ('dashboard/floors.index', compact('floors'));
     }
@@ -46,14 +46,14 @@ class FloorController extends Controller
             $imagePath = $request->file('image')->storeAs('public/assets/img', $imageName);
         }
 
-        ServicePrice::create([
-            'service_id' => $request->input('service_id'),
-            'type' => $request->input('type'),
-            'price' => $request->input('price'),
-            'image' => $imagePath ?? null, // Store the image path if uploaded, otherwise null
-        ]);
+        // ServicePrice::create([
+        //     'service_id' => $request->input('service_id'),
+        //     'type' => $request->input('type'),
+        //     'price' => $request->input('price'),
+        //     'image' => $imagePath ?? null, // Store the image path if uploaded, otherwise null
+        // ]);
 
-        return redirect('ServicePrice')->with('success', 'Service Price Added!');
+        return redirect('dashboard/floors.index')->with('success', 'floor added!');
     }
     /**
      * Display the specified resource.

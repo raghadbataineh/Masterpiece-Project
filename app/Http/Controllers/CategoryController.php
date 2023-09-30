@@ -38,16 +38,14 @@ class categoryController extends Controller
         $categories = new Category();
 
         $request->validate([
-            'title' => 'required',
-            'type' => 'required',
+            'name' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif |max:2048',
             'description' => 'required',
            
         ]);
 
-        $categories->title = $request->input('title');
+        $categories->name = $request->input('name');
         $categories->description = $request->input('description');
-        $categories->type = $request->input('type');
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -61,7 +59,7 @@ class categoryController extends Controller
 
         // $categories->save();
 
-        return redirect()->route('categories.index')->with('success', 'category created successfully');
+        return redirect()->route('category.index')->with('success', 'category created successfully');
     }
 
     /**
@@ -86,9 +84,8 @@ class categoryController extends Controller
        
         $categories = Category::findOrFail($id);
 
-        $categories->title = $request->input('title');
+        $categories->name = $request->input('name');
         $categories->description = $request->input('description');
-        $categories->type = $request->input('type');
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -101,7 +98,7 @@ class categoryController extends Controller
 
         $categories->save();
 
-        return redirect()->route('categories.index')->with('success', 'category updated successfully');
+        return redirect()->route('category.index')->with('success', 'category updated successfully');
     }
 
     public function destroy($id)
