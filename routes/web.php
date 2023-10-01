@@ -34,9 +34,15 @@ Route::get('/', function () {
 // Route::get('/categories', 'CategoriesController@index')->name('categories');
 // Route::get('/about', 'AboutController@index')->name('about');
 // Route::get('/contacts', 'ContactsController@index')->name('contacts');
-Route::get('/home', function () {
-    return view('website.home');
-})->name('home');
+
+// Route::get('/home', function () {
+//     return view('website.home');
+
+// })->name('home');
+
+Route::get('/home', [CategoryController::class, 'home'])->name('home');
+
+
 
 Route::get('/contact', function () {
     return view('website.contactus');

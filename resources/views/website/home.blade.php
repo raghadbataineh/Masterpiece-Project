@@ -199,14 +199,23 @@
                   </div>
                   <div class="service_section_2">
                      <div class="row">
-                        <div class="col">
-                           <div class="service_box">
-                              <div class="breakfast_img"><img src="../assets/img/shoes.PNG"></div>
-                           </div>
-                           <h4 class="breakfast_text">Shoes&bags</h4>
-                           <div class="seemore_bt"><a href="categories.html">See More</a></div>
-                        </div>
-                        <div class="col">
+                        @foreach ($categories as $category)
+                            <div class="col">
+                                <div class="service_box">
+                                    <div class="breakfast_img">
+
+                                       {{-- <img src="{{ asset('path_to_your_category_image_directory/' . $category->image) }}"> --}}
+                                        <img src="{{ url('/images/' . $category->image) }}" alt="" >
+
+                                    </div>
+                                </div>
+                                <h4 class="breakfast_text">{{ $category->name }}</h4>
+                                <div class="seemore_bt"><a href="{{ route('category.show', $category->id) }}">See More</a></div>
+                            </div>
+                        @endforeach
+                    </div>
+                    
+                        {{-- <div class="col">
                            <div class="service_box">
                               <div class="breakfast_img"><img src="../assets/img/electonics.jpg"></div>
                            </div>
@@ -240,7 +249,7 @@
                            </div>
                            <h4 class="breakfast_text">Accessories</h4>
                            <div class="seemore_bt"><a href="categories.html">See More</a></div>
-                        </div>
+                        </div> --}}
                      </div>
                   </div>
                </div>
@@ -309,7 +318,7 @@
                      <!-- order section start -->
                      <div class="order_section">
                         <div class="order_taital_main">
-                           <h1 class="order_taital">Order Best food at time</h1>
+                           <h1 class="order_taital">Order Best Product at time</h1>
                            <div class="order_bt"><a href="#">Order Now</a></div>
                         </div>
                      </div>

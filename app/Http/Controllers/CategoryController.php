@@ -18,6 +18,11 @@ class categoryController extends Controller
         $categories=Category::all();
         return view ('dashboard/categories/index', compact('categories'));
     }
+    public function home()
+    {
+        $categories=Category::all();
+        return view ('website/home', compact('categories'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -65,8 +70,18 @@ class categoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show(Category $category ,$id)
     {
+        $category = Category::find($id);
+
+        // Check if the category was found
+        if (!$category) {
+            // Handle the case where the category does not exist (e.g., return a 404 error)
+            abort(404);
+        }
+
+        // Load the category details view and pass the category data to it
+        return view('website.category.show', compact('category'));
         
     }
 
