@@ -33,27 +33,36 @@ class FloorController extends Controller
    
     public function store(Request $request)
     {
+
+
+        $floors = new Floor();
+
+        // $floors=Floor::all();
         $request->validate([
-            'shop_id' => 'required|exists:services,id',
             'name' => 'required',
-            'price' => 'required|numeric',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Example image validation
         ]);
 
+        $floors->floor_name = $request->input('name');
+        // $floors->email = $request->input('email');
+
         // Handle image upload if needed
         if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
             $imageName = 'image.' . $request->file('image')->extension();
-            $imagePath = $request->file('image')->storeAs('public/assets/img', $imageName);
+            $image->move(public_path('images'), $imageName); // Upload the image to the public/images directory
+            $floors->floor_image = $imageName;
+            // $storedPath = $uploadedFile->store('public/photo');
+            $floors->save();
         }
 
-        // ServicePrice::create([
-        //     'service_id' => $request->input('service_id'),
-        //     'type' => $request->input('type'),
-        //     'price' => $request->input('price'),
-        //     'image' => $imagePath ?? null, // Store the image path if uploaded, otherwise null
-        // ]);
+        $floors->save();
 
-        return redirect('dashboard/floors.index')->with('success', 'floor added!');
+        return redirect()->route('floor.index')->with('success', 'Floor created successfully');
+       
+
+        // return redirect('dashboard/floors.index')->with('success', 'floor added!');
     }
     /**
      * Display the specified resource.

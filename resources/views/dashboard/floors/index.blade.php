@@ -69,7 +69,11 @@
                     <td>{{$floor->floor_name}}</td>
                     <td>
                       @foreach ($floor->shops as $shop)
-                          {{$shop->name}}<br>
+                      <ul>
+                        <li>  {{$shop->name}}</li>
+
+                      </ul>
+                          <br>
                       @endforeach
                     </td>
                     <td class="project-actions text-right">

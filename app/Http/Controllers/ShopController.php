@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\Category;
+use App\Models\Floor;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -13,21 +15,23 @@ class ShopController extends Controller
     public function index()
     {
         $shops = Shop::all(); 
-        // $category = $shop->category;
-        // $category = Shop::with('category')->get();
-        // $shopsWithCategories = Shop::with('category')->get();
-
-
-        // $floor = $shop->floor;
+  
         return view ('dashboard/shops/index', compact('shops'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view('dashboard.shops.create');
+    public function create(){
+
+    $categoryNames=Category::all();
+    $floorNames=Floor::all();
+
+    // $categoryNames=::all();
+    
+
+        return view('dashboard.shops.create',compact('categoryNames','floorNames'));
+    
 
     }
 
@@ -46,25 +50,45 @@ class ShopController extends Controller
 
         // ]);
 
-        $shops->title = $request->input('name');
+
+        $shops->name = $request->input('name');
         $shops->description = $request->input('description');
-        $shops->price = $request->input('price');
+        // $shops->floor = $request->input('floor');
+        // $shops->category = $request->input('category');
+        $shops->location = $request->input('location');
+        $shops->phone = $request->input('phone');
+        $shops->opening_hours = $request->input('open');
+       
         $categoryNames = $request->input('category_name');
         $category_id = $request->input('category_id');
         $shops->category_id = $category_id;
 
+        $floorNames = $request->input('floor_name');
+        $floor_id = $request->input('floor_id');
+        $shops->floor_id = $floor_id;
 
 
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $imageName); // Upload the image to the public/images directory
-            $shops->image = $imageName;
-
+            $images = [$request->file('image'), $request->file('image1'), $request->file('image2'), $request->file('image3')];
+            foreach ($images as $key => $image) {
+                // Define the allowed image columns in your database
+                $allowedColumns = ['image', 'image1', 'image2', 'image3'];
+        
+                if ($image && isset($allowedColumns[$key])) {
+                    $imageName = time() . '_' . $key . '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path('images'), $imageName);
+        
+                    // Save the image's file name to the corresponding column
+                    $imageField = $allowedColumns[$key];
+                    $shops->$imageField = $imageName;
+                }
+            }
         }
+    
 
         $shops->save();
         return redirect()->route('shop.index')->with('success', 'shop created successfully');
+        
     }
 
     /**

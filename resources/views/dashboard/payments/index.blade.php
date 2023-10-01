@@ -87,8 +87,8 @@
                   </td>
                     <td>{{$payment->payment_method}}</td>
                     <td>{{$payment->payment_amount}}</td>
-                    <td>{{$payment->payment_method}}</td>
-                    <td >{{$payment->payment_amount}}</td>
+                    {{-- <td>{{$payment->payment_method}}</td>
+                    <td >{{$payment->payment_amount}}</td> --}}
                     <td>{{$payment->payment_status}}</td>
                     <td>{{$payment->payment_date}}</td>
                     <td>{{$payment->Currency}}</td>

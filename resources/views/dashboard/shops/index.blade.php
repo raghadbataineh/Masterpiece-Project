@@ -46,6 +46,18 @@
                        shop name
                     </th>
                     <th>
+                       shop Description
+                    </th>
+                    <th>
+                       shop Image
+                    </th>
+                    <th>
+                       shop Image
+                    </th>
+                    <th>
+                       shop Image
+                    </th>
+                    <th>
                        shop Image
                     </th>
                     <th>
@@ -83,7 +95,6 @@
                     <th scope="row">{{$i}}</th>
 
                      <td>{{$shop->name}}</td>
-                     <td><img src="{{ url('/images/' . $shop->image) }}" alt="" width="100px" height="100px"></td>
                      <td>
                         <div class="description-wrapper" style="width: 100px">
                             <span class="short-description">{{ Str::limit($shop->description, 100) }}</span>
@@ -91,9 +102,15 @@
                         </div>
                         <a href="#" class="read-more">Read More</a>
                     </td>
-
-
+                     <td><img src="{{ url('/images/' . $shop->image) }}" alt="" width="70px" height="70px"></td>
+                     <td><img src="{{ url('/images/' . $shop->image1) }}" alt="" width="70px" height="70px"></td>
+                     <td><img src="{{ url('/images/' . $shop->image2) }}" alt="" width="70px" height="70px"></td>
+                     <td><img src="{{ url('/images/' . $shop->image3) }}" alt="" width="70px" height="70px"></td>
                      <td>{{$shop->floor->floor_name}}</td>
+
+                
+
+
 
                      <td>{{$shop->category->name}}</td>
                     <td><img src="{{ url('/images/' . $shop->category->image) }}" alt="" width="100px" height="100px"></td>

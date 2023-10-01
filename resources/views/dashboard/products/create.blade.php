@@ -18,56 +18,80 @@
 
 {{-- form --}}
 <div class="card">
-        <div class="card-header">Create new Kit</div>
+        <div class="card-header">Create new Product</div>
         <div class="card-body">
-            <form action="{{ route('kits.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="UserName">Kit Title</label>
-                    <input type="text" name="title" class="form-control" 
+                    <label for="UserName">Product Name</label>
+                    <input type="text" name="name" class="form-control" 
                      
-                        placeholder="Kit Title">
+                        placeholder="Product Name">
 
-                        @error('title')
+                        @error('name')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                 </div>
                 <div class="form-group">
-                    <label for="description">Kit Description</label>
-                    <textarea name="description" class="form-control" placeholder="Kit Description"></textarea>
+                    <label for="description">Product Description</label>
+                    <textarea name="description" class="form-control" placeholder="Product Description"></textarea>
                     @error('description')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 
                 <div class="form-group">
-                        <label for="UserPassword">Kit Image</label>
+                        <label for="UserPassword">Product Image</label>
                         <input type="file" name="image" class="form-control"
-                            placeholder="Kit Image">
+                            placeholder="Product Image">
+                            @error('image')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                    </div>
+                <div class="form-group">
+                        <label for="UserPassword">Product Image</label>
+                        <input type="file" name="image1" class="form-control"
+                            placeholder="Product Image">
+                            @error('image')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                    </div>
+                <div class="form-group">
+                        <label for="UserPassword">Product Image</label>
+                        <input type="file" name="image2" class="form-control"
+                            placeholder="Product Image">
+                            @error('image')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                    </div>
+                <div class="form-group">
+                        <label for="UserPassword">Product Image</label>
+                        <input type="file" name="image3" class="form-control"
+                            placeholder="Product Image">
                             @error('image')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                     </div>
        
                         <div class="form-group">
-                                <label for="Status">Kit Price</label>
+                                <label for="Status">Product Price</label>
                                 <input type="number" name="price" class="form-control"
-                                    placeholder="Kit Price">
+                                    placeholder="Product Price">
                                     @error('price')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                         </div>
                         <div class="form-group">
-                            <label for="category">Choose category:</label>
-                            <select name="category_id" id="category" class="form-control">
-                                @foreach ($categoryNames as $categoryName)
-                                    <option value="{{ $categoryName->id }}">{{ $categoryName->title }}</option>
+                            <label for="shop">Choose Shop:</label>
+                            <select name="shop_id" id="shop" class="form-control">
+                                @foreach ($shopNames as $shopName)
+                                    <option value="{{ $shopName->id }}">{{ $shopName->name }}</option>
                                 @endforeach
                             </select>
-                            <input type="hidden" value="{{ $categoryName->id }}"name="category_id">
+                            <input type="hidden" value="{{ $shopName->id }}"name="shop_id">
                         </div>
                     <br>
-                    <input type="submit" value="Add Kit" class="btn btn-success"><br>
+                    <input type="submit" value="Add Product" class="btn btn-success"><br>
                 </div>
             </form>
         </div>

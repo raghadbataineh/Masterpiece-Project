@@ -24,13 +24,13 @@
                 @csrf
                
                 <div class="form-group">
-                    <label for="UserName">Floor Image</label>
+                    <label for="Floor image">Floor Image</label>
                     <input type="file" name="image" class="form-control" placeholder="Floor Image">
                     <span>@error('image'){{$message}} @enderror</span>
 
                 </div>
                 <div class="form-group">
-                    <label for="UserName">Floor Name</label>
+                    <label for="Floor Name">Floor Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Floor Name">
                     <span>@error('name'){{$message}} @enderror</span>
 

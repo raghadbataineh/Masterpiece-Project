@@ -81,7 +81,7 @@ category
                     </td>
 
                     <td>{{$category->type}}</td>
-                    <td class="project-actions text-right">
+                    <td >
 
                         <a class="btn btn-info " href="{{ route('category.edit', $category->id) }}">
                             <i class="fas fa-pencil-alt">

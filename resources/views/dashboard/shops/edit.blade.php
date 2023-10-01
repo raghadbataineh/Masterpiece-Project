@@ -17,7 +17,7 @@
 @section('content')
 
 <div class="container-fluid">
-    <form action="{{ route('category.update',$categories->id) }}" method="POST">
+    <form action="{{ route('shop.update',$categories->id) }}" method="POST">
         @csrf
         @method('PUT')
         <input type="hidden" name="id" value="{{ $categories->id }}">

@@ -77,18 +77,27 @@
 
                     
                 </div>
-                <div class="form-group">
+               
+                {{-- <div class="form-group">
                         <label for="image"> Shop Floor</label>
-                        <input type="text" name="image3" class="form-control"
-                            placeholder="Image">
-                            @error('image')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-
+                        <select name="floor" id="">
+                            <option value="ground floor">Ground floor</option>
+                            <option value="first floor">First floor</option>
+                            <option value="seconed floor">Seconed Floor</option>
+                        </select>
                     
+                </div> --}}
+                <div class="form-group">
+                    <label for="floor">Choose Floor:</label>
+                    <select name="floor_id" id="floor" class="form-control">
+                        @foreach ($floorNames as $floorName)
+                            <option value="{{ $floorName->id }}">{{ $floorName->floor_name }}</option>
+                        @endforeach
+                    </select>
+                    <input type="hidden" value="{{ $floorName->id }}"name="floor_id">
                 </div>
                 
-                <div class="form-group">
+                {{-- <div class="form-group"> --}}
                         {{-- <label for="image"> Shop Category</label>
                         <input type="text" name="image3" class="form-control"
                             placeholder="Image">
@@ -98,18 +107,29 @@
 
                     
                 </div> --}}
+
+                {{-- <div class="form-group">
+                    <label for="category">Choose category:</label>
+                    <select name="category" id="category" class="form-control">
+                        @foreach ($shops as $shop)
+                            <option value="{{ $shop->category->name }}">{{ $shop->category->name }}</option>
+                        @endforeach
+                    </select>
+                    <input type="hidden" value="{{ $shop->category->name}}" name="category_id">
+                </div> --}}
+                
                 <div class="form-group">
                     <label for="category">Choose category:</label>
                     <select name="category_id" id="category" class="form-control">
                         @foreach ($categoryNames as $categoryName)
-                            <option value="{{ $categoryName->id }}">{{ $categoryName->title }}</option>
+                            <option value="{{ $categoryName->id }}">{{ $categoryName->name }}</option>
                         @endforeach
                     </select>
                     <input type="hidden" value="{{ $categoryName->id }}"name="category_id">
                 </div>
              
                 
-                <div class="form-group">
+                {{-- <div class="form-group">
                         <label for="image"> Category Image</label>
                         <input type="file" name="image3" class="form-control"
                             placeholder="Image">
@@ -118,12 +138,12 @@
                     @enderror
 
                     
-                </div>
+                </div> --}}
                 <div class="form-group">
                         <label for="image"> Shop Location</label>
-                        <input type="text" name="image3" class="form-control"
-                            placeholder="Image">
-                            @error('image')
+                        <input type="text" name="location" class="form-control"
+                            placeholder="Shop Location">
+                            @error('location')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
 
@@ -131,9 +151,9 @@
                 </div>
                 <div class="form-group">
                         <label for="image"> Shop phone</label>
-                        <input type="text" name="image3" class="form-control"
-                            placeholder="Image">
-                            @error('image')
+                        <input type="text" name="phone" class="form-control"
+                            placeholder="Shop phone">
+                            @error('phone')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
 
@@ -141,24 +161,15 @@
                 </div>
                 <div class="form-group">
                         <label for="image"> Shop opening_hours</label>
-                        <input type="time" name="image3" class="form-control"
-                            placeholder="Image">
+                        <input type="time" name="open" class="form-control"
+                            placeholder="Shop opening hours">
                             @error('image')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
 
                     
                 </div>
-                {{-- <div class="form-group">
-                    <label for="description">Type </label>
-                  
-                        <br>
-                        <select name="type" id="">
-                            <option value="learning">learning</option>
-                            <option value="school suplies">school suplies</option>
-                            <option value="service">service</option>
-                        </select>
-                </div> --}}
+               
 
                 <br>
                     <input type="submit" value="Add Shop" class="btn btn-success"><br>

@@ -46,7 +46,7 @@
                        Product Image
                     </th>
                     <th>
-                       Product Title
+                       Product Name
                     </th>
                     <th style="width: 20%">
                         Product description
