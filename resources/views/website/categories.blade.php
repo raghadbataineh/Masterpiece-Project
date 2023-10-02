@@ -26,16 +26,21 @@
           <div class="blog_section_2 layout_padding">
              <div class="container">
                 <div class="row">
-                   
+                  @foreach ($categories as $category)
+
                    <div class="col-md-3">
                       <div class="blog_taital_main">
-                        <img src="../assets/img/crispy-chicken-logo.png" alt="">
-                         <h1 class="blog_text">Crispy Chicken</h1>
-                         <div class="readmore_btn"><a href="{{ route ('singlepage') }}">Read More</a></div>
+                        {{-- <img src="../assets/img/crispy-chicken-logo.png" alt=""> --}}
+                        {{-- <img src="{{ url('/images/' . $category->image) }}" alt="" > --}}
+
+                         <h1 class="blog_text">{{$category->shop->name}}</h1>
+                         {{-- <div class="readmore_btn"><a href="{{ route ('singlepage') }}">Read More</a></div> --}}
                       </div>
                    </div>
+                   @endforeach
+
                    
-                   <div class="col-md-3">
+                   {{-- <div class="col-md-3">
                       <div class="blog_taital_main">
                         <img src="../assets/img/lebnani-snack-1.png" alt="">
                          <h1 class="blog_text">Lebnani Snack</h1>
@@ -122,7 +127,7 @@
                          <h1 class="blog_text">Hadra Maut</h1>
                          <div class="readmore_btn"><a href="single page.html">Read More</a></div>
                       </div>
-                   </div>
+                   </div> --}}
                 </div>
              </div>
           </div>

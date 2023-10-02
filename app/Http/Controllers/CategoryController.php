@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -70,18 +71,19 @@ class categoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category ,$id)
+    public function show(Category $categories ,$id)
     {
-        $category = Category::find($id);
+        $categories = Category::find($id);
+        // $shops = $categories->shops;
 
         // Check if the category was found
-        if (!$category) {
+        if (!$categories) {
             // Handle the case where the category does not exist (e.g., return a 404 error)
             abort(404);
         }
 
         // Load the category details view and pass the category data to it
-        return view('website.category.show', compact('category'));
+        return view('website.categories', compact('categories'));
         
     }
 
