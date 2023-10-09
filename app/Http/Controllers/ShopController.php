@@ -94,10 +94,24 @@ class ShopController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Shop $shop)
+    public function show(Shop $shops , $id)
     {
-        //
+        
+        $shops = Shop::find($id);
+
+        // Check if the category was found
+        if (!$shops) {
+            abort(404);
+        }
+    
+        // Load the shops associated with this category
+        // $shops = $category->shops;
+    
+        // Load the category details view and pass the category and shops data to it
+        return view('website.single page', compact( 'shops'));
+        
     }
+
 
     /**
      * Show the form for editing the specified resource.

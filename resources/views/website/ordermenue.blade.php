@@ -24,138 +24,26 @@
             </div><!-- end title -->
 
             <div class="row">
+				@foreach ($products as $product)
+
 				<div class="col-md-3">
+						
                     <div class="services-inner-box">
 						<div class="ser-icon">
-							<img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" />
+							{{-- <img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" /> --}}
+							<img src= "{{ url('/images/' . $product->image)}}" class="img-fluid" alt="" />
+
 						</div>
-						<h2>Big Mac</h2>
-						<a class="hvr-radial-in" href="#">$ 6.00</a>
+						<h2>{{$product->name}}</h2>
+						<a class="hvr-radial-in" href="#">{{$product->price}}</a>
 						<a class="hvr-radial-in" href="{{ route ('singleproduct') }}">View Meal</a>
 					</div>
                 </div><!-- end col -->
-                <div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesburger.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>CheesBurger</h2>
-						<a class="hvr-radial-in" href="#">$ 4.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
+				@endforeach
 
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesdelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Chees Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 6.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesdelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Chees Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 6.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesdelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Chees Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 6.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesdelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Chees Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 6.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/cheesdelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Chees Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 6.50</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/deluxemccrispy.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Delux Crispy</h2>
-						<a class="hvr-radial-in" href="#">$ 7.00</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/spicydelux.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Spicy Delux</h2>
-						<a class="hvr-radial-in" href="#">$ 5.00</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Vegetable Name..</h2>
-						<a class="hvr-radial-in" href="#">$ 24.00</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Vegetable Name..</h2>
-						<a class="hvr-radial-in" href="#">$ 28.00</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-3">
-                    <div class="services-inner-box">
-						<div class="ser-icon">
-							<img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" />
-						</div>
-						<h2>Vegetable Name..</h2>
-						<a class="hvr-radial-in" href="#">$ 30.00</a>
-                        <a class="hvr-radial-in" href="singleproduct.html">View Meal</a>
-
-					</div>
-                </div><!-- end col -->
+              
             </div><!-- end row -->
+
         </div><!-- end container -->
     </div><!-- end section -->
 

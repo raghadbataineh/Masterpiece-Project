@@ -73,17 +73,26 @@ class categoryController extends Controller
      */
     public function show(Category $categories ,$id)
     {
-        $categories = Category::find($id);
-        // $shops = $categories->shops;
+        // $categories = Category::find($id);
+
+        // if (!$categories) {
+        //     abort(404);
+        // }
+
+        // return view('website.categories', compact('categories'));
+        $category = Category::find($id);
 
         // Check if the category was found
-        if (!$categories) {
+        if (!$category) {
             // Handle the case where the category does not exist (e.g., return a 404 error)
             abort(404);
         }
-
-        // Load the category details view and pass the category data to it
-        return view('website.categories', compact('categories'));
+    
+        // Load the shops associated with this category
+        $shops = $category->shops;
+    
+        // Load the category details view and pass the category and shops data to it
+        return view('website.categories', compact('category', 'shops'));
         
     }
 

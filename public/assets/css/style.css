@@ -393,7 +393,7 @@ button {
     color: #A084DC;
 }
 
-.login_menu {}
+/* .login_menu {} */
 
 .login_menu ul {
     padding: 0px;
@@ -732,6 +732,7 @@ font-weight: bold;
     font-size: 20px;
     color: #f8f8f8;
     font-weight: bold;
+    text-align: center;
 }
 
 .lorem_text {
@@ -1329,4 +1330,10 @@ li .floor {
 .gradient img {
     /* width: 50%; */
     border-radius: 180px;
+}
+
+/* Category Section */
+.cat_img {
+    height: 150px;
+    width: 250px;
 }

@@ -81,9 +81,19 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Shop $shop, $id)
     {
-        //
+        // Find the shop by its ID
+        $shop = Shop::find($id);
+    
+        if (!$shop) {
+            abort(404);
+        }
+    
+        // Retrieve all products associated with this shop
+        $products = $shop->products;
+    
+        return view('website.ordermenue', compact('products'));
     }
 
     /**

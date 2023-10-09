@@ -99,3 +99,4 @@ Route::resource('review', ReviewController::class);
 Route::resource('shop', ShopController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('dashboard', dashhome::class);
+
