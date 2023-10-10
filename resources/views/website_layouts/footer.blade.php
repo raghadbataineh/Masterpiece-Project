@@ -5,7 +5,7 @@
        <div class="footer_sectio_2">
           <div class="row">
              <div class="col-lg-3 col-md-6">
-                <h2 class="footer_logo">Foodfinda</h2>
+                <h2 class="useful_text">Vertual Eye</h2>
                 <p class="footer_text">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of </p>
              </div>
              <div class="col-lg-3 col-md-6">

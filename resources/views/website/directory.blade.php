@@ -18,11 +18,24 @@
             <div class="location">
               
                <div class="left">
+                  @foreach ($floors as $floor )
+                     
                   <div class="section1">
-                     <h4>Ground floor</h4>
-                     <img src="../assets/img/groundfloor.PNG" alt="">
+                     <h4>{{$floor->floor_name}}</h4>
+                     {{-- <img src="../assets/img/groundfloor.PNG" alt=""> --}}
+                     <img src="{{ url('/images/' . $floor->floor_image) }}" alt="" >
+                     @foreach ($shops as $shop )
+
+                     <ol style="color: white">
+                        <li>{{$shop->name}}</li>
+                        
+                     </ol>
+                     @endforeach
+
                   </div>
-                  <div id="section2" class="section2">
+                  @endforeach
+
+                  {{-- <div id="section2" class="section2">
                      <h4>
                         first floor
                      </h4>
@@ -35,7 +48,7 @@
                   <div class="section4">
                      <h4>third floor</h4>
                      <img src="../assets/img/thirdfloor.PNG" alt="">
-                  </div>
+                  </div> --}}
                </div>
 
                <div class="right">

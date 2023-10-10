@@ -26,7 +26,7 @@ class ProductController extends Controller
     
         
     
-            return view('dashboard.products.create',compact('shopNames'));
+         return view('dashboard.products.create',compact('shopNames'));
     }
 
     /**
@@ -94,6 +94,18 @@ class ProductController extends Controller
         $products = $shop->products;
     
         return view('website.ordermenue', compact('products'));
+    }
+
+    public function show_product( Product $product,$id)
+    {
+        // Find the product by its ID
+        $product = Product::find($id);
+    
+        if (!$product) {
+            abort(404);
+        }
+    
+        return view('website.singleproduct', compact('product'));
     }
 
     /**

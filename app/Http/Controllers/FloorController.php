@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Floor;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class FloorController extends Controller
@@ -69,7 +70,10 @@ class FloorController extends Controller
      */
     public function show(Floor $floor)
     {
-        //
+        $floors = Floor::all();
+        $shops = Shop ::all();
+
+        return view ('website.directory', compact('floors' , 'shops'));
     }
 
     /**
