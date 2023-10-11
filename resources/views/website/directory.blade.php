@@ -18,19 +18,27 @@
             <div class="location">
               
                <div class="left">
+                  @php
+                  $i=1;
+                  @endphp
                   @foreach ($floors as $floor )
                      
-                  <div class="section1">
-                     <h4>{{$floor->floor_name}}</h4>
+                  <div class="section1" class="floor_list">
+                     <h1>{{$floor->floor_name}}</h1>
                      {{-- <img src="../assets/img/groundfloor.PNG" alt=""> --}}
                      <img src="{{ url('/images/' . $floor->floor_image) }}" alt="" >
-                     @foreach ($shops as $shop )
 
-                     <ol style="color: white">
-                        <li>{{$shop->name}}</li>
-                        
+                     <ol style="color: white;" class="floor_list" >
+
+                        @foreach ($floor->shops as $shop)
+                       {{-- <li style="list-style-type: decimal">{{$shop->name}}</li> --}}
+                       <a href="{{ route ('shop.show', $shop->id)  }}"> <li style="list-style-type: decimal">{{$shop->name}}</li>
+                       </a>
+                       @php
+                       $i++;
+                   @endphp
+                      @endforeach                        
                      </ol>
-                     @endforeach
 
                   </div>
                   @endforeach
@@ -51,7 +59,7 @@
                   </div> --}}
                </div>
 
-               <div class="right">
+               <div class="right_section">
                   <ul>
                      <li ><svg id="sectionButton" xmlns="http://www.w3.org/2000/svg" height="4em" viewBox="0 0 640 512"><style>svg{fill:#ff9001}</style><path d="M0 488V171.3c0-26.2 15.9-49.7 40.2-59.4L308.1 4.8c7.6-3.1 16.1-3.1 23.8 0L599.8 111.9c24.3 9.7 40.2 33.3 40.2 59.4V488c0 13.3-10.7 24-24 24H568c-13.3 0-24-10.7-24-24V224c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32V488c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm488 24l-336 0c-13.3 0-24-10.7-24-24V432H512l0 56c0 13.3-10.7 24-24 24zM128 400V336H512v64H128zm0-96V224H512l0 80H128z"/></svg><span class="floor">Ground floor</span></li>
                      <li><svg id="sectionButton1" xmlns="http://www.w3.org/2000/svg" height="4em" viewBox="0 0 640 512"><style>svg{fill:#ff9001}</style><path d="M36.8 192H603.2c20.3 0 36.8-16.5 36.8-36.8c0-7.3-2.2-14.4-6.2-20.4L558.2 21.4C549.3 8 534.4 0 518.3 0H121.7c-16 0-31 8-39.9 21.4L6.2 134.7c-4 6.1-6.2 13.2-6.2 20.4C0 175.5 16.5 192 36.8 192zM64 224V384v80c0 26.5 21.5 48 48 48H336c26.5 0 48-21.5 48-48V384 224H320V384H128V224H64zm448 0V480c0 17.7 14.3 32 32 32s32-14.3 32-32V224H512z"/></svg><span class="floor">First floor</span></li>
