@@ -4,11 +4,11 @@
 
 
 @section('css')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}">
+
+{{-- <link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}"> --}}
+{{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}"> --}}
 
 
 @endsection
@@ -60,8 +60,8 @@
 									class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
 								  </div>
 								  <div class="ms-3">
-									<h5>{{isset($item->product) ? $item->product->name : $item['Name']}}
-									</h5>
+									<h4>{{isset($item->product) ? $item->product->name : $item['Name']}}
+									</h4>
 									{{-- <p class="small mb-0">256GB, Navy Blue</p> --}}
 								  </div>
 								</div>
@@ -74,7 +74,7 @@
 									<h5 class="mb-0">JOD  {{ isset($item->product) ? $item->product->price * $item->quantity : $item['price'] * $item['quantity'] }}
 									</h5>
 								  </div>
-								  <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+								  <a href="#!" style="color: red;"><i class="fa fa-trash"></i></a>
 								</div>
 							  </div>
 							</div>

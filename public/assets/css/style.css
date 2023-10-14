@@ -1344,3 +1344,8 @@ li .floor {
     list-style-type: decimal;
     font-size: 15px;
 }
+
+.card-body h4,p,h5 {
+    color: #111;
+    font-weight: bold;
+}
