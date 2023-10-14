@@ -113,7 +113,7 @@
 								</label>
 							</div>
 
-							<div class="add-to-cart">
+							{{-- <div class="add-to-cart">
 								<div class="qty-label">
 									Qty
 									<div class="input-number">
@@ -129,7 +129,22 @@
 								  </a>
 								  
 
-							</div>
+							</div> --}}
+							<form id="cartForm" action="{{ route('addcart',['idcart'=>$product->id]) }}" method="post">
+								@csrf
+								<div class="qty-label">
+									Qty
+									<div class="input-number">
+										<input type="number" name="quantity" value="1" min="1">
+										<span class="qty-up">+</span>
+										<span class="qty-down">-</span>
+									</div>
+								</div>
+								{{-- <button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> Add to cart</button> --}}
+								<input class="add-to-cart-btn" type="submit" value="Add to cart">
+								<button class="add-to-cart-btn" id="viewCartButton" style="display: none"><i class="fa fa-shopping-cart"></i> View cart</button>
+							</form>
+							
 
 							<ul class="product-btns">
 								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
@@ -293,38 +308,8 @@
 															<p>MY favourit resturent</p>
 														</div>
 													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">John</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>OMG , the mac chees is my favourit meal</p>
-														</div>
-													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">Qaies</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
+													
+													
 												</ul>
 												<ul class="reviews-pagination">
 													<li class="active">1</li>

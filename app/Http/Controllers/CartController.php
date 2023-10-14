@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
+
 
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -12,6 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
+
         $carts=Cart::all();
         
         return view ('dashboard/carts.index' , compact('carts'));
@@ -28,9 +32,26 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        // $product = Product::find($productId);
+        // if (!$product) {
+        // }
+    
+        // $cart = session('cart', []);
+    
+        // $cartItem = [
+        //     'product_id' => $product->id,
+        //     'name' => $product->name,
+        //     'price' => $product->price,
+        //     'quantity' => 1, 
+        // ];
+    
+        // $cart[] = $cartItem;
+    
+        // session(['cart' => $cart]);
+        return view ('website.cart');
+    
+        // Redirect or return a response
     }
 
     /**
@@ -63,5 +84,24 @@ class CartController extends Controller
     public function destroy(Cart $cart)
     {
         //
+    }
+    public function back_cart()
+    {
+        if (auth()->user()) {
+            $user= auth()->user();
+        
+            $cart = Cart::where('user_id', $user->id)->with('product')->get();
+        }
+        else{
+        
+            $cart = session('cart');
+        
+        }
+        
+        
+        // dd(isset($cart->product));
+        
+                return view('website.cart',compact('cart'));
+
     }
 }

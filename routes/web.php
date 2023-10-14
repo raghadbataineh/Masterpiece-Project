@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\SingleproductController;
 use App\Http\Controllers\dashhome;
 
@@ -27,14 +29,45 @@ use App\Http\Controllers\dashhome;
 */
 
 Route::get('/', function () {
-    return view('dashboard/welcome-dashboard');
+    return view('welcome');
 });
 
 
-// Route::get('/', 'HomeController@index')->name('home');
-// Route::get('/categories', 'CategoriesController@index')->name('categories');
-// Route::get('/about', 'AboutController@index')->name('about');
-// Route::get('/contacts', 'ContactsController@index')->name('contacts');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+// Route::get('/home', [CategoryController::class, 'home'])->middleware(['auth', 'verified'])->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard/welcome-dashboard');
+// });
+
+
 
 // Route::get('/home', function () {
 //     return view('website.home');
@@ -42,7 +75,6 @@ Route::get('/', function () {
 // })->name('home');
 
 Route::get('/home', [CategoryController::class, 'home'])->name('home');
-
 
 
 Route::get('/contact', function () {
@@ -54,7 +86,6 @@ Route::get('/contact', function () {
 // })->name('directory');
 
 Route::get('/floors', [FloorController::class, 'show'])->name('directory');
-
 
 Route::get('/categories',  function () {
     return view('website.categories');
@@ -68,15 +99,6 @@ Route::get('/ordermenue',  function () {
     return view('website.ordermenue');
 })->name('ordermenue');
 
-// Route::get('/singleproduct/{id}',  [ProductController::class, 'show_product']) {
-//     return view('website.singleproduct');
-// })->name('singleproduct');
-
-// Route::get('/addtocart',  function () {
-//     return view('website.cart');
-// })->name('cart');
-
-// Route::get('/product/{id}', [ProductController::class, 'show_product'])->name('singleproduct');
 
 
 
@@ -84,12 +106,20 @@ Route::get('/ordermenue',  function () {
 
 Route::get('/about', function () {
     return view('website.aboutus');
-})->name('about');
+})->name('about'); 
 
 Route::get('/cartpage', function () {
     return view('website.cart');
 })->name('cartpage');
 
+
+
+Route::post('/productdetail/add/{idcart}', [SingleproductController::class,'add_cart'])->name('addcart');
+Route::get('/productdetail/{id}', [SingleproductController::class,'show_product'])->name('detail');
+
+Route::get('/cartweb', [CartController::class , 'back_cart']);
+
+Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
 
 
 
@@ -107,4 +137,8 @@ Route::resource('shop', ShopController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('singleproduct', SingleproductController::class);
 Route::resource('dashboard', dashhome::class);
+
+
+
+
 

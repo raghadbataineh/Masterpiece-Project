@@ -37,7 +37,7 @@
 						<h2>{{$product->name}}</h2>
 						<a class="hvr-radial-in" href="#">{{$product->price}}</a>
 						{{-- <a class="hvr-radial-in" href="{{ route ('singleproduct', $product->id) }}">View Meal</a> --}}
-						<a class="hvr-radial-in" href="{{ route ('singleproduct.show', $product->id) }}">View Meal</a>
+						<a class="hvr-radial-in" href="{{ route ('detail',$product->id) }}">View Meal</a>
 					</div>
                 </div><!-- end col -->
 				@endforeach

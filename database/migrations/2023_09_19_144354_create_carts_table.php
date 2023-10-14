@@ -16,10 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-            $table->integer('total_Price');
-            $table->string('image');
 
-            
+
             // Define foreign key constraints
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
