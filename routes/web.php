@@ -50,7 +50,15 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+// login
+Route::get('login', function () {
+    return view('auth.login');
+})->name('login');
 
+// signup
+Route::get('signup', function () {
+    return view('auth.register');
+})->name('signup');
 
 /*
 |--------------------------------------------------------------------------
@@ -62,11 +70,6 @@ require __DIR__.'/auth.php';
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard/welcome-dashboard');
-// });
-
 
 
 // Route::get('/home', function () {

@@ -27,7 +27,7 @@
 			  <div class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col">
 				  <div class="card">
-					<div class="card-body p-4">
+					<div class="card-body p-4 cart">
 		  
 					  <div class="row">
 		          

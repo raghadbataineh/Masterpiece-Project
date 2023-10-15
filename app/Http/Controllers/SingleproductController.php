@@ -55,6 +55,11 @@ public function show_product( $id)
 
     return view('website.singleproduct', compact('product'));
 }
+public function detail( $id)
+{
+
+    return view('website.cart');
+}
 public function add_cart(Request $request, $id )
 {
     $product = Product::find($id);
@@ -100,9 +105,11 @@ public function add_cart(Request $request, $id )
                 'price' => $product->price,
             ];
         }
+ 
+
 
         session()->put('cart', $cart);
-        // dd($cart);
+        dd($cart);
 
         return redirect()->back()->with('success', 'Product added to the cart successfully');
     }
