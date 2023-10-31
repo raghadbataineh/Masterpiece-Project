@@ -87,6 +87,7 @@ class CartController extends Controller
     }
     public function back_cart()
     {
+        
         if (auth()->user()) {
             $user= auth()->user();
         
@@ -100,8 +101,9 @@ class CartController extends Controller
         
         
         // dd(isset($cart->product));
-        
-                return view('website.cart',compact('cart'));
+      return view('\website\cart',compact('cart'));
+    // return redirect()->route('cartweb');
+
 
     }
 }

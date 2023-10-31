@@ -16,6 +16,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        // dd('edit');
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
@@ -26,22 +27,34 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $user = $request->user();
+    
+        // Update user attributes
+        $user->fill($request->validated());
+    
+        // You can access the "phone" and "address" fields directly from the request and update them
+        $user->phone = $request->input('phone');
+        $user->address = $request->input('address');
+    
+        // Check if the email has changed and reset email verification
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    
+        $user->save();
+    
+        return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
+    
 
     /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse
     {
+
+        // dd('destroy');
+
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);

@@ -16,7 +16,7 @@
 
  @include('website_layouts.navbar');
 
-
+ @include('sweetalert::alert')
 
 
   

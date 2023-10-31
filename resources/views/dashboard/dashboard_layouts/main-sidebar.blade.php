@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="width: 200px">
         <!-- Brand Logo -->
         <a href="" class="brand-link">
           <img src="{{asset('/images/logo.jfif')}}" alt="logo" width="70px" style="border-radius: 180px">

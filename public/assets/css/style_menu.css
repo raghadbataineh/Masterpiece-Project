@@ -23,52 +23,7 @@
     SKELETON
 -------------------------------------------------------------------*/
 
-body {
-    color: #999999;
-    font-size: 14px;
-    font-family: 'Exo 2', sans-serif;
-    line-height: 1.80857;
-	font-weight: 200;
-	letter-spacing: 1.3px;
-}
-
-html, body{
-	height: 100%;
-}
-
-body.demos .section-title img {
-    max-width: 280px;
-    display: block;
-    margin: 10px auto;
-}
-
-body.demos .service-widget h3 {
-    border-bottom: 1px solid #ededed;
-    font-size: 18px;
-    padding: 20px 0;
-    background-color: #ffffff;
-}
-
-body.demos .service-widget {
-    margin: 0 0 30px;
-    padding: 30px;
-    background-color: #fff
-}
-
-body.demos .container-fluid {
-    max-width: 1080px
-}
-
-a {
-    color: #1f1f1f;
-    text-decoration: none !important;
-    outline: none !important;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
+/*  */
 
 h1,
 h2,
@@ -81,7 +36,7 @@ h6 {
     padding: 0 0 10px 0;
     font-weight: normal;
     line-height: 120% !important;
-    color: #333333;
+    color: white;
     margin: 0
 }
 
@@ -178,128 +133,12 @@ ul, li, ol{
     WP CORE
 -------------------------------------------------------------------*/
 
-.first {
-    clear: both
-}
-
-.last {
-    margin-right: 0
-}
-
-.alignnone {
-    margin: 5px 20px 20px 0;
-}
-
-.aligncenter,
-div.aligncenter {
-    display: block;
-    margin: 5px auto 5px auto;
-}
-
-.alignright {
-    float: right;
-    margin: 10px 0 20px 20px;
-}
-
-.alignleft {
-    float: left;
-    margin: 10px 20px 20px 0;
-}
-
-a img.alignright {
-    float: right;
-    margin: 10px 0 20px 20px;
-}
-
-a img.alignnone {
-    margin: 10px 20px 20px 0;
-}
-
-a img.alignleft {
-    float: left;
-    margin: 10px 20px 20px 0;
-}
-
-a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-
-.wp-caption {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%;
-    /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
-}
-
-.wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignright {
-    margin: 5px 0 20px 20px;
-}
-
-.wp-caption img {
-    border: 0 none;
-    height: auto;
-    margin: 0;
-    max-width: 98.5%;
-    padding: 0;
-    width: auto;
-}
-
-.wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
-}
-
-
-/* Text meant only for screen readers. */
-
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-}
-
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */
-}
 
 
 /*------------------------------------------------------------------
     HEADER
 -------------------------------------------------------------------*/
-
+/* 
 .navbar-dark{
 	background: #ffffff;
 }
@@ -320,17 +159,17 @@ a img.aligncenter {
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus{
 	color: #ffffff;
-	background: #8dbd56;
+	background: #a084dc;
 }
 .navbar-dark .navbar-nav .nav-link.active{	
 	color: #ffffff;
-	background: #8dbd56;
+	background: #a084dc;
 }
 .navbar-dark .navbar-nav .nav-link::after {
     content: '';
     width: 0;
     height: 5px;
-    background: #664a3f;
+    background: #ff9001;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -345,7 +184,7 @@ a img.aligncenter {
 .navbar-dark .navbar-nav .nav-link.active::after {
 	width: 84.5%;
 	height: 100%;
-}
+} */
 
 /*------------------------------------------------------------------
     SECTIONS
@@ -412,11 +251,11 @@ a img.aligncenter {
 }
 
 .in-box{
-	background: #8dbd56;
+	background: #a084dc;
 	display: inline-block;
 	padding: 40px;
 	position: relative;
-	border: 20px solid #664a3f;
+	border: 20px solid #ff9001;
 }
 .in-box::before{
 	border: 10px solid #ffffff;
@@ -439,11 +278,11 @@ a img.aligncenter {
 }
 
 .in-box a{
-	background: #664a3f;
+	background: #ff9001;
 	font-size: 18px;
 	padding: 10px 20px;
 	color: #ffffff;
-	box-shadow: 0 1px 5px #664a3f;
+	box-shadow: 0 1px 5px #ff9001;
 }
 .in-box a:hover{
 	color: #ffffff;
@@ -470,7 +309,7 @@ a img.aligncenter {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #8dbd56;
+	background: #a084dc;
 	border-radius: 100%;
 	-webkit-transform: scale(2);
 	transform: scale(2);
@@ -535,77 +374,7 @@ a img.aligncenter {
 xclip 
 
 -------------------------------- */
-.cd-headline.clip span {
-  display: inline-block;
-  padding: .2em 0;
-  color: #ffffff;
-  font-size: 30px;
-}
-.cd-headline.clip span b{
-	text-transform: uppercase;
-}
-.cd-headline.clip .cd-words-wrapper {
-  overflow: hidden;
-  vertical-align: top;
-}
-.cd-headline.clip .cd-words-wrapper::after {
-  /* line */
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background-color: #aebcb9;
-}
-.cd-headline.clip b {
-  opacity: 0;
-}
-.cd-headline.clip b.is-visible {
-  opacity: 1;
-}
 
-
-#mainNav.navbar-shrink {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #ffffff;
-}
-
-#clouds{
-	margin-top: -5%;
-	position: relative;
-	z-index: 1;
-}
-#clouds path {
-    fill: #ffffff;
-    bottom: -10px;
-    overflow: hidden;
-    stroke: #ffffff;
-}
-
-.section {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    padding: 70px 80px;
-}
-
-.noover {
-    overflow: visible;
-}
-
-.noover .btn-dark {
-    border: 0 !important;
-}
-
-.nopad {
-    padding: 0;
-}
-
-.nopadtop {
-    padding-top: 0;
-}
 
 /* .section.wb {
     background-color: #ffffff;
@@ -702,7 +471,7 @@ xclip
 }
 
 .sim-btn{
-	background: #664a3f;
+	background: #ff9001;
 	font-size: 18px;
 	padding: 10px 20px;
 	color: #ffffff;
@@ -765,7 +534,7 @@ xclip
 }
 .right-box-pro::before {
     content: "";
-    background: #8dbd56;
+    background: #a084dc;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -775,7 +544,7 @@ xclip
 }
 .right-box-pro::after {
     content: "";
-    background: #8dbd56;
+    background: #a084dc;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -799,7 +568,7 @@ xclip
 	width: 250px;
 	text-align: center;
 	line-height: 90px;
-	background: #8dbd56;
+	background: #a084dc;
 	margin: 0 auto;
 }
 .ser-icon i{
@@ -814,7 +583,7 @@ xclip
 
 .services-inner-box a{
 	color: #ffffff;
-	background: #664a3f;
+	background: #ff9001;
 	padding: 10px 18px;
 	font-size: 16px;
 }
@@ -1016,8 +785,8 @@ xclip
 .desc {
     padding: 30px;
     position: relative;
-    background: #8dbd56;
-    border: 15px solid #8dbd56;
+    background: #a084dc;
+    border: 15px solid #a084dc;
 	width: calc(100% - 220px);
 	float: left;
 	margin-left: 30px;
@@ -1144,7 +913,7 @@ xclip
     width: 120px;
     height: 120px;
     border-radius: 100px;
-    background: #8dbd56;
+    background: #a084dc;
     position: absolute;
     bottom: -60px;
     left: 0;
@@ -1166,7 +935,7 @@ xclip
 }
 .pricingTable .month{
     font-size: 11px;
-    color: #664a3f;
+    color: #ff9001;
     text-transform: uppercase;
     position: absolute;
     top: 60px;
@@ -1187,13 +956,13 @@ xclip
     content: "\f00c";
     font-family: 'FontAwesome';
     font-size: 20px;
-    color: #8dbd56;
+    color: #a084dc;
     margin-right: 10px;
 }
 .pricingTable .pricingTable-signup{
     display: inline-block;
     letter-spacing:2px;
-	background: #664a3f;
+	background: #ff9001;
 	font-size: 18px;
 	padding: 10px 20px;
 	color: #3a3a3a;
@@ -1226,7 +995,7 @@ xclip
 }
 .our-team .team-content{
     width: 100%;
-    background: #664a3f;
+    background: #ff9001;
     color: #fff;
     padding: 15px 0 10px 0;
     position: absolute;
@@ -1243,7 +1012,7 @@ xclip
     content: "";
     width: 60%;
     height: 60px;
-    background: #664a3f;
+    background: #ff9001;
     position: absolute;
     top: -18px;
     transform: rotate(15deg);
@@ -1269,7 +1038,7 @@ xclip
     content: "";
     width: 7px;
     height: 93px;
-    background: #8dbd56;
+    background: #a084dc;
     position: absolute;
     top: -78px;
     z-index: -2;
@@ -1313,7 +1082,7 @@ xclip
 	display: inline-block;
 	width: 32px;
 	height: 32px;
-	background: #8dbd56;
+	background: #a084dc;
 }
 .our-team .social-links li:last-child a{
     margin-right: 0;
@@ -1595,7 +1364,7 @@ xclip
 
 .message-box ul{}
 .message-box ul li{
-	background: #664a3f;
+	background: #ff9001;
 	padding: 10px 20px;
 	margin-bottom: 10px;
 	color: #ffffff;
@@ -1604,7 +1373,7 @@ xclip
 	border-radius: 10px 5px;
 }
 .message-box ul li:hover{
-	background: #8dbd56;
+	background: #a084dc;
 }
 
 
@@ -1812,7 +1581,7 @@ hr.invis1 {
 }
 
 .filter-button-group button.active{
-	background: #8dbd56;
+	background: #a084dc;
 	color: #ffffff;
 	
 	box-shadow: -5px 5px 0px 0px rgba(0,0,0,.9);	
@@ -1825,7 +1594,7 @@ hr.invis1 {
 	font-weight: 600;
 	font-size: 14px;
 	cursor: pointer;
-	background: #664a3f;
+	background: #ff9001;
 	padding: 12px 40px;
 	border: none;
 	border-radius: 0px;
@@ -1880,7 +1649,7 @@ hr.invis1 {
 	right: 0px;
 	left: 0px;
 	margin: 0 auto;
-	background: #8dbd56;
+	background: #a084dc;
 	color: #fff;
 	padding: 10px 15px;
 	text-align: center;
@@ -1960,7 +1729,7 @@ hr.invis1 {
 	display: block;
 	text-align: center;
 	margin-bottom: 15px;
-	background: #8dbd56;
+	background: #a084dc;
 	color: #ffffff;
 	padding: 10px 0px;
 	box-shadow: 0 7px 10px #e6e6e6;
@@ -2470,7 +2239,7 @@ select.mobile-device {
 }
 
 .contact_form .form-control {
-    background-color: #8dbd56;
+    background-color: #a084dc;
     margin-bottom: 30px;
     border: 1px solid #ebebeb;
     box-sizing: border-box;
@@ -2655,7 +2424,7 @@ select.mobile-device {
     text-decoration: none;
 }
 .footer-distributed .footer-links a:hover{
-	color: #8dbd56;
+	color: #a084dc;
 }
 
 .footer-distributed .footer-company-name {
@@ -2728,7 +2497,7 @@ select.mobile-device {
 }
 
 .footer-distributed .footer-company-name a{
-	color: #8dbd56;
+	color: #a084dc;
 }
 
 .footer-distributed .footer-company-name a:hover{
@@ -2749,7 +2518,7 @@ select.mobile-device {
 
 .ph-fonts-style {
     font-size: 18px;
-    color: #664a3f;
+    color: #ff9001;
     font-weight: 500;
     padding: 0;
 }
@@ -2762,7 +2531,7 @@ select.mobile-device {
 	float: left;
 	width: 40px;
 	height: 40px;
-	background: #664a3f;
+	background: #ff9001;
 	text-align: center;
 	line-height: 40px;
 	margin-top: 5px;
@@ -2783,7 +2552,7 @@ select.mobile-device {
 }
 
 .cont-dit p a:hover{
-	color: #8dbd56;
+	color: #a084dc;
 }
 .form-inline .form-group {
     width: 100%;
@@ -2797,16 +2566,16 @@ select.mobile-device {
 .form-inline .form-group .form-control {
     width: 100%;
     min-height: 45px;
-    border: 1px solid #664a3f;
+    border: 1px solid #ff9001;
     border-radius: 0;
 }
 .form-inline .form-group .form-control:focus{
-	border: 1px solid #8dbd56;
+	border: 1px solid #a084dc;
 	box-shadow: none;
 }
 
 .btn-primary{
-	background-color: #664a3f !important;
+	background-color: #ff9001 !important;
 	border: none;
 	border-radius: 0px;
 	padding: 10px 18px;
@@ -2817,14 +2586,14 @@ select.mobile-device {
 }
 .ph-links-column li a{
 	display: block;
-	color: #664a3f;
+	color: #ff9001;
 	position: relative;
 }
 .ph-links-column li a::after {
     content: '';
     width: 0;
     height: 1px;
-    border: 1px dashed #8dbd56;
+    border: 1px dashed #a084dc;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2836,7 +2605,7 @@ select.mobile-device {
     z-index: 0;
 }
 .ph-links-column li a:hover{
-	color: #8dbd56;
+	color: #a084dc;
 }
 
 .ph-links-column li a:hover::after {
@@ -2889,7 +2658,7 @@ select.mobile-device {
 }
 
 .dmtop:hover{
-	background: #8dbd56;
+	background: #a084dc;
 }
 
 .icon_wrap {
@@ -2931,7 +2700,7 @@ select.mobile-device {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #8dbd56;
+    background: #a084dc;
     z-index: 11000;
     position: fixed;
     display: block

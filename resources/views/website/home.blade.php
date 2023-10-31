@@ -26,6 +26,8 @@
                <div id="main_slider" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                      <div class="carousel-item active">
+                        {{-- <img src="./vertualmall.jpg" alt="Image 1"> --}}
+
                         <div class="container">
                            <div class="row">
                               <div class="col-md-12">
@@ -59,6 +61,8 @@
                         </div>
                      </div>
                      <div class="carousel-item">
+                        <img src="./vertualmall.jpg" alt="Image 1">
+
                         <div class="container">
                            <div class="row">
                               <div class="col-md-12">
@@ -92,6 +96,8 @@
                         </div>
                      </div>
                      <div class="carousel-item">
+                                                <img src="./vertualmall.jpg" alt="Image 1">
+
                         <div class="container">
                            <div class="row">
                               <div class="col-md-12">

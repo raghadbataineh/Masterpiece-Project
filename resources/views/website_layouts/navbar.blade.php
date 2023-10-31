@@ -45,48 +45,46 @@
 
                            <div class="d-flex align-items-center">
                                <!-- Icon -->
-                               <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span
-                                       class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                               </button>
+                              
+                               <a href="{{route ('cartweb')}}">
+                                <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span
+                                        class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                </button>
+                            </a>
                                <div class="dropdown-menu">
                                    <div class="row total-header-section">
-                                       @php $total = 0 @endphp
+                                       {{-- @php $total = 0 @endphp
                                        @foreach ((array) session('cart') as $id => $details)
                                            @php $total += $details['price'] * $details['quantity'] @endphp
                                        @endforeach
-                                       <div
-                                           class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                                       <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
                                            <p>Total: <span class="text-info">$
                                                    {{ $total }}</span></p>
-                                           </div>
                                        </div>
+                                   </div>
                                    @if (session('cart'))
                                        @foreach (session('cart') as $id => $details)
                                            <div class="row cart-detail">
-                                               <div
-                                                   class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                                   <img
-                                                       src="{{ asset('img') }}/{{ $details['photo'] }}" />
-                                                   </div>
-                                               <div
-                                                   class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                               <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                   <img src="{{ asset('img') }}/{{ $details['image'] }}" />
+                                               </div>
+                                               <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                                    <p>{{ $details['product_name'] }}
                                                    </p>
                                                    <span class="price text-info">
                                                        ${{ $details['price'] }}</span> <span class="count">
                                                        Quantity:{{ $details['quantity'] }}</span>
-                                                   </div>
                                                </div>
-                                       @endforeach
-                                       @endif
-                                   <div class="row">
-                                       <div
-                                           class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                           {{--                             <a href="{{ route('addcart',['idcart',$id] ) }}" class="btn btn-primary btn-block">View all</a> --}}
                                            </div>
+                                       @endforeach
+                                   @endif --}}
+                                   <div class="row">
+                                       <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                           {{--                             <a href="{{ route('addcart',['idcart',$id] ) }}" class="btn btn-primary btn-block">View all</a> --}}
                                        </div>
                                    </div>
+                               </div>
                                @if (session('success'))
                                    <div class="alert alert-success">
                                        {{ session('success') }}
@@ -123,12 +121,22 @@
                                            <a href="{{ url('/profile') }}"
                                                class="theme-btn-s2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                                style="margin: 0 10px">Profile</a>
-                                           <a class="btn btn-primary" style="margin-right: 10px;"
+
+
+                                           {{-- <a class="btn btn-primary" style="margin-right: 10px;"
                                                href="{{ route('logout') }}"
-                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> --}}
+
+
                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                                style="display: none;">
                                                @csrf
+
+                                               <a class="btn btn-primary" style="margin-right: 10px;"
+                                                   href="{{ route('logout') }}">
+                                                   Logout</a>
+
+                                               {{-- <a href="{{ route('logout')}}">Logout</a> --}}
 
                                            </form>
                                        @else

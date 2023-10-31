@@ -26,7 +26,7 @@
             <div class="row">
 				@foreach ($products as $product)
 
-				<div class="col-md-3">
+				<div class="col-md-3" >
 						
                     <div class="services-inner-box">
 						<div class="ser-icon">
@@ -34,8 +34,9 @@
 							<img src= "{{ url('/images/' . $product->image)}}" class="img-fluid" alt="" />
 
 						</div>
-						<h2>{{$product->name}}</h2>
-						<a class="hvr-radial-in" href="#">{{$product->price}}</a>
+						{{-- <h2>{{$product->name}}</h2> --}}
+						<p style="color: black ; font-weigt: bold" >{{$product->name}}</p>
+						<a class="hvr-radial-in" href="#">{{$product->price}}$</a>
 						{{-- <a class="hvr-radial-in" href="{{ route ('singleproduct', $product->id) }}">View Meal</a> --}}
 						<a class="hvr-radial-in" href="{{ route ('detail',$product->id) }}">View Meal</a>
 					</div>
@@ -48,7 +49,6 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
-    <!-- footer section start -->
  
 </div>
     <!-- Optional JavaScript -->

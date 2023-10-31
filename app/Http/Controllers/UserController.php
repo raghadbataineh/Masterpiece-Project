@@ -28,6 +28,19 @@ class UserController extends Controller
 
     }
 
+    function logout(Request $request){
+
+        // dd('logout');
+        
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home');
+    }
+
     /**
      * Store a newly created resource in storage.
      */

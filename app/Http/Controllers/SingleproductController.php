@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Product;
 use App\Models\Cart;
+use Alert;
 
 class SingleproductController extends Controller
 {
@@ -90,7 +91,7 @@ public function add_cart(Request $request, $id )
             ]);
         }
 
-        return redirect()->back()->with('success', 'Product added to the cart successfully');
+        return back()->with('success', 'Product added to the cart successfully');
     } else {
         $cart = session()->get('cart', []);
 
@@ -109,9 +110,13 @@ public function add_cart(Request $request, $id )
 
 
         session()->put('cart', $cart);
-        dd($cart);
+        // dd($cart);
 
-        return redirect()->back()->with('success', 'Product added to the cart successfully');
+        Alert::success('Congrats','Product added to the cart successfully');
+
+        return redirect()->back();
+        // with('success', 'Product added to the cart successfully');
+        // return view ('website.cart', compact ('cart'));
     }
 
 }

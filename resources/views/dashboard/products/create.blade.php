@@ -88,7 +88,7 @@
                                     <option value="{{ $shopName->id }}">{{ $shopName->name }}</option>
                                 @endforeach
                             </select>
-                            <input type="hidden" value="{{ $shopName->id }}"name="shop_id">
+                            {{-- <input type="hidden" value="{{ $shopName->id }}"name="shop_id"> --}}
                         </div>
                     <br>
                     <input type="submit" value="Add Product" class="btn btn-success"><br>

@@ -44,11 +44,13 @@ html {
 
 body {
     /* color: #666666; */
+    /* background: black; */
     font-size: 14px;
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden;
-    background-image: url(../images/body-bg.png);
+    background-image: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(/public/images/virtual.png); */
     height: auto;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -1346,6 +1348,6 @@ li .floor {
 }
 
 .cart h4,p,h5 {
-    color: #111;
+    /* color: #111; */
     font-weight: bold;
 }

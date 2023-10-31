@@ -18,6 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->string('order_status');
+            $table->string('address');
+            $table->string('city');
+            $table->string('payment_method');
+            $table->decimal('subtotal', 10, 2);
+            $table->decimal('delivery', 10, 2);
+            $table->decimal('total', 10, 2);
 
             // Define foreign key constraints
             $table->foreign('user_id')->references('id')->on('users');

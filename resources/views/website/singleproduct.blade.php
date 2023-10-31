@@ -1,14 +1,15 @@
 @extends('website_layouts.master')
 
-@section('title','')
+@section('title', '')
 
 
 @section('css')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
 
-<link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}"> --}}
+ 
 
 
 @endsection
@@ -18,102 +19,102 @@
 @section('content')
 
 
-     
 
-     <!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<!-- Product main img -->
-					<div class="col-md-5 col-md-push-2">
-						<div id="product-main-img">
-							<div class="product-preview">
-								{{-- <img src="../assets/img/cheesburger.jfif" alt=""> --}}
-                                <img src= "{{ url('/images/' . $product->image)}}" class="img-fluid" alt="" />
 
-							</div>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- Product main img -->
+                <div class="col-md-5 col-md-push-2">
+                    <div id="product-main-img">
+                        <div class="product-preview">
+                            {{-- <img src="../assets/img/cheesburger.jfif" alt=""> --}}
+                            <img src= "{{ url('/images/' . $product->image) }}" class="img-fluid" alt="" />
 
-							<div class="product-preview">
-								<img src="../assets/img/cheesburger.jfif" alt="">
-							</div>
+                        </div>
 
-							<div class="product-preview">
-								<img src="../assets/img/cheesburger.jfif" alt="">
-							</div>
+                        <div class="product-preview">
+                            <img src="../assets/img/cheesburger.jfif" alt="">
+                        </div>
 
-							<div class="product-preview">
-								<img src="../assets/img/cheesburger.jfif" alt="">
-							</div>
-						</div>
-					</div>
-					<!-- /Product main img -->
+                        <div class="product-preview">
+                            <img src="../assets/img/cheesburger.jfif" alt="">
+                        </div>
 
-					<!-- Product thumb imgs -->
-					<div class="col-md-2  col-md-pull-5">
-						<div id="product-imgs">
-							<div class="product-preview">
-                                <img src= "{{ url('/images/' . $product->image)}}" class="img-fluid" alt="" />
+                        <div class="product-preview">
+                            <img src="../assets/img/cheesburger.jfif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product main img -->
 
-							</div>
+                <!-- Product thumb imgs -->
+                <div class="col-md-2  col-md-pull-5">
+                    <div id="product-imgs">
+                        <div class="product-preview">
+                            <img src= "{{ url('/images/' . $product->image) }}" class="img-fluid" alt="" />
 
-							<div class="product-preview">
-                                <img src= "{{ url('/images/' . $product->image1)}}" class="img-fluid" alt="" />
+                        </div>
 
-							</div>
+                        <div class="product-preview">
+                            <img src= "{{ url('/images/' . $product->image1) }}" class="img-fluid" alt="" />
 
-							<div class="product-preview">
-                                <img src= "{{ url('/images/' . $product->image3)}}" class="img-fluid" alt="" />
+                        </div>
 
-							</div>
+                        <div class="product-preview">
+                            <img src= "{{ url('/images/' . $product->image3) }}" class="img-fluid" alt="" />
 
-							<div class="product-preview">
-                                <img src= "{{ url('/images/' . $product->image4)}}" class="img-fluid" alt="" />
+                        </div>
 
-							</div>
-						</div>
-					</div>
-					<!-- /Product thumb imgs -->
-					<!-- Product details -->
-					<div class="col-md-5">
-						<div class="product-details">
-							<h2 class="product-name" style="color: white">{{ $product->name }} </h2>
-							<div>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
-							</div>
-							<div>
-								<h3 class="product-price">{{ $product->price }} <del class="product-old-price">$7.00</del></h3>
-								<!-- <span class="product-available">In Stock</span> -->
-							</div>
-							<p>{{ $product->description}}</p>
+                        <div class="product-preview">
+                            <img src= "{{ url('/images/' . $product->image4) }}" class="img-fluid" alt="" />
 
-							<div class="product-options">
-								<label>
-									Size
-									<select class="input-select">
-										<option value="0">XL</option>
-										<option value="0">L</option>
-										<option value="0">M</option>
-									</select>
-								</label>
-								<label>
-									Color
-									<select class="input-select">
-										<option value="0">Red</option>
-										<option value="0">Blue</option>
-									</select>
-								</label>
-							</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product thumb imgs -->
+                <!-- Product details -->
+                <div class="col-md-5">
+                    <div class="product-details">
+                        <h2 class="product-name" style="color: white">{{ $product->name }} </h2>
+                        <div>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <a class="review-link" href="#">10 Review(s) | Add your review</a>
+                        </div>
+                        <div>
+                            <h3 class="product-price">{{ $product->price }} <del class="product-old-price">$7.00</del></h3>
+                            <!-- <span class="product-available">In Stock</span> -->
+                        </div>
+                        <p>{{ $product->description }}</p>
 
-							{{-- <div class="add-to-cart">
+                        <div class="product-options">
+                            <label>
+                                Size
+                                <select class="input-select">
+                                    <option value="0">XL</option>
+                                    <option value="0">L</option>
+                                    <option value="0">M</option>
+                                </select>
+                            </label>
+                            <label>
+                                Color
+                                <select class="input-select">
+                                    <option value="0">Red</option>
+                                    <option value="0">Blue</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        {{-- <div class="add-to-cart">
 								<div class="qty-label">
 									Qty
 									<div class="input-number">
@@ -130,237 +131,273 @@
 								  
 
 							</div> --}}
-							<form id="cartForm" action="{{ route('addcart',['idcart'=>$product->id]) }}" method="post">
-								@csrf
-								<div class="qty-label">
-									Qty
-									<div class="input-number">
-										<input type="number" name="quantity" value="1" min="1">
-										<span class="qty-up">+</span>
-										<span class="qty-down">-</span>
-									</div>
-								</div>
-								{{-- <button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> Add to cart</button> --}}
-								<input class="add-to-cart-btn" type="submit" value="Add to cart">
-								<button class="add-to-cart-btn" id="viewCartButton" style="display: none"><i class="fa fa-shopping-cart"></i> View cart</button>
-							</form>
-							
+                        <form id="cartForm" action="{{ route('addcart', ['idcart' => $product->id]) }}" method="post">
+                            @csrf
+                            <div class="qty-label">
+                                Qty
+                                <div class="input-number">
+                                    <input type="number" name="quantity" value="1" min="1">
+                                    <span class="qty-up">+</span>
+                                    <span class="qty-down">-</span>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> Add to
+                                cart</button>
 
-							<ul class="product-btns">
-								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-							</ul>
+                            {{-- <input class="add-to-cart-btn" type="submit" value="Add to cart"> --}}
+                            {{-- <div class="product-buttons" style="margin-left: 40px;margin-top: 25px;">
+									@if (auth()->check()) <!-- Check if the user is authenticated -->
+										<button type="submit" class="btn btn-dark btn-outline-hover-dark" style="margin-left: 20%;">Add To cart</button>
+										
+									@else
+									<p style="margin: 10px 0; font-weight: bold;">
+										Please <a href="{{ route('login') }}" style="color: #F56565; text-decoration: underline;">log in</a> to add to cart.
+									</p>
+									@endif
+								</div> --}}
+                        </form>
 
-							<ul class="product-links">
-								<li>Category:</li>
-								<li><a href="#">food</a></li>
-								<li><a href="#">McDonald</a></li>
-							</ul>
+                        {{-- @if (Session::has('message'))
+                            <script>
+                                swal('message', '{{ Session::get('message') }}', 'success', {
+                                    button: true,
+                                    button: 'Ok',
+                                });
+                            </script>
+                        @endif --}}
 
-							<!-- <ul class="product-links">
-								<li>Share:</li>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-							</ul> -->
 
-						</div>
-					</div>
-					<!-- /Product details -->
+                    </div>
+                    <button class="add-to-cart-btn" id="viewCartButton" style="display: none"><i
+                            class="fa fa-shopping-cart"></i> View cart</button>
+                    {{-- </form> --}}
 
-					<!-- Product tab -->
-					<div class="col-md-12">
-						<div id="product-tab">
-							<!-- product tab nav -->
-							<ul class="tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
-							</ul>
-							<!-- /product tab nav -->
 
-							<!-- product tab content -->
-							<div class="tab-content">
-								<!-- tab1  -->
-								<div id="tab1" class="tab-pane fade in active">
-									<div class="row">
-										<div class="col-md-12">
-                                            <p>{{ $product->description}}</p>
-										</div>
-									</div>
-								</div>
-								<!-- /tab1  -->
+                    <ul class="product-btns">
+                        <li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
+                    </ul>
 
-								<!-- tab2  -->
-								<div id="tab2" class="tab-pane fade in">
-									<div class="row">
-										<div class="col-md-12">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-										</div>
-									</div>
-								</div>
-								<!-- /tab2  -->
+                    <ul class="product-links">
+                        <li>Category:</li>
+                        <li><a href="#">food</a></li>
+                        <li><a href="#">McDonald</a></li>
+                    </ul>
 
-								<!-- tab3  -->
-								<div id="tab3" class="tab-pane fade in">
-									<div class="row">
-										<!-- Rating -->
-										<div class="col-md-3">
-											<div id="rating">
-												<div class="rating-avg">
-													<span>4.5</span>
-													<div class="rating-stars">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o"></i>
-													</div>
-												</div>
-												<ul class="rating">
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 80%;"></div>
-														</div>
-														<span class="sum">3</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 60%;"></div>
-														</div>
-														<span class="sum">2</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<!-- /Rating -->
+                    <!-- <ul class="product-links">
+            <li>Share:</li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+           </ul> -->
 
-										<!-- Reviews -->
-										<div class="col-md-6">
-											<div id="reviews">
-												<ul class="reviews">
-													<li>
-														<div class="review-heading">
-															<h5 class="name">John</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>MY favourit resturent</p>
-														</div>
-													</li>
-													
-													
-												</ul>
-												<ul class="reviews-pagination">
-													<li class="active">1</li>
-													<li><a href="#">2</a></li>
-													<li><a href="#">3</a></li>
-													<li><a href="#">4</a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-												</ul>
-											</div>
-										</div>
-										<!-- /Reviews -->
+                </div>
+            </div>
+            <!-- /Product details -->
 
-										<!-- Review Form -->
-										<div class="col-md-3">
-											<div id="review-form">
-												<form class="review-form">
-													<input class="input" type="text" placeholder="Your Name">
-													<input class="input" type="email" placeholder="Your Email">
-													<textarea class="input" placeholder="Your Review"></textarea>
-													<div class="input-rating">
-														<span>Your Rating: </span>
-														<div class="stars">
-															<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
-															<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
-															<input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
-															<input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
-															<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
-														</div>
-													</div>
-													<button class="primary-btn">Submit</button>
-												</form>
-											</div>
-										</div>
-										<!-- /Review Form -->
-									</div>
-								</div>
-								<!-- /tab3  -->
-							</div>
-							<!-- /product tab content  -->
-						</div>
-					</div>
-					<!-- /product tab -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+            <!-- Product tab -->
+            <div class="col-md-12">
+                <div id="product-tab">
+                    <!-- product tab nav -->
+                    <ul class="tab-nav">
+                        <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
+                        <li><a data-toggle="tab" href="#tab2">Details</a></li>
+                        <li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+                    </ul>
+                    <!-- /product tab nav -->
 
-		<!-- Section -->
-		{{-- <div class="section">
+                    <!-- product tab content -->
+                    <div class="tab-content">
+                        <!-- tab1  -->
+                        <div id="tab1" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>{{ $product->description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab1  -->
+
+                        <!-- tab2  -->
+                        <div id="tab2" class="tab-pane fade in">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /tab2  -->
+
+                        <!-- tab3  -->
+                        <div id="tab3" class="tab-pane fade in">
+                            <div class="row">
+                                <!-- Rating -->
+                                <div class="col-md-3">
+                                    <div id="rating">
+                                        <div class="rating-avg">
+                                            <span>4.5</span>
+                                            <div class="rating-stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="rating">
+                                            <li>
+                                                <div class="rating-stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="rating-progress">
+                                                    <div style="width: 80%;"></div>
+                                                </div>
+                                                <span class="sum">3</span>
+                                            </li>
+                                            <li>
+                                                <div class="rating-stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="rating-progress">
+                                                    <div style="width: 60%;"></div>
+                                                </div>
+                                                <span class="sum">2</span>
+                                            </li>
+                                            <li>
+                                                <div class="rating-stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="rating-progress">
+                                                    <div></div>
+                                                </div>
+                                                <span class="sum">0</span>
+                                            </li>
+                                            <li>
+                                                <div class="rating-stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="rating-progress">
+                                                    <div></div>
+                                                </div>
+                                                <span class="sum">0</span>
+                                            </li>
+                                            <li>
+                                                <div class="rating-stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="rating-progress">
+                                                    <div></div>
+                                                </div>
+                                                <span class="sum">0</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /Rating -->
+
+                                <!-- Reviews -->
+                                <div class="col-md-6">
+                                    <div id="reviews">
+                                        <ul class="reviews">
+                                            <li>
+                                                <div class="review-heading">
+                                                    <h5 class="name">John</h5>
+                                                    <p class="date">27 DEC 2018, 8:0 PM</p>
+                                                    <div class="review-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o empty"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="review-body">
+                                                    <p>MY favourit resturent</p>
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+                                        <ul class="reviews-pagination">
+                                            <li class="active">1</li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /Reviews -->
+
+                                <!-- Review Form -->
+                                <div class="col-md-3">
+                                    <div id="review-form">
+                                        <form class="review-form">
+                                            <input class="input" type="text" placeholder="Your Name">
+                                            <input class="input" type="email" placeholder="Your Email">
+                                            <textarea class="input" placeholder="Your Review"></textarea>
+                                            <div class="input-rating">
+                                                <span>Your Rating: </span>
+                                                <div class="stars">
+                                                    <input id="star5" name="rating" value="5"
+                                                        type="radio"><label for="star5"></label>
+                                                    <input id="star4" name="rating" value="4"
+                                                        type="radio"><label for="star4"></label>
+                                                    <input id="star3" name="rating" value="3"
+                                                        type="radio"><label for="star3"></label>
+                                                    <input id="star2" name="rating" value="2"
+                                                        type="radio"><label for="star2"></label>
+                                                    <input id="star1" name="rating" value="1"
+                                                        type="radio"><label for="star1"></label>
+                                                </div>
+                                            </div>
+                                            <button class="primary-btn">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /Review Form -->
+                            </div>
+                        </div>
+                        <!-- /tab3  -->
+                    </div>
+                    <!-- /product tab content  -->
+                </div>
+            </div>
+            <!-- /product tab -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+    <!-- Section -->
+    {{-- <div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
@@ -497,39 +534,43 @@
 			</div>
 			<!-- /container -->
 		</div> --}}
-		<!-- /Section -->
+    <!-- /Section -->
 
-    <!-- footer section start -->
-   
-</div>
+
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    	<!-- jQuery Plugins -->
-		<script src="{{ asset ('assets/js/jquery.min.js')}}"></script>
-		<script src="{{ asset ('assets/js/bootstrap.min.js')}}"></script>
-		<script src="{{ asset ('assets/js/slick.min.js')}}"></script>
-		<script src="{{ asset ('assets/js/nouislider.min.js')}}"></script>
-		<script src="{{ asset ('assets/js/jquery.zoom.min.js')}}"></script>
-		<script src="{{ asset ('assets/js/main.js')}}"></script>
-	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- jQuery Plugins -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+
 @endsection
 
 @section('scripts')
-<script>
-	const addTocart=document.getElementById('addToCartButton');
-	const viewcart=document.getElementById('viewCartButton');
+    <script>
+        const addTocart = document.getElementById('addToCartButton');
+        const viewcart = document.getElementById('viewCartButton');
 
-	addTocart.addEventListener ('click', function(){
-		addTocart.style.display='none';
-		viewcart.style.display='inline-block';
-	})
+        addTocart.addEventListener('click', function() {
+            addTocart.style.display = 'none';
+            viewcart.style.display = 'inline-block';
+        })
 
-	viewcart.addEventListener ('click', function(){
-		window.location.href='cart.html';
-	})
-
-</script>
+        viewcart.addEventListener('click', function() {
+            window.location.href = 'cart.html';
+        })
+    </script>
 @endsection

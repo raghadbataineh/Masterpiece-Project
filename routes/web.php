@@ -35,7 +35,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('profile.index');
 
 
 
@@ -55,11 +55,17 @@ Route::get('login', function () {
     return view('auth.login');
 })->name('login');
 
+
+
 // signup
 Route::get('signup', function () {
     return view('auth.register');
 })->name('signup');
 
+
+//logout
+Route::get('logout',[UserController ::class,'logout'])->name('logout');
+    
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,6 +108,12 @@ Route::get('/ordermenue',  function () {
     return view('website.ordermenue');
 })->name('ordermenue');
 
+// Route::get('/checkout',  function () {
+//     return view('website.popupCheckout');
+// })->name('checkout');
+
+
+
 
 
 
@@ -120,7 +132,7 @@ Route::get('/cartpage', function () {
 Route::post('/productdetail/add/{idcart}', [SingleproductController::class,'add_cart'])->name('addcart');
 Route::get('/productdetail/{id}', [SingleproductController::class,'show_product'])->name('detail');
 
-Route::get('/cartweb', [CartController::class , 'back_cart']);
+Route::get('/cartweb', [CartController::class , 'back_cart'])->name('cartweb');
 
 Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
 
