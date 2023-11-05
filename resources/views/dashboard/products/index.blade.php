@@ -48,7 +48,7 @@
                     <th>
                        Product Name
                     </th>
-                    <th style="width: 20%">
+                    <th style="width:200px">
                         Product description
                     </th>
                     <th class="text-center">
@@ -76,7 +76,7 @@
                 <td>{{$product->name}}</td>
                <td >
                 <div class="description-wrapper">
-                    <span class="short-description">{{ Str::limit($product->description, 100) }}</span>
+                    <span class="short-description">{{ Str::limit($product->description, 30) }}</span>
                     <span class="full-description" style="display: none;">{{ $product->description }}</span>
                 </div>
                 <a href="#" class="read-more">Read More</a>

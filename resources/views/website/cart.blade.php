@@ -37,6 +37,7 @@
 
                                 <div class="col-lg-7">
                                     <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
                                         <h5 class="mb-3"><a href="{{ route('home') }}" class="text-body"><i
                                                     class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
                                         <hr>
@@ -100,25 +101,25 @@
 
 
                                         <table class="table table-bordered">
-                                            <form>
+                                           
 
                                                 <div class="form-group">
                                                     <label for="inputAddress">Address</label>
-                                                    <input type="text" class="form-control" placeholder="1234 Main St"
+                                                    <input name="address" type="text" class="form-control" placeholder="1234 Main St"
                                                         style="background-color: #e8f0fe">
                                                 </div>
 
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="inputCity">City</label>
-                                                        <input type="text" class="form-control"
+                                                        <input name="city" type="text" class="form-control"
                                                             style="background-color: #e8f0fe">
                                                     </div>
 
 
                                                 </div>
 
-                                            </form>
+                                            
                                         </table>
 
 
@@ -143,16 +144,17 @@
                                             <a href="#!" type="submit" class="text-white"><i
                                                     class="fab fa-cc-paypal fa-2x"></i></a>
 
-                                            <form class="mt-4">
+                                            <div class="mt-4">
                                                 <div class="form-outline form-white mb-4">
-                                                    <input type="text" id="typeName"
+                                                    <input type="text" name="cardholder"
+                                            
                                                         class="form-control form-control-lg" siez="17"
                                                         placeholder="Cardholder's Name" />
                                                     <label class="form-label" for="typeName">Cardholder's Name</label>
                                                 </div>
 
                                                 <div class="form-outline form-white mb-4">
-                                                    <input type="text" id="typeText"
+                                                    <input type="text" name="cardnumber"
                                                         class="form-control form-control-lg" siez="17"
                                                         placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
                                                     <label class="form-label" for="typeText">Card Number</label>
@@ -161,7 +163,7 @@
                                                 <div class="row mb-4">
                                                     <div class="col-md-6">
                                                         <div class="form-outline form-white">
-                                                            <input type="text" id="typeExp"
+                                                            <input type="text" name="expire"
                                                                 class="form-control form-control-lg" placeholder="MM/YYYY"
                                                                 size="7" id="exp" minlength="7"
                                                                 maxlength="7" />
@@ -170,7 +172,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-outline form-white">
-                                                            <input type="password" id="typeText"
+                                                            <input type="password" name="cvv"
                                                                 class="form-control form-control-lg"
                                                                 placeholder="&#9679;&#9679;&#9679;" size="1"
                                                                 minlength="3" maxlength="3" />
@@ -179,7 +181,7 @@
                                                     </div>
                                                 </div>
 
-                                            </form>
+                                            </div>
 
                                             <hr class="my-4">
 
@@ -187,6 +189,7 @@
                                                 <p class="mb-2">Subtotal</p>
                                                 {{-- <p class="mb-2">${{ $item['price'] * $item['quantity'] }}</p> --}}
                                                 <p class="mb-2">$ {{ number_format($totalSubtotal, 2) }}</p>
+                                                <input name="subtotal" type="hidden" value="$ {{ number_format($totalSubtotal, 2) }}">
 
                                             </div>
 
@@ -198,6 +201,7 @@
                                             <div class="d-flex justify-content-between mb-4">
                                                 <p class="mb-2">Total Price</p>
                                                 <p class="mb-2">${{ number_format($totalSubtotal, 2)+3 }}</p>
+                                                <input type="hidden" name="total" value="${{ number_format($totalSubtotal, 2)+3 }}">
                                             </div>
 
                                             <button type="button" class="btn btn-info btn-block btn-lg">

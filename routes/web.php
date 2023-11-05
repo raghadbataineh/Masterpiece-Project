@@ -135,6 +135,8 @@ Route::get('/productdetail/{id}', [SingleproductController::class,'show_product'
 Route::get('/cartweb', [CartController::class , 'back_cart'])->name('cartweb');
 
 Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
+Route::post('reviews', [ReviewController::class,'store'])->name('reviews.store');
+// Route::get('reviews', [ReviewController::class,'show']);
 
 
 
