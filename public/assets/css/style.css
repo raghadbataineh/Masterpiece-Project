@@ -44,17 +44,19 @@ html {
 
 body {
     /* color: #666666; */
-    /* background: black; */
+    /* background: #071838; */
+    max-width: 100%;
     font-size: 14px;
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden;
-    /* background-image: url(https://images.pexels.com/photos/2832382/pexels-photo-2832382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
-    /* background-image: url(/public/images/virtual.png); */
-    background-color: #071838;
+    background-image: url(https://images.pexels.com/photos/3663314/pexels-photo-3663314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); 
+    /* background-color: #071838; */
     height: auto;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    /* background-size: 100% 100%;
+    background-repeat: no-repeat; */
+    background-size: contain;
+    background-repeat: repeat;
     font-family: 'Sen', sans-serif;
 }
 
@@ -1419,7 +1421,7 @@ li .floor {
 
 
 
-
+/* Style for card in subcategory page */
 
 .shopCard img.cat_img {
     max-width: 100%;
@@ -1453,5 +1455,61 @@ li .floor {
     color: white; 
 }
 
+
+
+/* Style for the sidebar of subcategory */
+
+.left-sidebar {
+    /* background-color: #f5f5f5;  */
+    border-radius: 5px;
+}
+
+
+
+.left-sidebar h3 {
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.left-sidebar .search-box {
+    display: flex;
+    margin-top: 10px;
+}
+
+.left-sidebar .search-box input[type="text"] {
+    border: 1px solid #ccc; /* Input border */
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.left-sidebar .search-box .btn-search {
+    background-color: #ff9001;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* transition: background-color 0.3s; */
+}
+
+
+
+/* List styles */
+.left-sidebar ul.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.left-sidebar ul.list-unstyled li {
+    margin-top: 8px;
+}
+
+/* Anchor link styles */
+.left-sidebar ul.list-unstyled li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
 
 

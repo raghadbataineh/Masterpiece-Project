@@ -45,13 +45,17 @@
                            The McDonald's menu includes a range of items, such as hamburgers (like the iconic Big Mac), cheeseburgers, chicken sandwiches, French fries, salads, breakfast items, milkshakes, soft drinks, and more. The menu may vary slightly based on regional preferences.
                          </p>  --}}
                          <p class="lorem_text"> {{$shops->description}}</p> 
-                           <br> <br>                        
-                         <div class="text">
+                           <br> <br> 
+                           <hr style="background-color: white;">
+                           <hr style="background-color: white;">
+                           <div class="text">
                            <p>Category : <a href="../html/categories.html">Food</a> </p>
                            <p>Floor : <a href="../html/directory.html">{{$shops->location}}</a></p>
                            <p>Shop Number : 12 </p>
                            <p>Phone Number : {{$shops->phone}}</p> 
                          </div>
+                         <hr style="background-color: white;">
+
                          <div class="readmore_btn"><a href="{{ route ('product.show',$shops->id ) }}">Order Menu</a></div>
                       </div>
                    </div>

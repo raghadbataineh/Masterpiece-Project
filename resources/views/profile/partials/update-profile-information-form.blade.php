@@ -77,11 +77,11 @@
 <div class="card mb-4">
     <div class="card-body">
         <header>
-            <h2 class="text-lg font-medium text-gray-900">
+            <h2 class="text-lg font-medium text-gray-900" style="color: black">
                 {{ __('Profile Information') }}
             </h2>
     
-            <p class="mt-1 text-sm text-gray-600">
+            <p class="mt-1 text-sm text-gray-600"  style="color: black">
                 {{ __("Update your account's profile information and email address.") }}
             </p>
         </header>
@@ -93,22 +93,22 @@
             @method('patch')
       <div class="row">
         <div class="col-sm-3">
-          <p class="mb-0">Full Name</p>
+          <p class="mb-0" style="color: black">Full Name</p>
         </div>
         <div class="col-sm-9">
           {{-- <p class="text-muted mb-0">Johnatan Smith</p> --}}
-          <x-text-input id="name" name="name" type="text" class="text-muted mb-0" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+          <x-text-input id="name" name="name" type="text" class="form-control" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-sm-3">
-          <p class="mb-0">Email</p>
+          <p class="mb-0" style="color: black">Email</p>
         </div>
         <div class="col-sm-9">
             <div>
-                <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
+                <x-text-input id="email" name="email" type="email" class="form-control block w-full" :value="old('email', $user->email)" required autocomplete="username" />
                 <x-input-error class="mt-2" :messages="$errors->get('email')" />
     
                 @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
@@ -135,11 +135,11 @@
       <hr>
       <div class="row">
         <div class="col-sm-3">
-          <p class="mb-0">Phone</p>
+          <p class="mb-0" style="color: black">Phone</p>
         </div>
         <div class="col-sm-9">
           {{-- <p class="text-muted mb-0">(097) 234-5678</p> --}}
-          <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+          <x-text-input id="phone" name="phone" type="text" class="mt-1 form-control" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
 
         </div>
@@ -149,11 +149,11 @@
       <hr>
       <div class="row">
         <div class="col-sm-3">
-          <p class="mb-0">Address</p>
+          <p class="mb-0" style="color: black">Address</p>
         </div>
         <div class="col-sm-9">
           {{-- <p class="text-muted mb-0">Bay Area, San Francisco, CA</p> --}}
-          <x-text-input id="address" name="address" type="text" class="mt-1 block w-full" :value="old('address', $user->address)" required autofocus autocomplete="address" />
+          <x-text-input id="address" style="color: black" name="address" type="text" class="mt-1 form-control" :value="old('address', $user->address)" required autofocus autocomplete="address" />
             <x-input-error class="mt-2" :messages="$errors->get('address')" />
         </div>
 

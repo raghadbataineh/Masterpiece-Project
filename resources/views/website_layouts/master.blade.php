@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
- @include('website_layouts.headerlinks');
+ @include('website_layouts.headerlinks')
  @yield('css')
 
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+{{-- <body class="hold-transition sidebar-mini layout-fixed"> --}}
 <div class="wrapper">
 
  
 
- @include('website_layouts.navbar');
+ @include('website_layouts.navbar')
 
  @include('sweetalert::alert')
 
@@ -25,7 +25,7 @@
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
- @include('website_layouts.footer');
+ @include('website_layouts.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -35,7 +35,7 @@
 </div>
 <!-- ./wrapper -->
 
-@include('website_layouts.footerscripts');
+@include('website_layouts.footerscripts')
 
 @yield('scripts')
 
