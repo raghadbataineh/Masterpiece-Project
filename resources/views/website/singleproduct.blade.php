@@ -92,7 +92,6 @@
                         </div>
                         <div>
                             <h3 class="product-price">{{ $product->price }} <del class="product-old-price">$7.00</del></h3>
-                            <!-- <span class="product-available">In Stock</span> -->
                         </div>
                         <div style="width: 200px">
                             <p >{{ $product->description }}</p>

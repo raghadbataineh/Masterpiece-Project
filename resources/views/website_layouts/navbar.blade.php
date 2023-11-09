@@ -23,35 +23,26 @@
                
              </div>
           </nav> --}}
-               <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                   {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button> --}}
-                   <a class="navbar-brand" href="#">Navbar</a>
+               <nav class="navbar navbar-expand-lg  ">
 
-                   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                           <li class="nav-item active">
-                               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="#">Link</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link disabled" href="#">Disabled</a>
-                           </li>
-                       </ul>
+                   <div class="navleft">
+                       <img src="{{ asset('./images/logo1-removebg-preview.png') }}" alt="Logo" style="width: 50px">
+                       <a class="navbar-brand" href="#">Virtual Eye</a>
+                   </div>
+
+                   <div class="collapse navbar-collapse navright" id="navbarTogglerDemo03">
+
                        <form class="form-inline my-2 my-lg-0">
 
                            <div class="d-flex align-items-center">
                                <!-- Icon -->
-                              
-                               <a href="{{route ('cartweb')}}">
-                                <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span
-                                        class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                                </button>
-                            </a>
+
+                               <a href="{{ route('cartweb') }}">
+                                   <button type="button" class="btn cartbutton" data-toggle="dropdown">
+                                       <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span
+                                           class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                   </button>
+                               </a>
                                <div class="dropdown-menu">
                                    <div class="row total-header-section">
                                        {{-- @php $total = 0 @endphp
@@ -79,93 +70,60 @@
                                            </div>
                                        @endforeach
                                    @endif --}}
-                                   <div class="row">
-                                       <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                           {{--                             <a href="{{ route('addcart',['idcart',$id] ) }}" class="btn btn-primary btn-block">View all</a> --}}
+                                       <div class="row">
+                                           <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                               {{-- <a href="{{ route('addcart',['idcart',$id] ) }}" class="btn btn-primary btn-block">View all</a> --}}
+                                           </div>
                                        </div>
                                    </div>
+                                   @if (session('success'))
+                                       <div class="alert alert-success">
+                                           {{ session('success') }}
+
+                                       </div>
+                                   @endif
+                                   <!-- Notifications -->
+
+                                   <!-- Avatar -->
+
                                </div>
-                               @if (session('success'))
-                                   <div class="alert alert-success">
-                                       {{ session('success') }}
-
-                                   </div>
-                               @endif
-                               <!-- Notifications -->
-                               <div class="dropdown">
-                                   <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
-                                       id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
-                                       aria-expanded="false">
-                                       <i class="fa fa-bell"></i>
-                                       <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                                   </a>
-                                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                       <li>
-                                           <a class="dropdown-item" href="#">Some news</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="#">Another news</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="#">Something else here</a>
-                                       </li>
-                                   </ul>
-                               </div>
-                               <!-- Avatar -->
-
-                           </div>
-                           <li>
-                               <div class="vollenter-btn">
-                                   @if (Route::has('login'))
-                                       @auth
-                                           <a href="{{ url('/profile') }}"
-                                               class="theme-btn-s2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                               style="margin: 0 10px">Profile</a>
+                               <li>
+                                   <div class="vollenter-btn">
+                                       @if (Route::has('login'))
+                                           @auth
+                                               <a href="{{ url('/profile') }}"
+                                                   class="theme-btn-s2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                                   style="margin: 0 10px">Profile</a>
 
 
-                                           {{-- <a class="btn btn-primary" style="margin-right: 10px;"
+                                               {{-- <a class="btn btn-primary" style="margin-right: 10px;"
                                                href="{{ route('logout') }}"
                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> --}}
 
 
-                                           <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                               style="display: none;">
-                                               @csrf
+                                               <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                   style="display: none;">
+                                                   @csrf
 
-                                               <a class="btn btn-primary" style="margin-right: 10px;"
-                                                   href="{{ route('logout') }}">
-                                                   Logout</a>
+                                                   <a class="btn cartbutton" style="margin-right: 10px;"
+                                                       href="{{ route('logout') }}">
+                                                       Logout</a>
 
-                                               {{-- <a href="{{ route('logout')}}">Logout</a> --}}
+                                                   {{-- <a href="{{ route('logout')}}">Logout</a> --}}
 
-                                           </form>
-                                       @else
-                                           <a class="theme-btn-s2" href="{{ route('login') }}">Login</a>
-                                           @if (Route::has('register'))
-                                               <a class="theme-btn-s2" href="{{ route('register') }}">Register</a>
-                                           @endif
-                                       @endauth
-                                   @endif
-                               </div>
-                               {{--                 
-                  @if (Auth::check())
-                  <div style="display: flex; align-items: center;">
-                      <a href="{{ route('profile.edit', [Auth::user()]) }}" style="margin-right: 10px;" class="nav-item nav-link nav-sticky profilee ">{{ Auth::user()->name }}</a>
-                      <form method="POST" class="dropdown-item" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
-                          {{ __('Log Out') }}
+                                               </form>
+                                           @else
+                                               <a class="btn cartbutton" href="{{ route('login') }}">Login</a>
+                                               @if (Route::has('register'))
+                                                   <a class="btn cartbutton" href="{{ route('register') }}">Register</a>
+                                               @endif
+                                           @endauth
+                                       @endif
+                                   </div>
 
-                        </a>
-                      </form>
-                  </div>
-                  @else
-                      <a href="/login"><button class="button-nav">Login</button></a>
-                      <a href="/signup"><button class="button-nav">Register</button></a>
-                  @endif
-          --}}
 
-                           </li>
+                               </li>
+                            </div>
                        </form>
                    </div>
                </nav>
