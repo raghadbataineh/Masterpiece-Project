@@ -26,25 +26,19 @@
                    <div class="row">
                       <div class="col-md-12">
                          <h1 class="contact_taital">Get In Touch</h1>
-                         <form action="">
+                         <form action="{{route('contact.store')}}" method="post">
+                           @csrf
                             <div class="mail_section_1">
-                               <input type="text" class="mail_text" placeholder="Name" name="Name">
-                               <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number"> 
-                               <input type="text" class="mail_text" placeholder="Email" name="Email">
-                               <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                               <div class="send_bt"><a href="#">SEND</a></div>
+                               <input type="text" class="mail_text" placeholder="Name" name="name">
+                               <input type="text" class="mail_text" placeholder="Email" name="email">
+                               <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="message"></textarea>
+                               {{-- <div class="send_bt"><a href="#">SEND</a></div> --}}
+                               <button class="send_bt" type="submit">SEND</button>
                             </div>
                          </form>
                       </div>
                    </div>
-                   <!-- order section start -->
-                   <div class="order_section">
-                      <div class="order_taital_main">
-                         <h1 class="order_taital">Order Best food at time</h1>
-                         <div class="order_bt"><a href="#">Order Now</a></div>
-                      </div>
-                   </div>
-                   <!-- order section end -->
+                  
                 </div>
              </div>
           </div>

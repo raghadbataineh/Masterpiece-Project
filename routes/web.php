@@ -16,6 +16,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\SingleproductController;
 use App\Http\Controllers\dashhome;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,9 +87,9 @@ Route::get('logout',[UserController ::class,'logout'])->name('logout');
 Route::get('/home', [CategoryController::class, 'home'])->name('home');
 
 
-Route::get('/contact', function () {
-    return view('website.contactus');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('website.contactus');
+// })->name('contact');
 
 // Route::get('/floors', function () {
 //     return view('website.directory');
@@ -114,11 +115,6 @@ Route::get('/ordermenue',  function () {
 
 
 
-
-
-
-
-
 Route::get('/about', function () {
     return view('website.aboutus');
 })->name('about'); 
@@ -136,12 +132,14 @@ Route::get('/cartweb', [CartController::class , 'back_cart'])->name('cartweb');
 
 Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
 Route::post('reviews', [ReviewController::class,'store'])->name('reviews.store');
-// Route::get('reviews', [ReviewController::class,'show']);
+
+// Route::get('/contact', [ContactController::class])->name('contact');
 
 
 
 // Crud for Dashboard Routes
 Route::resource('user', UserController::class);
+Route::resource('contact', ContactController::class);
 Route::resource('admin', AdminController::class);
 Route::resource('cart', CartController::class);
 Route::resource('directory', DirectoryController::class);

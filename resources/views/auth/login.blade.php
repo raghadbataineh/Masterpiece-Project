@@ -59,7 +59,7 @@
   </head>
   <body>
       
-    <section class="vh-100" style="background-color: #508bfc;">
+    <section class="vh-100" style="background-color: #fff;">
         <div class="container py-5 h-100">
             <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -110,22 +110,30 @@
               </x-primary-button>
       
                   <hr class="my-4">
-      
+{{--       
                   <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
                     type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
                   <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-                    type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
+                    type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> --}}
       
                 </div>
               </div>
             </div>
+            <div
+            class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+    
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                class="img-fluid" alt="Sample image">
+    
+        </div>
           </div>
         </form>
-
+       
         </div>
       </section>
       
-      
+     
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

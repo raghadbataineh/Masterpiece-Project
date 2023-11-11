@@ -83,8 +83,10 @@
                                         <img class="cat_img" src="{{ url('/images/' . $shop->image) }}" alt=""
                                             width="150px">
                                         <h1 class="blog_text">{{ $shop->name }}</h1>
-                                        <div class="readmore_btn"><a href="{{ route('shop.show', $shop->id) }}">Read
-                                                More</a></div>
+                                        <div class="readmore_btn">
+                                            <a href="{{ route('shop.show', $shop->id) }}">Read
+                                                More</a>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
@@ -95,7 +97,7 @@
         </div>
     </div>
 
-    <!-- blog section end -->
+   
 
 
 @endsection

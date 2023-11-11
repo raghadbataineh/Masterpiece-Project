@@ -27,6 +27,8 @@
 
                    <div class="navleft">
                        <img src="{{ asset('./images/logo1-removebg-preview.png') }}" alt="Logo" style="width: 50px">
+                       <div class="navbar-line"></div>
+
                        <a class="navbar-brand" href="#">Virtual Eye</a>
                    </div>
 
@@ -147,16 +149,11 @@
                                <li><a href="{{ route('directory') }}">Directory</a></li>
                                <li><a href="{{ route('categories') }}">Categories</a></li>
                                <li><a href="{{ route('about') }}">About</a></li>
-                               <li><a href="{{ route('contact') }}">Contacts</a></li>
+                               <li><a href="{{ route('contact.index') }}">Contacts</a></li>
 
                            </ul>
                        </div>
-                       <div class="login_menu">
-                           <ul>
-                               <li><a href="#">Login</a></li>
-                               {{-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> --}}
-                           </ul>
-                       </div>
+                       
                    </div>
                </div>
            </div>

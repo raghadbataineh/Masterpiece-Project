@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/style_singleproduct.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick_singleproduct.css') }}">
+    
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}"> --}}
 
 
@@ -93,18 +94,18 @@
                         <div>
                             <h3 class="product-price">{{ $product->price }} <del class="product-old-price">$7.00</del></h3>
                         </div>
-                        <div style="width: 200px">
+                        <div>
                             <p >{{ $product->description }}</p>
 
                         </div>
 
-                       
+
 
 
                         <form id="cartForm" action="{{ route('addcart', ['idcart' => $product->id]) }}" method="post">
                             @csrf
                             <div class="qty-label">
-                                Qty
+                                Item Quantity
                                 <div class="input-number">
                                     <input type="number" name="quantity" value="1" min="1">
                                     <span class="qty-up" style="color: black">+</span>
@@ -112,6 +113,18 @@
                                 </div>
                                 <br>
                             </div>
+                            {{-- <div class="col-sm-6">
+                                <div class="item-quantity mb-4 mb-sm-0">
+                                    <h6>Item Quantity</h6>
+                                    <div class="quantity d-flex align-items-center justify-content-between">
+                                        <h6 class="mb-0">Quantity of</h6>
+                                        <div>
+                                            <input type="number" class="input-text qty text" value="1"> <span
+                                                class="plus"><i class="fa fa-caret-up"></i> </span><span class="minus"><i
+                                                    class="fa fa-caret-down"></i></span></div>
+                                    </div>
+                                </div>
+                            </div> --}}
                             <button class="btn add-to-cart-btn" type="submit" style="background-color: #a084dc"><i
                                     class="fa fa-shopping-cart"></i> Add to
                                 cart</button>
@@ -154,16 +167,14 @@
 
                     <!-- product tab content -->
                     <div class="tab-content">
-                       
+
 
                         <!-- tab2  -->
                         <div id="tab2" class="tab-pane fade in">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum.</p>
+                                        </p>
 
                                 </div>
                             </div>
@@ -171,78 +182,81 @@
                         <!-- /tab2  -->
 
                         <!-- tab3  -->
-                        <div id="tab3" class="tab-pane fade in">
+                        <div id="tab3" class="tab-pane fade in" >
                             <div class="row">
                                 <!-- Rating -->
-                                <!-- Rating -->
-<div class="col-md-3">
-    <div id="rating">
-        <div class="rating-avg">
-            <span>{{ $averageRating }}</span>
-            <div class="rating-stars">
-                @php
-                $averageRatingRounded = round($averageRating);
-                @endphp
-                @for ($i = 1; $i <= 5; $i++)
-                    <i class="fa fa-star{{ $i <= $averageRatingRounded ? '' : '-o' }}"></i>
-                @endfor
-            </div>
-        </div>
-        <ul class="rating">
-            @foreach ($ratings as $rating)
-            <li>
-                <div class="rating-stars">
-                    {{-- @for ($i = 1; $i <= 5; $i++)
+                                <div class="col-md-3">
+                                    <div id="rating">
+                                        <div class="rating-avg">
+                                            <span>{{ $averageRating }}</span>
+                                            <div class="rating-stars">
+                                                @php
+                                                    $averageRatingRounded = round($averageRating);
+                                                @endphp
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <i class="fa fa-star{{ $i <= $averageRatingRounded ? '' : '-o' }}"></i>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                        <ul class="rating">
+                                            @foreach ($ratings as $rating)
+                                                <li>
+                                                    <div class="rating-stars">
+                                                        {{-- @for ($i = 1; $i <= 5; $i++)
                         <i class="fa fa-star{{ $rating->rating && $i <= $rating->rating ? '' : '-o' }}"></i>
                     @endfor --}}
-                </div>
-                <div class="rating-progress">
-                    {{-- <div style="width: {{ $rating->percentage }}%;"></div> --}}
-                </div>
-                {{-- <span class="sum">{{ $rating->count }}</span> --}}
-            </li>
-        @endforeach
-        
-        </ul>
-    </div>
-</div>
+                                                    </div>
+                                                    <div class="rating-progress">
+                                                        {{-- <div style="width: {{ $rating->percentage }}%;"></div> --}}
+                                                    </div>
+                                                    {{-- <span class="sum">{{ $rating->count }}</span> --}}
+                                                </li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+                                </div>
 
                                 <!-- /Rating -->
 
                                 <!-- Reviews -->
                                 <div class="col-md-6">
-                                    <div id="reviews">
-                                        <ul class="reviews">
+                                    <div id="reviews" >
+                                        <ul class="reviews" >
                                             @if ($reviews)
 
-                                            @foreach ($reviews as $review)
-                                            <li>
-                                                <div class="review-heading">
-                                                    <h5 class="name">{{ $review->user->name }}</h5> <!-- Assuming user information is available in the review model -->
-                                                    <p class="date">{{ $review->created_at->format('M d, Y, h:i A') }}</p> <!-- Adjust the date format accordingly -->
-                                                    <div class="review-rating">
-                                                        @for ($i = 0; $i < $review->rating; $i++)
-                                                            <i class="fa fa-star"></i>
-                                                        @endfor
-                                                        @for ($i = 0; $i < 5 - $review->rating; $i++)
-                                                            <i class="fa fa-star-o empty"></i>
-                                                        @endfor
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>{{ $review->comment }}</p> <!-- Assuming the review content is stored in the 'review' field -->
-                                                </div>
-                                            </li>
-                                        @endforeach
-                                        @else
-    <p>No reviews available for this product.</p>
-@endif
-                                        
+                                                @foreach ($reviews as $review)
+                                                    <li>
+                                                        <div class="review-heading">
+                                                            <h5 class="name">{{ $review->user->name }}</h5>
+                                                            <!-- Assuming user information is available in the review model -->
+                                                            <p class="date">
+                                                                {{ $review->created_at->format('M d, Y, h:i A') }}</p>
+                                                            <!-- Adjust the date format accordingly -->
+                                                            <div class="review-rating">
+                                                                @for ($i = 0; $i < $review->rating; $i++)
+                                                                    <i class="fa fa-star"></i>
+                                                                @endfor
+                                                                @for ($i = 0; $i < 5 - $review->rating; $i++)
+                                                                    <i class="fa fa-star-o empty"></i>
+                                                                @endfor
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-body">
+                                                            <p>{{ $review->comment }}</p>
+                                                            <!-- Assuming the review content is stored in the 'review' field -->
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @else
+                                                <p>No reviews available for this product.</p>
+                                            @endif
+
 
 
 
                                         </ul>
-                                        <ul class="reviews-pagination">
+                                        <ul class="reviews-pagination" >
                                             <li class="active">1</li>
                                             <li><a href="#">2</a></li>
                                             <li><a href="#">3</a></li>
@@ -257,18 +271,23 @@
                                 <div class="col-md-3">
                                     <div id="review-form">
                                         @if (auth()->check())
+                                        <span>Add Review</span>
                                             <form class="review-form" method="POST"
                                                 action="{{ route('reviews.store') }}" enctype="multipart/form-data">
                                                 @csrf
 
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-                                                <textarea class="input" placeholder="Your Review" name="review"></textarea>
+                                                <textarea class="input" placeholder="Your Review" name="review">
+                                                    
+                                                </textarea>
                                                 <div class="input-rating">
                                                     <span>Your Rating: </span>
                                                     <div class="stars">
                                                         <input id="star5" name="rating" value="5"
-                                                            type="radio"><label for="star5"></label>
+                                                            type="radio"><label for="star5">
+
+                                                            </label>
                                                         <input id="star4" name="rating" value="4"
                                                             type="radio"><label for="star4"></label>
                                                         <input id="star3" name="rating" value="3"
@@ -278,6 +297,7 @@
                                                         <input id="star1" name="rating" value="1"
                                                             type="radio"><label for="star1"></label>
                                                     </div>
+                                                 
 
                                                 </div>
                                                 <button class="primary-btn" type="submit">Submit</button>
@@ -379,6 +399,7 @@
 @endsection
 
 @section('scripts')
+
     <script>
         const addTocart = document.getElementById('addToCartButton');
         const viewcart = document.getElementById('viewCartButton');

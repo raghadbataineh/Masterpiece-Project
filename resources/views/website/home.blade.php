@@ -116,14 +116,14 @@
                              <li>
                                  <div class="icon"><img src="./images/icon1.svg" alt=""></div>
                                  <div class="content">
-                                     <h5>Setup wallet</h5>
+                                     <h5>Shop</h5>
                                  </div>
                              </li>
                              <li class="selling-sep"><img src="./images/icon5.svg" alt=""></li>
                              <li>
                                 <div class="icon"><img src="./images/icon2.svg" alt=""></div>
                                 <div class="content">
-                                     <h5>Add to NFT</h5>
+                                     <h5>Add to cart</h5>
                                  </div>
                              </li>
                              <li class="selling-sep"><img src="./images/icon5.svg" alt=""></li>
@@ -131,14 +131,14 @@
                              <li>
                                 <div class="icon"><img src="./images/icon3.svg" alt=""></div>
                                 <div class="content">
-                                     <h5>Payment Bill</h5>
+                                     <h5>Payment </h5>
                                  </div>
                              </li>
                              <li class="selling-sep"><img src="./images/icon5.svg" alt=""></li>
                              <li>
                                 <div class="icon"><img src="./images/icon4.svg" alt=""></div>
                                 <div class="content">
-                                     <h5>NFT Shipped</h5>
+                                     <h5> Shipped</h5>
                                  </div>
                              </li>
                          </ul>
