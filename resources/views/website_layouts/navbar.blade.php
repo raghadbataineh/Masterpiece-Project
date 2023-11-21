@@ -39,12 +39,15 @@
                            <div class="d-flex align-items-center">
                                <!-- Icon -->
 
-                               <a href="{{ route('cartweb') }}">
+                               {{-- <a href="{{ route('cartweb') }}">
                                    <button type="button" class="btn cartbutton" data-toggle="dropdown">
                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span
                                            class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                                    </button>
-                               </a>
+                               </a> --}}
+                               <button type="button" class="btn cartbutton" data-toggle="dropdown" id="cartButton">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                            </button>
                                <div class="dropdown-menu">
                                    <div class="row total-header-section">
                                        {{-- @php $total = 0 @endphp

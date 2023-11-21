@@ -130,8 +130,9 @@ Route::get('/productdetail/{id}', [SingleproductController::class,'show_product'
 
 Route::get('/cartweb', [CartController::class , 'back_cart'])->name('cartweb');
 
-Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
+// Route::post('/checkout', [checkoutController::class, 'store'])->name('checkout');
 Route::post('reviews', [ReviewController::class,'store'])->name('reviews.store');
+// Route::delete('checkout/product/{id}', [CheckoutController::class, 'destroyProduct'])->name('checkout.destroyProduct');
 
 // Route::get('/contact', [ContactController::class])->name('contact');
 
@@ -142,6 +143,7 @@ Route::resource('user', UserController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('admin', AdminController::class);
 Route::resource('cart', CartController::class);
+Route::resource('checkout', checkoutController::class);
 Route::resource('directory', DirectoryController::class);
 Route::resource('floor', FloorController::class);
 Route::resource('order', OrderController::class);

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('phone');
             $table->string('opening_hours');
+            $table->integer('hasproducts');
            
             $table->timestamps();
         });

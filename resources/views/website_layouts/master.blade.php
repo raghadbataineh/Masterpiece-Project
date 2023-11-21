@@ -16,8 +16,10 @@
 
  @include('website_layouts.navbar')
 
+
  @include('sweetalert::alert')
 
+ @include('website_layouts.assistant')
 
   
     <!-- /.content-header -->

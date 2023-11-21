@@ -101,7 +101,7 @@ class CartController extends Controller
         
         
         // dd(isset($cart->product));
-      return view('\website\cart',compact('cart'));
+      return view('website.cart',compact('cart'));
     // return redirect()->route('cartweb');
 
 

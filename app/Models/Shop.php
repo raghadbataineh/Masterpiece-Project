@@ -13,7 +13,7 @@ class Shop extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'location', 'phone', 'opening_hours','image','image1','image2','image3','description'
+        'name', 'location', 'phone', 'opening_hours','image','image1','image2','image3','description','hasproducts'
     ];
     
 

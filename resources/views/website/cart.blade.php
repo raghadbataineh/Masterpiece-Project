@@ -36,7 +36,7 @@
 
 
                                 <div class="col-lg-7">
-                                    <form action="{{ route('checkout') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('checkout.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <h5 class="mb-3"><a href="{{ route('home') }}" class="text-body"><i
                                                     class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
@@ -57,11 +57,12 @@
 
                                         <table class="table table-bordered">
                                             <thead>
-                                                <tr>
+                                                <tr style="color: black">
                                                     <th>Image</th>
                                                     <th>Name</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
+                                                    <th>Shop Name</th>
                                                     <th>Remove</th>
                                                 </tr>
                                             </thead>
@@ -70,7 +71,7 @@
                                                     $totalSubtotal = 0;
                                                 @endphp
                                                 @foreach ($cart as $item)
-                                                    <tr>
+                                                    <tr style="color: black">
                                                         <td>
                                                             <img src="{{ asset('images/' . (isset($item->product) ? $item->product->image : $item['image1'])) }}"
                                                                 class="img-fluid rounded-3" alt="Shopping item"
@@ -86,9 +87,25 @@
                                                             JOD
                                                             {{ isset($item->product) ? $item->product->price * $item->quantity : $item['price'] * $item['quantity'] }}
                                                         </td>
+                                                    
                                                         <td>
-                                                            <a href="#!" style="color: red;"><i
-                                                                    class="fa fa-trash"></i></a>
+                                                            {{-- {{ optional($item->product)->shop->name }} --}}
+                                                            {{ isset($item['product']) ? optional($item['product']->shop)->name : '' }}
+
+                                                        </td>
+                                                        
+                                                        <td>
+                                                            
+                                                            {{-- {{ route('checkout.destroy',$item->product->id) }} --}}
+
+                                                                <form action=""  method="POST"  style="display: inline;">
+                                                                    {{-- @method('DELETE') --}}
+                                                                    @csrf
+                                                                    <button type="submit"   style="color: red;"
+                                                                    onclick="return confirm('Are you sure you want to delete this product?')">
+                                                                    <i class="fa fa-trash">
+                                                                 </i></button>
+                                                                  </form>
                                                         </td>
                                                     </tr>
                                                     <!-- Accumulate the subtotal for the current item to the total subtotal -->
@@ -100,21 +117,55 @@
                                         </table>
 
 
+                                        <input name="product_id" type="hidden" value="{{$item->product->id}}">
+                                        <input name="shop_id" type="hidden" value="{{$item['product']->shop->id}}">
                                         <table class="table table-bordered">
                                            
 
                                                 <div class="form-group">
-                                                    <label for="inputAddress">Address</label>
+                                                    <label for="inputAddress" style="color: black">Address</label>
                                                     <input name="address" type="text" class="form-control" placeholder="1234 Main St"
                                                         style="background-color: #e8f0fe">
                                                 </div>
 
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputCity">City</label>
-                                                        <input name="city" type="text" class="form-control"
+                                                        <label for="inputCity" style="color: black">City</label>
+                                                        <input placeholder="Your ciry" name="city" type="text" class="form-control"
                                                             style="background-color: #e8f0fe">
                                                     </div>
+
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputCity" style="color: black">Payment method</label>
+                                                      
+                                                        <select name="paymentmethod" id="paymentmethodSelector">
+                                                            <option value="cash" id="cashOption">Cash</option>
+                                                            <option value="visa" id="visaCardOption">Visa card</option>
+                                                        </select>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <button type="submit" class="btn btn-info btn-block btn-lg" id="cashButton">
+                                                        <div class="d-flex justify-content-between">
+                                                            <span>${{ number_format($totalSubtotal, 2)+3 }}</span>
+                                                            @if (auth()->check())
+                                                             
+                                                             <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+        
+                                                            @else
+                                                                <p style="margin: 10px 0; font-weight: bold;">
+                                                                    Please <a href="{{ route('login') }}"
+                                                                        style="color: #F56565; text-decoration: underline;">log
+                                                                        in</a> to checkout.
+                                                                </p>
+                                                            @endif
+                                                        </div>
+                                                    </button>
 
 
                                                 </div>
@@ -126,7 +177,7 @@
                                 </div>
                                 <div class="col-lg-5">
 
-                                    <div class="card  text-white rounded-3" style="background-color: #a084dc">
+                                    <div class="card  text-white rounded-3" style="background-color: #a084dc ; display:none" id="visaCardDetails">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-4">
                                                 <h5 class="mb-0">Card details</h5>
@@ -204,7 +255,7 @@
                                                 <input type="hidden" name="total" value="${{ number_format($totalSubtotal, 2)+3 }}">
                                             </div>
 
-                                            <button type="button" class="btn btn-info btn-block btn-lg">
+                                            <button type="submit" class="btn btn-info btn-block btn-lg">
                                                 <div class="d-flex justify-content-between">
                                                     <span>${{ number_format($totalSubtotal, 2)+3 }}</span>
                                                     {{-- <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span> --}}
@@ -244,17 +295,20 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const addTocart = document.getElementById('addToCartButton');
-        const viewcart = document.getElementById('viewCartButton');
+<script>
+    const paymentMethodSelector = document.getElementById('paymentmethodSelector');
+    const visaCardDetails = document.getElementById('visaCardDetails');
+    const cashButton = document.getElementById('cashButton');
 
-        addTocart.addEventListener('click', function() {
-            addTocart.style.display = 'none';
-            viewcart.style.display = 'inline-block';
-        })
+    paymentMethodSelector.addEventListener('change', function() {
+        if (paymentMethodSelector.value === 'cash') {
+            visaCardDetails.style.display = 'none';
+            cashButton.style.display = 'block';
+        } else if (paymentMethodSelector.value === 'visa') {
+            visaCardDetails.style.display = 'block';
+            cashButton.style.display = 'none';
 
-        viewcart.addEventListener('click', function() {
-            window.location.href = 'cart.html';
-        })
-    </script>
+        }
+    });
+</script>
 @endsection

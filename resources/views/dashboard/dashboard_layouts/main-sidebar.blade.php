@@ -1,20 +1,51 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="width: 200px">
-        <!-- Brand Logo -->
-        <a href="" class="brand-link">
-          <img src="{{asset('/images/logo.jfif')}}" alt="logo" width="70px" style="border-radius: 180px">
+<style>
+  .main-sidebar{
+    background-color:#27214a;
+  }
+  .nav-pills .nav-link {
+    color: #fff;
+    font: 1em sans-serif;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    color: #fff;
+    background: #590f87;
+    background: -o-linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    background: linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    
+    border-radius: 10px; 
 
-          <span class="brand-text font-weight-light">Vertual Eye</span>
-        </a>
-       
+  }
+
+  .navbar-line {
+    height: 40px; /* Adjust height as needed */
+    width: 1px;
+    background-color: #fff; /* Color of the vertical line */
+    margin: 0 10px; /* Adjust margin as needed */
+}
+.navleft {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+</style>
+<aside class="main-sidebar  elevation-4" >
+        
+        <div class="navleft">
+          <img src="{{ asset('./images/logo1-removebg-preview.png') }}" alt="Logo" style="width: 50px">
+          <div class="navbar-line"></div>
+
+          <a class="navbar-brand" href="#" style="color: #fff">Virtual Eye</a>
+      </div>
         <!-- Sidebar -->
         <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
+            {{-- <div class="image">
               <img src="{{url('/images/'. session('loginimage') ) }}" class="img-circle elevation-2" alt="User Image" width="60px">
 
-            </div>
+            </div> --}}
             <div class="info">
               <h6 style="color: white">Welcome {{session('loginname')}}</h6>
 
@@ -36,8 +67,7 @@
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-                   with font-awesome or any other icon font library -->
+              
               <li class="nav-item menu-open">
                 
                 <ul class="nav nav-treeview">

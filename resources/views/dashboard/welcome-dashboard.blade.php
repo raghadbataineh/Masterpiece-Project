@@ -27,7 +27,8 @@ body
   height:100%;
   margin:0px;
   padding:2rem;
-  background-image:url(https://www.bing.com/th?id=OHR.NorthSeaStairs_EN-IN3347217370_1920x1080.webp&qlt=50);
+  /* background-image:url(https://www.bing.com/th?id=OHR.NorthSeaStairs_EN-IN3347217370_1920x1080.webp&qlt=50); */
+background-color: #2c3a55;
   background-position: center;
     background-size: cover;
 }
@@ -108,7 +109,7 @@ body
           <div class="small-box bg-success">
             <div class="inner">
               {{-- <h3>53<sup style="font-size: 20px">%</sup></h3> --}}
-              {{-- <h3>{{ $categoryCount }}<sup style="font-size: 20px"></sup></h3> --}}
+              <h3>{{ $categoryCount }}<sup style="font-size: 20px"></sup></h3>
               <p> Categories</p>
             </div>
             <div class="icon">
@@ -139,7 +140,7 @@ body
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              {{-- <h3>{{ $shopCount }}<sup style="font-size: 20px"></sup></h3> --}}
+              <h3>{{ $shopCount }}<sup style="font-size: 20px"></sup></h3>
 
               <p>Shops</p>
             </div>

@@ -38,7 +38,6 @@ class ContactController extends Controller
 
         
         $contacts->save();
-        // Mail::to('raghad.bataineh24@gmail.com')->send(new ContactFormSubmitted($request->all()));
 
 
         return redirect()->route('contact.index')->with('success', 'Your message has been sent successfully!');

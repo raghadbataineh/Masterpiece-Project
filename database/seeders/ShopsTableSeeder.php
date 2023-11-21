@@ -23,6 +23,7 @@ class ShopsTableSeeder extends Seeder
             'image3' => 'oceanfood.jpg',
             'location' => 'First Floor',
             'phone' => '0781234556',
+            'hasproducts' => 1,
 
             'opening_hours' => '10:00',
             'floor_id' => 2,
@@ -37,6 +38,8 @@ class ShopsTableSeeder extends Seeder
             'image2' => 'delicious3.jpg',
             'image3' => 'deliciousfood.jpg',
             'location' => 'Second Floor',
+            'hasproducts' => 1,
+
             'phone' => '0789876543',
             'opening_hours' => '11:00',
             'floor_id' => 2,
@@ -51,6 +54,8 @@ class ShopsTableSeeder extends Seeder
             'image2' => 'tasty3.jpg',
             'image3' => 'tastyfood.jpg',
             'location' => 'Ground Floor',
+            'hasproducts' => 1,
+
             'phone' => '0798765432',
             'opening_hours' => '08:30',
             'floor_id' => 2,
@@ -65,6 +70,8 @@ class ShopsTableSeeder extends Seeder
             'image2' => 'burger3.jpeg',
             'image3' => 'burgerfood.jpeg',
             'location' => 'Food Court',
+            'hasproducts' => 1,
+
             'phone' => '0787654321',
             'opening_hours' => '10:30',
             'floor_id' => 2,
@@ -80,6 +87,8 @@ Shop::create([
     'image2' => 'shoesbags3.jpg',
     'image3' => 'shoesbags4.jpg',
     'location' => 'Mall Street',
+    'hasproducts' => 0,
+
     'phone' => '0796543210',
     'opening_hours' => '09:30',
     'floor_id' => 3,
@@ -94,6 +103,8 @@ Shop::create([
     'image2' => 'bag3.jpg',
     'image3' => 'bag4.jpg',
     'location' => 'Fashion Avenue',
+    'hasproducts' => 0,
+
     'phone' => '0787654321',
     'opening_hours' => '10:00',
     'floor_id' => 3,
@@ -109,6 +120,8 @@ Shop::create([
     'image2' => 'bank3.jpg',
     'image3' => 'bank4.jpg',
     'location' => 'Finance Street',
+    'hasproducts' => 0,
+
     'phone' => '0790123456',
     'opening_hours' => '09:00',
     'floor_id' => 1,
@@ -124,6 +137,8 @@ Shop::create([
     'image2' => 'gadget3.jpg',
     'image3' => 'gadget4.jpg',
     'location' => 'Tech Hub',
+    'hasproducts' => 0,
+
     'phone' => '0789876543',
     'opening_hours' => '10:30',
     'floor_id' => 1,
@@ -138,6 +153,7 @@ Shop::create([
     'image2' => 'appliance3.jpg',
     'image3' => 'appliance4.jpg',
     'location' => 'Electronics Avenue',
+    'hasproducts' => 0,
     'phone' => '0798765432',
     'opening_hours' => '10:00',
     'floor_id' => 1,
@@ -151,6 +167,7 @@ Shop::create([
     'image2' => 'optics3.jpg',
     'image3' => 'optics4.jpg',
     'location' => 'Eyewear Street',
+    'hasproducts' => 0,
     'phone' => '0781234567',
     'opening_hours' => '10:00',
     'floor_id' => 3,
