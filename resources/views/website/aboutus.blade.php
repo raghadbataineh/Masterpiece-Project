@@ -14,29 +14,61 @@
 
 
           <!-- about us section start -->
+
           <div class="container">
-            <h1>About Us</h1>
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="service_taital">About Us</h1>
+              </div>
+            </div>
+            
+
+            <br>
 
             <div class="aboutus">
                <div class="text_about">
-                  <h2> Welcome to [Virtual Eye] – Your Ultimate Destination for Virtual Shopping and Directory Exploration!</h2>
+                  <h2> Welcome to Virtual Eye Your Ultimate Destination for Virtual Shopping and Directory Exploration!</h2>
                      <br>
                      <ol>
                         <li> Virtual Shopping: Experience the thrill of shopping from the comfort of your own space. Our virtual mall offers a seamless and immersive shopping experience where you can browse through a diverse range of products from renowned brands. Interact with lifelike storefronts, explore product details, and make purchases effortlessly.</li>
                         <li>  Directory Exploration: Discover a world of possibilities with our directory mall. Explore an array of categories, each filled with curated listings of businesses, services, and experiences. Whether you're looking for a cozy café, a top-notch spa, or expert advice from professionals, our directory has you covered.</li>
-                        <li> Community and Events: [Virtual and Directory Mall Name] is not just a platform; it's a community. Engage with fellow shoppers, share your thoughts, and stay updated on the latest trends. Plus, we host exciting virtual events, workshops, and exhibitions that bring people together and celebrate the joy of exploration.</li>
                      </ol>
                      <br>
                      
-                     <h3>  Our Mission:
-                     
-                        At Verual Eye, our mission is to revolutionize the way you shop and explore. We believe in harnessing technology to create a dynamic and interactive experience that bridges the gap between online convenience and offline charm. Our commitment to innovation, quality, and customer satisfaction drives us to continually enhance your virtual shopping and exploration journey.</h3>
+                  <hr style="background-color: white">
+                  <hr style="background-color: white">
                </div>
+
+               
                <div class="image_aboutus">
                   <img src="../assets/img/Online ads-amico.png" alt="">
 
                </div>
             </div>
+
+            <div class="service_section layout_padding">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-sm-12">
+                           <h1>Our Vision</h1>
+                       </div>
+                   </div>
+                   <div class="service_section_2">
+                       <div class="row">
+                           <div class="col-12">
+                              <video width="100%" height="auto" controls autoplay muted >
+                                  <!-- Provide multiple sources for compatibility -->
+                                  <source src="./images/Virtual Shopping Mall.mp4" type="video/mp4">
+                                  {{-- <source src="video.webm" type="video/webm"> --}}
+                                  <!-- Add a fallback message for browsers that do not support the video element -->
+                                  Your browser does not support the video tag.
+                              </video>
+                           </div>
+      
+                       </div>
+                   </div>
+               </div>
+           </div>
           </div>
           <!-- about us section End -->
        

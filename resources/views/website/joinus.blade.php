@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="container">
-        <form method="post" action="{{ route('joinus') }}">
+        <form method="POST" action="{{ route('joinus.store') }}">
             @csrf
 
             <!-- Business Information -->
@@ -27,9 +27,9 @@
             </div>
 
             <div class="form-outline mb-4">
-                <label class="form-label" for="businessPhone">Business Phone</label>
+                <label class="form-label" for="businessPhone">Shop Phone</label>
 
-                <input type="tel" id="businessPhone" name="shop_phone" class="form-control" />
+                <input type="text" id="businessPhone"  name="shop_phone" class="form-control" />
                 <span>@error('shop_phone'){{$message}} @enderror</span>
 
             </div>
@@ -37,7 +37,7 @@
             <div class="form-outline mb-4">
                 <label class="form-label" for="businessEmail">shop_description</label>
 
-                <input type="email" id="businessEmail" name="shop_description" class="form-control" />
+                <input type="text" id="businessEmail" name="shop_description" class="form-control" />
                 <span>@error('shop_description'){{$message}} @enderror</span>
 
             </div>
@@ -63,7 +63,7 @@
             <div class="form-outline mb-4">
                 <label class="form-label" for="ownerPhone">Owner's Phone</label>
 
-                <input type="tel" id="ownerPhone" name="owner_phone" class="form-control" />
+                <input type="text" id="ownerPhone" name="owner_phone" class="form-control" />
                 <span>@error('owner_phone'){{$message}} @enderror</span>
 
             </div>
@@ -71,7 +71,7 @@
             <div class="form-outline mb-4">
                 <label class="form-label" for="ownerEmail">Owner's Email</label>
 
-                <input type="email" id="ownerEmail" name="owner_email" class="form-control" />
+                <input type="text" id="ownerEmail" name="owner_email" class="form-control" />
                 <span>@error('owner_email'){{$message}} @enderror</span>
 
             </div>
@@ -111,6 +111,7 @@
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+            {{-- <input type="submit" value="submit"> --}}
         </form>
     </div>
 @endsection

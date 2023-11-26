@@ -77,7 +77,7 @@ a {
 /* Felix */
 .personal-assistant {
 	position: fixed;
-	/* margin-top: 100px; */
+	margin-top: 100px;
     /* right: 0px;  */
 	display: flex;
 	align-items: center;
@@ -1062,14 +1062,17 @@ input.form-control::placeholder {
 .container h1 {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 .aboutus{
+    margin-top: 140px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     /* align-items: center; */
 }
 .text_about{
+   margin-top: 10px;
     width: 50%;
 }
 .text_about ol{

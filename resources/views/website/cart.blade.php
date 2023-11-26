@@ -36,8 +36,7 @@
 
 
                                 <div class="col-lg-7">
-                                    <form action="{{ route('checkout.store') }}" method="POST" enctype="multipart/form-data">
-                                        @csrf
+                                    
                                         <h5 class="mb-3"><a href="{{ route('home') }}" class="text-body"><i
                                                     class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
                                         <hr>
@@ -87,20 +86,20 @@
                                                             JOD
                                                             {{ isset($item->product) ? $item->product->price * $item->quantity : $item['price'] * $item['quantity'] }}
                                                         </td>
-                                                    
+
                                                         <td>
                                                             {{-- {{ optional($item->product)->shop->name }} --}}
                                                             {{ isset($item['product']) ? optional($item['product']->shop)->name : '' }}
 
                                                         </td>
-                                                        
+
                                                         <td>
-                                                            
+
                                                             {{-- {{ route('checkout.destroy',$item->product->id) }} --}}
 
-                                                                <form action=""  method="POST"  style="display: inline;">
-                                                                    {{-- @method('DELETE') --}}
-                                                                    @csrf
+                                                            <form action="{{ route('checkout.destroy',$item->id) }}"  method="POST"  style="display: inline;">
+                                                                @csrf
+                                                                    @method('DELETE')
                                                                     <button type="submit"   style="color: red;"
                                                                     onclick="return confirm('Are you sure you want to delete this product?')">
                                                                     <i class="fa fa-trash">
@@ -113,71 +112,86 @@
                                                         $totalSubtotal += isset($item->product) ? $item->product->price * $item->quantity : $item['price'] * $item['quantity'];
                                                     @endphp
                                                 @endforeach
+
+                                                <form action="{{ route('checkout.store') }}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+
+                                                <input name="product_id" type="hidden" value="{{ $item->product->id }}">
+                                                <input name="shop_id" type="hidden"
+                                                    value="{{ $item['product']->shop->id }}">
+                                                <input name="quantity" type="hidden" value="{{ $item->quantity }}">
+                                                <input name="subtotal" type="hidden" value="{{ $totalSubtotal }}">
+                                                <input name="delivery" type="hidden" value=" 3 ">
+                                                <input name="total" type="hidden" value="{{ $totalSubtotal + 3 }}">
                                             </tbody>
                                         </table>
 
 
-                                        <input name="product_id" type="hidden" value="{{$item->product->id}}">
-                                        <input name="shop_id" type="hidden" value="{{$item['product']->shop->id}}">
+
+
                                         <table class="table table-bordered">
-                                           
 
-                                                <div class="form-group">
-                                                    <label for="inputAddress" style="color: black">Address</label>
-                                                    <input name="address" type="text" class="form-control" placeholder="1234 Main St"
-                                                        style="background-color: #e8f0fe">
+
+                                            <div class="form-group">
+                                                <label for="inputAddress" style="color: black">Address</label>
+                                                <input name="address" type="text" class="form-control"
+                                                    placeholder="1234 Main St" style="background-color: #e8f0fe">
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputCity" style="color: black">City</label>
+                                                    <input placeholder="Your ciry" name="city" type="text"
+                                                        class="form-control" style="background-color: #e8f0fe">
                                                 </div>
 
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputCity" style="color: black">City</label>
-                                                        <input placeholder="Your ciry" name="city" type="text" class="form-control"
-                                                            style="background-color: #e8f0fe">
+
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputCity" style="color: black">Payment method</label>
+
+                                                    <select name="paymentmethod" id="paymentmethodSelector">
+                                                        <option value="cash" id="cashOption">Cash</option>
+                                                        <option value="visa" id="visaCardOption">Visa card</option>
+                                                    </select>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="form-row">
+                                                <button type="submit" class="btn btn-info btn-block btn-lg"
+                                                    id="cashButton">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>${{ number_format($totalSubtotal, 2) + 3 }}</span>
+                                                        @if (auth()->check())
+                                                            <span>Checkout <i
+                                                                    class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                                        @else
+                                                            <p style="margin: 10px 0; font-weight: bold;">
+                                                                Please <a href="{{ route('login') }}"
+                                                                    style="color: #F56565; text-decoration: underline;">log
+                                                                    in</a> to checkout.
+                                                            </p>
+                                                        @endif
                                                     </div>
+                                                </button>
 
 
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputCity" style="color: black">Payment method</label>
-                                                      
-                                                        <select name="paymentmethod" id="paymentmethodSelector">
-                                                            <option value="cash" id="cashOption">Cash</option>
-                                                            <option value="visa" id="visaCardOption">Visa card</option>
-                                                        </select>
-                                                    </div>
+                                            </div>
 
 
-                                                </div>
-                                                <div class="form-row">
-                                                    <button type="submit" class="btn btn-info btn-block btn-lg" id="cashButton">
-                                                        <div class="d-flex justify-content-between">
-                                                            <span>${{ number_format($totalSubtotal, 2)+3 }}</span>
-                                                            @if (auth()->check())
-                                                             
-                                                             <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-        
-                                                            @else
-                                                                <p style="margin: 10px 0; font-weight: bold;">
-                                                                    Please <a href="{{ route('login') }}"
-                                                                        style="color: #F56565; text-decoration: underline;">log
-                                                                        in</a> to checkout.
-                                                                </p>
-                                                            @endif
-                                                        </div>
-                                                    </button>
-
-
-                                                </div>
-
-                                            
                                         </table>
 
-
                                 </div>
+
+
+                                </form>
+
                                 <div class="col-lg-5">
 
-                                    <div class="card  text-white rounded-3" style="background-color: #a084dc ; display:none" id="visaCardDetails">
+                                    <div class="card  text-white rounded-3" style="background-color: #a084dc ; display:none"
+                                        id="visaCardDetails">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-4">
                                                 <h5 class="mb-0">Card details</h5>
@@ -198,7 +212,6 @@
                                             <div class="mt-4">
                                                 <div class="form-outline form-white mb-4">
                                                     <input type="text" name="cardholder"
-                                            
                                                         class="form-control form-control-lg" siez="17"
                                                         placeholder="Cardholder's Name" />
                                                     <label class="form-label" for="typeName">Cardholder's Name</label>
@@ -207,7 +220,8 @@
                                                 <div class="form-outline form-white mb-4">
                                                     <input type="text" name="cardnumber"
                                                         class="form-control form-control-lg" siez="17"
-                                                        placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                                                        placeholder="1234 5678 9012 3457" minlength="19"
+                                                        maxlength="19" />
                                                     <label class="form-label" for="typeText">Card Number</label>
                                                 </div>
 
@@ -240,7 +254,8 @@
                                                 <p class="mb-2">Subtotal</p>
                                                 {{-- <p class="mb-2">${{ $item['price'] * $item['quantity'] }}</p> --}}
                                                 <p class="mb-2">$ {{ number_format($totalSubtotal, 2) }}</p>
-                                                <input name="subtotal" type="hidden" value="$ {{ number_format($totalSubtotal, 2) }}">
+                                                <input name="subtotal" type="hidden"
+                                                    value="$ {{ number_format($totalSubtotal, 2) }}">
 
                                             </div>
 
@@ -251,19 +266,20 @@
 
                                             <div class="d-flex justify-content-between mb-4">
                                                 <p class="mb-2">Total Price</p>
-                                                <p class="mb-2">${{ number_format($totalSubtotal, 2)+3 }}</p>
-                                                <input type="hidden" name="total" value="${{ number_format($totalSubtotal, 2)+3 }}">
+                                                <p class="mb-2">${{ number_format($totalSubtotal, 2) + 3 }}</p>
+                                                <input type="hidden" name="total"
+                                                    value="${{ number_format($totalSubtotal, 2) + 3 }}">
                                             </div>
 
                                             <button type="submit" class="btn btn-info btn-block btn-lg">
                                                 <div class="d-flex justify-content-between">
-                                                    <span>${{ number_format($totalSubtotal, 2)+3 }}</span>
+                                                    <span>${{ number_format($totalSubtotal, 2) + 3 }}</span>
                                                     {{-- <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span> --}}
                                                     @if (auth()->check())
                                                         {{-- <button type="submit" class="btn btn-dark btn-outline-hover-dark"
                                                             style="margin-left: 20%;">Checkout</button> --}}
-													 <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-
+                                                        <span>Checkout <i
+                                                                class="fas fa-long-arrow-alt-right ms-2"></i></span>
                                                     @else
                                                         <p style="margin: 10px 0; font-weight: bold;">
                                                             Please <a href="{{ route('login') }}"
@@ -273,7 +289,6 @@
                                                     @endif
                                                 </div>
                                             </button>
-                                            </form>
                                         </div>
                                     </div>
 
@@ -295,20 +310,20 @@
 @endsection
 
 @section('scripts')
-<script>
-    const paymentMethodSelector = document.getElementById('paymentmethodSelector');
-    const visaCardDetails = document.getElementById('visaCardDetails');
-    const cashButton = document.getElementById('cashButton');
+    <script>
+        const paymentMethodSelector = document.getElementById('paymentmethodSelector');
+        const visaCardDetails = document.getElementById('visaCardDetails');
+        const cashButton = document.getElementById('cashButton');
 
-    paymentMethodSelector.addEventListener('change', function() {
-        if (paymentMethodSelector.value === 'cash') {
-            visaCardDetails.style.display = 'none';
-            cashButton.style.display = 'block';
-        } else if (paymentMethodSelector.value === 'visa') {
-            visaCardDetails.style.display = 'block';
-            cashButton.style.display = 'none';
+        paymentMethodSelector.addEventListener('change', function() {
+            if (paymentMethodSelector.value === 'cash') {
+                visaCardDetails.style.display = 'none';
+                cashButton.style.display = 'block';
+            } else if (paymentMethodSelector.value === 'visa') {
+                visaCardDetails.style.display = 'block';
+                cashButton.style.display = 'none';
 
-        }
-    });
-</script>
+            }
+        });
+    </script>
 @endsection

@@ -4,10 +4,8 @@
 <script src="{{ asset('dashboard-assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/js/jquery-3.0.0.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/js/plugin.js') }}"></script>
-<!-- sidebar -->
 <script src="{{ asset('dashboard-assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/js/custom.js') }}"></script>
-<!-- javascript --> 
 <script src="{{ asset('dashboard-assets/js/owl.carousel.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>  
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
@@ -97,8 +95,8 @@ function showResponse() {
 	responseFrame.classList.add("active");
 	deactivateFelix();
 }
-function closeResponse() { responseFrame.classList.remove("active"); }
-changeTheme(SiteTheme.Dark);
+// function closeResponse() { responseFrame.classList.remove("active"); }
+// changeTheme(SiteTheme.Dark);
 </script>
 
 <script>

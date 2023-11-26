@@ -110,11 +110,13 @@ Route::get('/ordermenue',  function () {
     return view('website.ordermenue');
 })->name('ordermenue');
 
-Route::get('/joinusform',  function () {
-    return view('website.joinus');
-})->name('joinusform');
+// Route::get('/joinusform',  function () {
+//     return view('website.joinus');
+// })->name('joinusform');
 
-Route::post('/joinus', [JoinusController::class , 'store'])->name('joinus');
+// Route::get('/joinus/create', [JoinusController::class , 'create'])->name('joinusCreate');
+// Route::post('/joinus', [JoinusController::class , 'store'])->name('joinus');
+
 
 
 Route::get('/about', function () {
@@ -157,6 +159,7 @@ Route::resource('shop', ShopController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('singleproduct', SingleproductController::class);
 Route::resource('dashboard', dashhome::class);
+Route::resource('joinus', JoinusController::class);
 
 
 

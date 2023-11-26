@@ -12,7 +12,8 @@ class JoinusController extends Controller
      */
     public function index()
     {
-        //
+        return view('website.joinus');
+
     }
 
     /**
@@ -20,7 +21,7 @@ class JoinusController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -28,16 +29,20 @@ class JoinusController extends Controller
      */
     public function store(Request $request)
     {
+
          $request->validate([
-            'shop_name' => 'required',
-            'shop_phone' => 'required',
+            'shop_name' => 'required|string',
+            'shop_phone' => ['required', 'numeric', 'regex:/(079|077|078)\d{7}/'],
             'shop_description' => 'required',
-            'owner_name' => 'required',
-            'owner_phone' => 'required',
-            'owner_email' => 'required',
-            'product_description' => 'required',
-            'product_categories' => 'required',
-        ]);
+            'owner_name' => 'required|string',
+            'owner_phone' =>  ['required', 'numeric', 'regex:/(079|077|078)\d{7}/'],
+            'owner_email' => 'required|email',
+            'product_description' => 'required|string',
+            'product_categories' => 'required|string',
+        ], 
+        [ 'shop_phone.regex' => 'The phone number must start with 079, 077, or 078 followed by 7 digits.', 
+        'owner_phone.regex' => 'The phone number must start with 079, 077, or 078 followed by 7 digits.']
+    );
 
 $joinus = new Joinus();
 
@@ -50,9 +55,12 @@ $joinus->owner_email = $request->input('owner_email');
 $joinus->product_description = $request->input('product_description');
 $joinus->product_categories = $request->input('product_categories');
 
+
 $joinus->save();
 
-        return view('website.joinus');
+        // return view('website.joinus');
+        return redirect()->back();
+        
     }
     /**
      * Display the specified resource.

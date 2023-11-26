@@ -150,7 +150,7 @@
                            <ul>
                                <li class="active"><a href="{{ route('home') }}">Home</a></li>
                                <li><a href="{{ route('directory') }}">Directory</a></li>
-                               <li><a href="{{ route('joinusform') }}">Join Us</a></li>
+                               <li><a href="{{ route('joinus.index') }}">Join Us</a></li>
                                <li><a href="{{ route('about') }}">About</a></li>
                                <li><a href="{{ route('contact.index') }}">Contacts</a></li>
 
