@@ -12,7 +12,11 @@
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min_singleproduct.css') }}"> --}}
 
 
-
+<style>
+    .yellow-star {
+    color: yellow !important; /* Use !important to override Font Awesome styles */
+}
+</style>
 @endsection
 
 
@@ -284,20 +288,23 @@
                                                 <div class="input-rating">
                                                     <span>Your Rating: </span>
                                                     <div class="stars">
-                                                        <input id="star5" name="rating" value="5"
-                                                            type="radio"><label for="star5">
-
-                                                            </label>
-                                                        <input id="star4" name="rating" value="4"
-                                                            type="radio"><label for="star4"></label>
-                                                        <input id="star3" name="rating" value="3"
-                                                            type="radio"><label for="star3"></label>
-                                                        <input id="star2" name="rating" value="2"
-                                                            type="radio"><label for="star2"></label>
-                                                        <input id="star1" name="rating" value="1"
-                                                            type="radio"><label for="star1"></label>
+                                                        <input id="star5" name="rating" value="5" type="radio" style="display: none;">
+                                                        <label for="star5"><i class="fa fa-star"></i></label>
+                                                    
+                                                        <input id="star4" name="rating" value="4" type="radio" style="display: none;">
+                                                        <label for="star4"><i class="fa fa-star"></i></label>
+                                                    
+                                                        <input id="star3" name="rating" value="3" type="radio" style="display: none;">
+                                                        <label for="star3"><i class="fa fa-star"></i></label>
+                                                    
+                                                        <input id="star2" name="rating" value="2" type="radio" style="display: none;">
+                                                        <label for="star2"><i class="fa fa-star"></i></label>
+                                                    
+                                                        <input id="star1" name="rating" value="1" type="radio" style="display: none;">
+                                                        <label for="star1"><i class="fa fa-star"></i></label>
                                                     </div>
-                                                 
+                                                    
+                                                    
 
                                                 </div>
                                                 <button class="primary-btn" type="submit">Submit</button>
@@ -413,4 +420,32 @@
             window.location.href = 'cart.html';
         })
     </script>
+
+<script>
+    const starsContainer = document.getElementById('star-rating');
+    const ratingInput = document.querySelector('input[name="rating"]');
+    const labels = starsContainer.querySelectorAll('.star-label');
+
+    starsContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('star-label')) {
+            const selectedRating = event.target.previousElementSibling.value;
+            ratingInput.value = selectedRating;
+
+            // Remove checked attribute from all radios
+            document.querySelectorAll('input[name="rating"]').forEach(radio => radio.removeAttribute('checked'));
+
+            // Set checked attribute on the selected radio
+            event.target.previousElementSibling.setAttribute('checked', 'checked');
+
+            labels.forEach(label => label.querySelector('i').classList.remove('yellow-star'));
+
+// Set color for selected stars
+for (let i = 1; i <= selectedRating; i++) {
+    labels[i - 1].querySelector('i').classList.add('yellow-star');
+}
+        }
+    });
+</script>
+
+
 @endsection

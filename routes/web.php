@@ -17,6 +17,7 @@ use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\SingleproductController;
 use App\Http\Controllers\dashhome;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JoinusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,10 +110,11 @@ Route::get('/ordermenue',  function () {
     return view('website.ordermenue');
 })->name('ordermenue');
 
-// Route::get('/checkout',  function () {
-//     return view('website.popupCheckout');
-// })->name('checkout');
+Route::get('/joinusform',  function () {
+    return view('website.joinus');
+})->name('joinusform');
 
+Route::post('/joinus', [JoinusController::class , 'store'])->name('joinus');
 
 
 Route::get('/about', function () {
@@ -122,6 +124,7 @@ Route::get('/about', function () {
 Route::get('/cartpage', function () {
     return view('website.cart');
 })->name('cartpage');
+
 
 
 

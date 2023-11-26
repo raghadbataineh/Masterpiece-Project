@@ -76,28 +76,33 @@ a {
 /* Assistant robot style */
 /* Felix */
 .personal-assistant {
-	position: relative;
-	margin-top: 100px;
+	position: fixed;
+	/* margin-top: 100px; */
+    /* right: 0px;  */
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	width: 100%;
-    margin-bottom: 100px;
+	justify-content: flex-start;
+	/* flex-direction: column; */
+	width: 96%;
+    /* z-index: 10; */
 }
+
+
+
 .felix {
-	position: absolute;
-	bottom: 50px;
-    /* left: 50%; */
+    /* float: right; */
+    position: absolute;
+    bottom: 30px;
+    right:20px;
     /* transform: translateX(-50%); */
-	width: 110px;
-	height: 95px;
-	border-radius: 45%;
-	border: 3px solid #fff;
-	box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-	animation: breathe-and-jump 3s linear infinite;
-	cursor: pointer;
-	z-index: 1;
+    width: 100px;
+    height: 40px;
+    border-radius: 45%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    animation: breathe-and-jump 3s linear infinite;
+    cursor: pointer;
+    z-index: 1;
 }
 .felix::before {
 	content: '';
@@ -117,9 +122,9 @@ a {
 .centered-pen{
    margin-top: 100px;
 }
-.centered-pen h1,p {
-  text-align: center;
-  color: #fff;}
+/* .centered-pen h1,p {
+  text-align: right;
+  color: #fff;} */
 
 .felix > .eyes { position: relative; }
 .felix > .eyes > .eye {
@@ -137,8 +142,10 @@ a {
 
 /* Platforms */
 .platform {
+    position: absolute;
 	transform: rotateX(70deg);
 	width: 100px;
+    right: 1%;
 	height: 100px;
 	box-shadow: 0 0 100px #fff,
 		         0 0 15px #fff inset;
@@ -204,7 +211,7 @@ a {
 }
 
 /* Command List */
-.command-list {
+/* .command-list {
 	position: absolute;
 	bottom: 35px;
 	list-style-type: none;
@@ -216,13 +223,27 @@ a {
     justify-content: center;
     align-items: center;
     
+} */
+
+.command-list {
+    position: absolute;
+    bottom: 35px;
+    list-style-type: none;
+   
+    width: 100%;
+    transform: translateX(8%);
+
+    z-index: 1;
+    display: flex; 
+     justify-content: flex-end; 
+     align-items: center;
 }
 .command-list > li {
     display: inline-block;
-	width: 45px;
-	height: 45px;
+	width: 35px;
+	height: 35px;
 	line-height: 37px;
-	font-size: 25px;
+	font-size: 20px;
 	border-radius: 50%;
 	border: 2px solid #fff;
 	box-shadow: 0 0 5px #fff;
@@ -1431,9 +1452,10 @@ font-weight: bold;
     width: 100%;
     float: left;
     height: auto;
-    background-size: 100%;
+    /* background-size: 100%; */
     padding-bottom: 30px;
-    background-repeat: no-repeat;
+    background-color: #142442;
+    /* background-repeat: no-repeat; */
     margin-top: 90px;
 }
 
@@ -1462,10 +1484,17 @@ font-weight: bold;
 }
 
 .footer_sectio_2 {
+    /* margin-top: 40px; */
     width: 100%;
     float: left;
 }
-
+.footer_descr{
+    background: #590f87;
+    background: -o-linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    background: linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    /* padding: 50px; */
+    color: white;
+}
 .footer_logo {
     width: 100%;
     float: left;
@@ -1477,6 +1506,7 @@ font-weight: bold;
 }
 
 .useful_text {
+    margin-top: 30px;
     width: 100%;
     font-size: 30px;
     color: #ffffff;

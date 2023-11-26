@@ -32,7 +32,8 @@
                                     <div class="col-md-12 mt-4 d-flex justify-content-center">
 
                                         <img src="./img-1.png" alt="slider" style="width: 80%">
-
+                                        {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_9T-2Xncjqs?si=FNI6LJADNx8WFZYp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -148,6 +149,30 @@
              </div>
          </div>
      </div>
+     {{-- Video for our vision --}}
+        <div class="service_section layout_padding">
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-12">
+                     <h1 class="service_taital">Our Vision</h1>
+                 </div>
+             </div>
+             <div class="service_section_2">
+                 <div class="row">
+                     <div class="col-12">
+                        <video width="100%" height="auto" controls autoplay muted >
+                            <!-- Provide multiple sources for compatibility -->
+                            <source src="./images/Virtual Shopping Mall.mp4" type="video/mp4">
+                            {{-- <source src="video.webm" type="video/webm"> --}}
+                            <!-- Add a fallback message for browsers that do not support the video element -->
+                            Your browser does not support the video tag.
+                        </video>
+                     </div>
+
+                 </div>
+             </div>
+         </div>
+     </div>
         <div class="service_section layout_padding">
          <div class="container">
              <div class="row">
@@ -203,7 +228,7 @@
                                 success. We look forward to each and every customer that walks through our door.
                                 With 6 lanes available for bowling enjoyment, and rotter skating ring , wide choices of
                                 beverages and a lounge that provides music, your visit should be a memorable one .</p>
-                            <div class="readmore_btn"><a href="#">Read More</a></div>
+                            {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -216,7 +241,7 @@
                                 More than 3000 square meters of the most exquisite machines and equipment in the world.
                                 A generously equipped free-weight area, along-side the most superior body building machines
                                 .</p>
-                            <div class="readmore_btn"><a href="#">Read More</a></div>
+                            {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -231,7 +256,7 @@
                                 You can have your kids play at 'Lego Play House' without even worrying! Lego Play House is
                                 an entertainment venue for kids, they offer a safe play area supervised by their qualified
                                 staff.</p>
-                            <div class="readmore_btn"><a href="#">Read More</a></div>
+                            {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
                 </div>

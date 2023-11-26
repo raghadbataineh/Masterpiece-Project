@@ -10,14 +10,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthenticatedSessionController extends Controller
 {
     /**
      * Display the login view.
      */
+   
+
     public function create(): View
     {
+        Redirect::setIntendedUrl(url()->previous());
+        // Redirect::intended(url()->previous());
+
         return view('auth.login');
     }
 
@@ -45,7 +51,9 @@ class AuthenticatedSessionController extends Controller
         ]);
         }
         }
+
         return redirect()->intended(RouteServiceProvider::HOME);
+
     }
 
     /**
