@@ -42,7 +42,7 @@
                 </th>
 
                   <th class="text-center">
-                    product review
+                    product name
                 </th>
                  
                     <th>
@@ -53,7 +53,7 @@
                     </th>
                    
                     
-                    <th>
+                    <th style="width: 30px">
                         Actions
                     </th>
                 </tr>
@@ -66,15 +66,14 @@
                     <tr>
                       <td>{{$i}}</td>
                     <td>{{ $review->user->name }}</td>
-                    {{-- <td>{{ $review->product->name }}</td> --}}
+                    <td>{{ $review->product->name }}</td>
 
 
                     <td>{{ $review->comment }}</td>
                    
                      
                  
-                    <td>{{ $review->rating }}</td>
-                    <td>action</td>
+                    <td>{{ $review->rating }} <i class="fa fa-star"></i></td>
                     {{-- <td>{{ $review->phone }}</td> --}}
                     <td class="project-actions">
 

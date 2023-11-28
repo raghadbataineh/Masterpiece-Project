@@ -25,7 +25,7 @@ class ProductController extends Controller
         $shopNames=Shop::all();
     
         
-    
+
          return view('dashboard.products.create',compact('shopNames'));
     }
 

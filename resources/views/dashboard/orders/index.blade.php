@@ -58,14 +58,24 @@
                     <th>
                         quantity
                     </th>
-                    {{-- <th>
-                        start_date
+                    <th>
+                        Order status
+                    </th>
+                    
+                    <th>
+                        Adress
                     </th>
                     <th>
-                        end_date
-                    </th> --}}
+                        City
+                    </th>
                     <th>
-                        order_status
+                        Payment method
+                    </th>
+                    <th>
+                        Total Price
+                    </th>
+                    <th>
+                        Action
                     </th>
                 </tr>
             </thead>
@@ -78,7 +88,7 @@
                 <tr>
 
                     <th scope="row">{{$i}}</th>
-                    <td><img src="{{ url('/images/' . $order->product->image) }}" alt="" width="150px"></td>
+                    <td><img src="{{ url('/images/' . $order->product->image) }}" alt="" width="110px"></td>
 
                      <td>{{$order->user->name}}</td>
                      <td>{{$order->shop->name}}</td>
@@ -87,16 +97,17 @@
                    
                     <td>{{$order->quantity}}</td>
                     <td>{{$order->order_status}}</td>
-                    {{-- <td>{{$order->start_date}}</td>
-                    <td>{{$order->end_date}}</td>
-                    <td>{{$order->active}}</td>
+                    <td>{{$order->address}}</td>
+                    <td>{{$order->city}}</td>
+                    <td>{{$order->payment_method}}</td>
+                    <td>{{$order->total}} JD</td>
                     <td class="project-actions text-right">
 
-                        <a class="btn btn-info " href="{{ route('order.edit', $order->id) }}">
+                        {{-- <a class="btn btn-info " href="{{ route('order.edit', $order->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
-                        </a>
+                        </a> --}}
 
                         <form action="{{route('order.destroy',$order->id)}}"  method="POST"  style="display: inline;">
                             @method('DELETE')
@@ -106,7 +117,7 @@
                             <i class="fas fa-trash">
                             </i>Delete</button>
                           </form>
-                    </td> --}}
+                    </td>
 
 
 

@@ -43,9 +43,19 @@
         </div>
         <div class="form-group">
             <label for="email">ُEmail:</label>
-            <input type="email" name="email" class="form-control @error('age') is-invalid @enderror" required
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" required
                 value="{{ old('email', $admins->email) }}">
             @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="email">Phone:</label>
+            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" required
+                value="{{ old('phone', $admins->phone) }}">
+            @error('phone')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

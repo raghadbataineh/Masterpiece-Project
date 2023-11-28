@@ -54,7 +54,7 @@
                         <hr style="background-color: white;">
                         <hr style="background-color: white;">
                         <div class="text">
-                            <p>Category : <a href="../html/categories.html">Food</a> </p>
+                            <p>Category : <a href="../html/categories.html">{{ $shops->category->name }}</a> </p>
                             <p>Floor : <a href="../html/directory.html">{{ $shops->location }}</a></p>
                             <p>Shop Number : 12 </p>
                             <p>Phone Number : {{ $shops->phone }}</p>

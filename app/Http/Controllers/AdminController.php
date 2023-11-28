@@ -114,6 +114,7 @@ class AdminController extends Controller
 
         $admins->name = $request->input('name');
         $admins->email = $request->input('email');
+        $admins->phone = $request->input('phone');
         $admins->password = Hash::make ($request->input('password'));
 
         if ($request->hasFile('image')) {
@@ -128,7 +129,7 @@ class AdminController extends Controller
 
         $admins->save();
 
-        return redirect()->route('admins.index')->with('success', 'Admin updated successfully');
+        return redirect()->route('admin.index')->with('success', 'Admin updated successfully');
     }
 
     /**

@@ -30,9 +30,9 @@ use App\Http\Controllers\JoinusController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/dashboard', function () {
@@ -40,6 +40,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('profile.index');
 
 
+Route::get('/', [CategoryController::class, 'home'])->name('home');
 
 // Route::get('/home', [CategoryController::class, 'home'])->middleware(['auth', 'verified'])->name('home');
 
@@ -68,33 +69,7 @@ Route::get('signup', function () {
 //logout
 Route::get('logout',[UserController ::class,'logout'])->name('logout');
     
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-
-// Route::get('/home', function () {
-//     return view('website.home');
-
-// })->name('home');
-
-Route::get('/home', [CategoryController::class, 'home'])->name('home');
-
-
-// Route::get('/contact', function () {
-//     return view('website.contactus');
-// })->name('contact');
-
-// Route::get('/floors', function () {
-//     return view('website.directory');
-// })->name('directory');
 
 Route::get('/floors', [FloorController::class, 'show'])->name('directory');
 

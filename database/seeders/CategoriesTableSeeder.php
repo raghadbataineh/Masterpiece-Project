@@ -23,11 +23,13 @@ class CategoriesTableSeeder extends Seeder
             'description' => 'all the banks in mall',
             'image' => 'bank.jpg',
         ]);
+
         Category::create([
             'name' => 'Optics',
             'description' => 'the shops of optics in mall',
             'image' => 'optics.png',
         ]);
+        
         Category::create([
             'name' => 'Shoes and bags',
             'description' => 'Shoes and bags in mall',

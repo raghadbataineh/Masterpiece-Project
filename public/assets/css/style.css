@@ -1065,12 +1065,16 @@ input.form-control::placeholder {
     margin-top: 30px;
 }
 .aboutus{
-    margin-top: 140px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  
     /* align-items: center; */
 }
+
+
 .text_about{
    margin-top: 10px;
     width: 50%;

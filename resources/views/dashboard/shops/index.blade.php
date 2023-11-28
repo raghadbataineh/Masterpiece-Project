@@ -124,13 +124,13 @@
 
                     <td class="project-actions text-right">
 
-                        <a class="btn btn-info " href="{{ route('category.edit', $shop->id) }}">
+                        <a class="btn btn-info " href="{{ route('shop.edit', $shop->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
                         </a>
 
-                        <form action="{{route('category.destroy',$shop->id)}}"  method="POST"  style="display: inline;">
+                        <form action="{{route('shop.destroy',$shop->id)}}"  method="POST"  style="display: inline;">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger"

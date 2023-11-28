@@ -1,4 +1,6 @@
 <!-- Main Sidebar Container -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <style>
   .main-sidebar{
     background-color:#27214a;
@@ -72,7 +74,7 @@
                 
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="" class="nav-link active">
+                    <a href="{{ route('home')}}" class="nav-link active">
                       <i class="nav-icon fas fa-home"></i>
                       <p>website home</p>
                     </a>
@@ -146,7 +148,7 @@
             </li>
 
               <li class="nav-item">
-                <a href="{{ route('user.index') }}" class="nav-link">
+                <a href="{{ route('user.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-user"></i>
                     <p>Users</p>
                 </a>
@@ -260,3 +262,17 @@
       {{-- @if(!session('loginname'))
         {{redirect()->route('adminLogin')}}
       @endif --}}
+<!-- Add this script after including jQuery -->
+<!-- Add this script after including jQuery -->
+<script>
+  $(document).ready(function() {
+    // Add the "active" class to the clicked sidebar item
+    $('.nav-link').on('click', function() {
+      // Remove the "active" class from all other sidebar items
+      $('.nav-link').removeClass('active');
+
+      // Add the "active" class to the clicked sidebar item
+      $(this).addClass('active');
+    });
+  });
+</script>

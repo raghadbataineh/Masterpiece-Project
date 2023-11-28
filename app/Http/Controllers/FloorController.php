@@ -79,18 +79,38 @@ class FloorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Floor $floor)
+    public function edit($id)
     {
-        //
+        $floor = Floor::findOrFail($id);
+    
+        return view('dashboard.floors.edit', compact('floor'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Floor $floor)
+    
+    public function update(Request $request, Floor $floor, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif|max:2048',
+            // Add any desired image validation rules
+            // Add other validation rules as needed
+        ]);
+    
+        $floor = Floor::findOrFail($id);
+    
+        $floor->name = $request->input('name');
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $floor->image = $imageName;
+        }
+    
+        $floor->save();
+    
+        return redirect()->route('floor.index')->with('success', 'Floor updated successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.

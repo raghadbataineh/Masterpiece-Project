@@ -94,9 +94,9 @@
                             <option value="{{ $floorName->id }}">{{ $floorName->floor_name }}</option>
                         @endforeach
                     </select>
-                    <input type="hidden" value="{{ $floorName->id }}"name="floor_id">
+                    {{-- <input type="hidden" value="{{ $floorName->id }}"name="floor_id"> --}}
                 </div>
-                
+                 <input type="hidden" name="floor_name" value="{{ $floorName->floor_name }}">
                 {{-- <div class="form-group"> --}}
                         {{-- <label for="image"> Shop Category</label>
                         <input type="text" name="image3" class="form-control"
@@ -125,7 +125,9 @@
                             <option value="{{ $categoryName->id }}">{{ $categoryName->name }}</option>
                         @endforeach
                     </select>
-                    <input type="hidden" value="{{ $categoryName->id }}"name="category_id">
+                    <input type="hidden" name="category_name" value="{{ $categoryName->name }}">
+
+                    {{-- <input type="hidden" value="{{ $categoryName->id }}"name="category_id"> --}}
                 </div>
              
                 
@@ -163,6 +165,16 @@
                         <label for="image"> Shop opening_hours</label>
                         <input type="time" name="open" class="form-control"
                             placeholder="Shop opening hours">
+                            @error('image')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+
+                    
+                </div>
+                <div class="form-group">
+                        <label for="image"> has product 0 or 1</label>
+                        <input type="number" name="hasproducts" class="form-control"
+                            placeholder="has product 0 or 1">
                             @error('image')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror

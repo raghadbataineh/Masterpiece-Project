@@ -66,3 +66,16 @@
       });
   });
 </script>
+
+<script>
+    $(document).ready(function() {
+      // Add the "active" class to the clicked sidebar item
+      $('.nav-link').on('click', function() {
+        // Remove the "active" class from all other sidebar items
+        $('.nav-link').removeClass('active');
+  
+        // Add the "active" class to the clicked sidebar item
+        $(this).addClass('active');
+      });
+    });
+  </script>
