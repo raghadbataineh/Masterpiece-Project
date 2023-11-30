@@ -55,7 +55,7 @@ class CheckoutController extends Controller
 
         // 5. Redirect the user to a thank you page or order details page
         // return redirect()->route('checkout.show');
-        return view ('website.thanks');
+        return view ('website.thanks', compact('order'));
 
         
         //->with('success', 'Order placed successfully!')

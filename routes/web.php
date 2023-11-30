@@ -144,7 +144,7 @@ Route::resource('payment', PaymentController::class)->middleware(['admin']);
 Route::resource('product', ProductController::class)->middleware(['admin']);
 Route::resource('review', ReviewController::class)->middleware(['admin']);
 Route::resource('shop', ShopController::class)->middleware(['admin']);
-Route::resource('category', CategoryController::class)->middleware(['admin']);
+Route::resource('category', CategoryController::class);
 Route::resource('singleproduct', SingleproductController::class);
 Route::resource('dashboard', dashhome::class)->middleware(['admin']);
 Route::resource('joinus', JoinusController::class);

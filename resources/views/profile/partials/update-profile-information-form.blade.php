@@ -172,6 +172,7 @@
                 >{{ __('Saved.') }}</p>
             @endif
         </div>
-        
+    </form>
+
       </div>
     </div>

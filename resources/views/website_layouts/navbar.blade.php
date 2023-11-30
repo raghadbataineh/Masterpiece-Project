@@ -29,7 +29,7 @@
                        <img src="{{ asset('./images/logo1-removebg-preview.png') }}" alt="Logo" style="width: 50px">
                        <div class="navbar-line"></div>
 
-                       <a class="navbar-brand" href="#">Virtual Eye</a>
+                       <a class="navbar-brand" href="#" style="color: white">Virtual Eye</a>
                    </div>
 
                    <div class="collapse navbar-collapse navright" id="navbarTogglerDemo03">
@@ -98,7 +98,7 @@
                                            @auth
                                                <a href="{{ url('/profile') }}"
                                                    class="theme-btn-s2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                                   style="margin: 0 10px">Profile</a>
+                                                   style="margin: 0 10px; color:white;">Profile</a>
 
 
                                                {{-- <a class="btn btn-primary" style="margin-right: 10px;"

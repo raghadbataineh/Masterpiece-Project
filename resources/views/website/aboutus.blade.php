@@ -17,13 +17,7 @@
     background: -o-linear-gradient(45deg,#590f87 0,#ff0076 100%);
     background: linear-gradient(45deg,#590f87 0,#ff0076 100%);
 }
-.vertival_line{
-    width: 4px;
-    height: 15px;
-    margin-top: 6px;
-    margin-left: 4px;
-    background-color: white;
-}
+/*  */
 p {
     margin: 0px;
 

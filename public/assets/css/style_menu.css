@@ -558,10 +558,10 @@ xclip
 
 .services-inner-box{
 	padding: 30px;
-	background: #ffffff;
+	background: #2c3a55;
 	margin-bottom: 30px;
 	border-radius: 0px 10px;
-	box-shadow: 0 7px 10px #e6e6e6;
+	box-shadow: 0 10px 10px #e6e6e6;
 	text-align: center;
 }
 .ser-icon{
@@ -582,10 +582,13 @@ xclip
 }
 
 .services-inner-box a{
-	color: #ffffff;
-	background: #ff9001;
-	padding: 10px 18px;
-	font-size: 16px;
+    background: #590f87;
+    background: -o-linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    background: linear-gradient(45deg, #590f87 0, #ff0076 50%, #590f87 100%);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
 }
 
 

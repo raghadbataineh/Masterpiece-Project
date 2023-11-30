@@ -1826,7 +1826,7 @@ li .floor {
     position: relative;
 }
 
-.shopCard .blog_taital_main {
+.shopCard .blog_taital_main  {
     background-color: #2c3a55;
     height: 400px;
     width: 270px;
@@ -1834,6 +1834,8 @@ li .floor {
     overflow: hidden;
     margin-top: 30px;
 }
+
+
 
 .shopCard img.cat_img {
     max-width: 100%;

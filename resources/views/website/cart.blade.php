@@ -36,23 +36,23 @@
 
 
                                 <div class="col-lg-7">
-                                    
-                                        <h5 class="mb-3"><a href="{{ route('home') }}" class="text-body"><i
-                                                    class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
-                                        <hr>
 
-                                        <div class="d-flex justify-content-between align-items-center mb-4">
-                                            <div>
-                                                <p class="mb-1" style="color: black">Shopping cart</p>
-                                                <p class="mb-0" style="color: black">You have items in your cart</p>
-                                            </div>
-                                            <div>
-                                                <p class="mb-0" style="color: black"><span class="text-muted">Sort
-                                                        by:</span> <a href="#!" class="text-body"
-                                                        style="color: black">price <i
-                                                            class="fas fa-angle-down mt-1"></i></a></p>
-                                            </div>
+                                    <h5 class="mb-3"><a href="{{ route('home') }}" class="text-body"><i
+                                                class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                                    <hr>
+
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                        <div>
+                                            <p class="mb-1" style="color: black">Shopping cart</p>
                                         </div>
+                                        <div>
+                                            <p class="mb-0" style="color: black"><span class="text-muted">Sort
+                                                    by:</span> <a href="#!" class="text-body"
+                                                    style="color: black">price <i class="fas fa-angle-down mt-1"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    @if (count((array) session('cart')) > 0)
 
                                         <table class="table table-bordered">
                                             <thead>
@@ -97,14 +97,16 @@
 
                                                             {{-- {{ route('checkout.destroy',$item->product->id) }} --}}
 
-                                                            <form action="{{ route('checkout.destroy',$item->id) }}"  method="POST"  style="display: inline;">
+                                                            <form
+                                                                action="{{ route('checkout.destroy', isset($item->id) ? $item->id : $item['id']) }}"
+                                                                method="POST" style="display: inline;">
                                                                 @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit"   style="color: red;"
+                                                                @method('DELETE')
+                                                                <button type="submit" style="color: red;"
                                                                     onclick="return confirm('Are you sure you want to delete this product?')">
                                                                     <i class="fa fa-trash">
-                                                                 </i></button>
-                                                                  </form>
+                                                                    </i></button>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                     <!-- Accumulate the subtotal for the current item to the total subtotal -->
@@ -113,16 +115,26 @@
                                                     @endphp
                                                 @endforeach
 
-                                                <form action="{{ route('checkout.store') }}" method="POST" enctype="multipart/form-data">
+                                                <form action="{{ route('checkout.store') }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                     @csrf
 
-                                                <input name="product_id" type="hidden" value="{{ $item->product->id }}">
-                                                <input name="shop_id" type="hidden"
-                                                    value="{{ $item['product']->shop->id }}">
-                                                <input name="quantity" type="hidden" value="{{ $item->quantity }}">
-                                                <input name="subtotal" type="hidden" value="{{ $totalSubtotal }}">
-                                                <input name="delivery" type="hidden" value=" 3 ">
-                                                <input name="total" type="hidden" value="{{ $totalSubtotal + 3 }}">
+                                                    {{-- <input name="product_id" type="hidden"
+                                                        value="{{ $item->product->id }}">
+                                                    <input name="shop_id" type="hidden"
+                                                        value="{{ $item['product']->shop->id }}">
+                                                    <input name="quantity" type="hidden" value="{{ $item->quantity }}">
+                                                    <input name="subtotal" type="hidden" value="{{ $totalSubtotal }}">
+                                                    <input name="delivery" type="hidden" value=" 3 ">
+                                                    <input name="total" type="hidden" value="{{ $totalSubtotal + 3 }}"> --}}
+                                                    <input name="product_id" type="hidden"
+                                                        value="{{ isset($item['product']['id']) ? $item['product']['id'] : $item['id'] }}">
+                                                    <input name="shop_id" type="hidden"
+                                                        value="{{ isset($item['product']['shop']['id']) ? $item['product']['shop']['id'] : '' }}">
+                                                    <input name="quantity" type="hidden" value="{{ $item['quantity'] }}">
+                                                    <input name="subtotal" type="hidden" value="{{ $totalSubtotal }}">
+                                                    <input name="delivery" type="hidden" value="3">
+                                                    <input name="total" type="hidden" value="{{ $totalSubtotal + 3 }}">
                                             </tbody>
                                         </table>
 
@@ -135,7 +147,7 @@
                                             <div class="form-group">
                                                 <label for="inputAddress" style="color: black">Address</label>
                                                 <input name="address" type="text" class="form-control"
-                                                    placeholder="1234 Main St" style="background-color: #e8f0fe">
+                                                    placeholder="your address" style="background-color: #e8f0fe">
                                             </div>
 
                                             <div class="form-row">
@@ -187,6 +199,7 @@
 
 
                                 </form>
+
 
                                 <div class="col-lg-5">
 
@@ -291,6 +304,9 @@
                                             </button>
                                         </div>
                                     </div>
+                                @else
+                                    <p style="color: black">Your cart is empty.</p>
+                                    @endif
 
                                 </div>
 

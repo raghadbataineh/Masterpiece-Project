@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="section-title text-center">
                 <h3>Menu</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
+                <p style="color: white">Explore our diverse menu offering a delightful selection of flavors and dishes inspired by best shops.</p>
             </div><!-- end title -->
 
             <div class="row">
@@ -30,21 +30,19 @@
 						
                     <div class="services-inner-box">
 						<div class="ser-icon">
-							{{-- <img src="../assets/img/bigmac.jfif" class="img-fluid" alt="" /> --}}
 							<img src= "{{ url('/images/' . $product->image)}}" class="img-fluid" alt="" />
 
 						</div>
-						{{-- <h2>{{$product->name}}</h2> --}}
-						<p style="color: black ; font-weigt: bold" >{{$product->name}}</p>
+						<p style="color: white ; font-weigt: bold" >{{$product->name}}</p>
 						<a class="hvr-radial-in" href="#">{{$product->price}}$</a>
-						{{-- <a class="hvr-radial-in" href="{{ route ('singleproduct', $product->id) }}">View Meal</a> --}}
 						<a class="hvr-radial-in" href="{{ route ('detail',$product->id) }}">View Meal</a>
 					</div>
-                </div><!-- end col -->
+                </div>
 				@endforeach
 
               
-            </div><!-- end row -->
+            </div>
+            <!-- end row -->
 
         </div><!-- end container -->
     </div><!-- end section -->

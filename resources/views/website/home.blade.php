@@ -277,7 +277,9 @@
                     <div class="order_section">
                         <div class="order_taital_main">
                             <h1 class="order_taital">Order Best Product at time</h1>
-                            <div class="order_bt"><a href="#">Order Now</a></div>
+                            <div class="order_bt">
+                                {{-- <a href="#">Order Now</a> --}}
+                            </div>
                         </div>
                     </div>
                     <!-- order section end -->
