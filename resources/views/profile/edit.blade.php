@@ -33,8 +33,17 @@
 
  @section('title','')
  
+ <style>
+   .container p {
+    color: black;
+  }
  
+  table{
+    color: black
+  }
+ </style>
  @section('css')
+ 
  @endsection
  
  
@@ -43,7 +52,6 @@
  
  
  
- <section >
     <div class="container py-5">
       <div class="row">
         <div class="col">
@@ -61,14 +69,14 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              <img src="images/logoo.jpg" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3" style="color: black">{{$user->name}}</h5>
               {{-- <x-text :value="old('name', $user->name)" required autofocus autocomplete="name" /> --}}
 
               
-              <p class="text-muted mb-1">Full Stack Developer</p>
-              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+              {{-- <p class="text-muted mb-1">Full Stack Developer</p> --}}
+              {{-- <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> --}}
               <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-primary">Follow</button>
                 <button type="button" class="btn btn-outline-primary ms-1">Message</button>
@@ -80,13 +88,14 @@
               <ul class="list-group list-group-flush rounded-3">
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fas fa-globe fa-lg text-warning"></i>
-                  <p class="mb-0">https://mdbootstrap.com</p>
+                  <a class="mb-0" style="color: black" href="" id="update">Update your password</a>
+                  
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                  <p class="mb-0">mdbootstrap</p>
+                  <p class="mb-0">Delete Account</p>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                {{-- <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
                   <p class="mb-0">@mdbootstrap</p>
                 </li>
@@ -97,17 +106,23 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                   <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
                   <p class="mb-0">mdbootstrap</p>
-                </li>
+                </li> --}}
               </ul>
             </div>
           </div>
         </div>
         <div class="col-lg-8">
           
-             <div class="max-w-xl">
+             <div class="max-w-xl" id="profile_info">
                     @include('profile.partials.update-profile-information-form')
                 </div>
+                <div class="max-w-xl" id="update_pass" style="display: none">
+                  @include('profile.partials.update-password-form')
+              </div>
+
           </div>
+          
+       
           <div class="row">
             <div class="col-md-12">
               <div class="card mb-4 mb-md-0">
@@ -123,9 +138,7 @@
                             <th>
                                 product image
                             </th>
-                            <th>
-                                User
-                            </th>
+                           
                             <th>
                                 shop
                             </th>
@@ -136,42 +149,41 @@
                             <th>
                                 quantity
                             </th>
-                            {{-- <th>
-                                start_date
+                            <th>
+                                Payment_method
                             </th>
+                            
                             <th>
-                                end_date
-                            </th> --}}
-                            <th>
-                                order_status
+                              Total_price
+
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @php
-                             $i=1;
-                        @endphp
-                        @foreach ( $orders as $order )
-        
-                        <tr>
-        
-                            <th scope="row">{{$i}}</th>
-                            <td><img src="{{ url('/images/' . $order->product->image) }}" alt="" width="150px"></td>
-        
-                             <td>{{$order->user->name}}</td>
-                             <td>{{$order->shop->name}}</td>
-                             <td>{{$order->product->name}}</td>
-                            <td>{{$order->quantity}}</td>
-                            <td>{{$order->order_status}}</td>
-                        
-        
-        
-        
-                        </tr>
-                        @php
-                        $i++;
-                    @endphp
-                        @endforeach --}}
+                   
+                      @php
+                     $i=1;
+                @endphp
+                @foreach ( $orders as $order )
+
+                <tr>
+
+                    <th scope="row">{{$i}}</th>
+                    <td><img src="{{ url('/images/' . $order->product->image) }}" alt="" width="70px"></td>
+
+                     <td>{{$order->shop->name}}</td>
+                     <td>{{$order->product->name}}</td>                   
+                    <td>{{$order->quantity}}</td>
+                    {{-- <td>{{$order->address}}</td>
+                    <td>{{$order->city}}</td> --}}
+                    <td>{{$order->payment_method}}</td>
+                    <td>{{$order->total}} JD</td>
+
+                </tr>
+                @php
+                $i++;
+            @endphp
+                @endforeach
         
                     </tbody>
                 </table>
@@ -183,11 +195,20 @@
         </div>
       </div>
     </div>
-  </section>
      
      
   @endsection
  
   @section('scripts')
+    <script>
+        const update = document.getElementById('update');
+        const update_pass = document.getElementById('update_pass');
+        const profile_info = document.getElementById('profile_info');
 
-  @endsection    
+        update.addEventListener('click', function() {
+            update_pass.style.display = 'block';
+            profile_info.style.display = 'none';
+        });
+    </script>
+@endsection
+    

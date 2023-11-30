@@ -741,7 +741,7 @@ button {
 }
 
 .menu_main {
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     background-color: #252525;
@@ -751,7 +751,7 @@ button {
 }
 
 .custome_menu {
-    width: 78%;
+    /* width: 78%; */
     float: left;
 }
 

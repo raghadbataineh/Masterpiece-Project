@@ -17,6 +17,17 @@
     background: -o-linear-gradient(45deg,#590f87 0,#ff0076 100%);
     background: linear-gradient(45deg,#590f87 0,#ff0076 100%);
 }
+.vertival_line{
+    width: 4px;
+    height: 15px;
+    margin-top: 6px;
+    margin-left: 4px;
+    background-color: white;
+}
+p {
+    margin: 0px;
+
+}
 
 
 </style>
@@ -81,19 +92,163 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1>Our Vision</h1>
+                        <h1>How it Work</h1>
                     </div>
                 </div>
                 <div class="service_section_2">
+                    {{-- The first row --}}
                     <div class="row">
-                        <div class="col-12">
-                            <video width="100%" height="auto" controls autoplay muted>
-                                <!-- Provide multiple sources for compatibility -->
-                                <source src="./images/Virtual Shopping Mall.mp4" type="video/mp4">
-                                {{-- <source src="video.webm" type="video/webm"> --}}
-                                <!-- Add a fallback message for browsers that do not support the video element -->
-                                Your browser does not support the video tag.
-                            </video>
+                        <div class="col-5">
+                           <img src="/images/example-9.png" alt="" width="70%">
+                        </div>
+                        <div class="col-2">
+                            @php
+                            $numberOfLines = 5; // Change this value based on the number of lines you want
+                            @endphp
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                               |
+                            </div>
+                        @endfor
+                        
+                        <h4>step 1</h4>
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                                |
+                            </div>
+                        @endfor
+                        </div>
+                        <div class="col-5" >
+                           <p style="margin-top: 20%">Shop from your favorite brands and restaurants!
+                            Browse by collections, categories, or by brand. Customize your items and add them to your cart.</p>
+                        </div>
+
+                    </div>
+                                        {{-- The seconed row --}}
+
+                    <div class="row">
+                        <div class="col-5" >
+                            <p style="margin-top: 20%">Click on your cart to review and click Checkout.
+                            </p>
+                         </div>
+                        <div class="col-2">
+                            @php
+                            $numberOfLines = 5; // Change this value based on the number of lines you want
+                            @endphp
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                               |
+                            </div>
+                        @endfor
+                        
+                        <p>step 2</p>
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                                |
+                            </div>
+                        @endfor
+                        </div>
+                       
+                        <div class="col-5">
+                            <img src="/images/phone_object (1).png" alt="" width="50%" height="20%">
+                         </div>
+
+                    </div>
+                                        {{-- The third row --}}
+
+
+                    <div class="row">
+                        <div class="col-5">
+                           <img src="/images/cart.png" alt="" width="50%">
+                        </div>
+                        <div class="col-2">
+                            @php
+                            $numberOfLines = 5; 
+                            @endphp
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                               |
+                            </div>
+                        @endfor
+                        
+                        <p>step 3</p>
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                                |
+                            </div>
+                        @endfor
+                        </div>
+                        <div class="col-5" >
+                           <p style="margin-top: 20%">Shop from your favorite brands and restaurants!
+                            Browse by collections, categories, or by brand. Customize your items and add them to your cart.</p>
+                        </div>
+
+                    </div>
+                                        {{-- The fourth row --}}
+
+                    <div class="row">
+                        <div class="col-5" >
+                            <p style="margin-top: 20%">Select a payment method and apply any voucher codes you may have.
+                                .</p>
+                         </div>
+                        <div class="col-2">
+                            @php
+                            $numberOfLines = 5; // Change this value based on the number of lines you want
+                            @endphp
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                               |
+                            </div>
+                        @endfor
+                        
+                        <p>step 4</p>
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                                |
+                            </div>
+                        @endfor
+                        </div>
+                        
+                        <div class="col-5">
+                            <img src="/images/card.png" alt="" width="50%">
+                         </div>
+
+                    </div>
+                                        {{-- The fifth row --}}
+
+                    <div class="row">
+                        <div class="col-5">
+                           <img src="/images/motorcycle.png" alt="" width="70%">
+                        </div>
+                        <div class="col-2">
+                            @php
+                            $numberOfLines = 5; // Change this value based on the number of lines you want
+                            @endphp
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                               |
+                            </div>
+                        @endfor
+                        
+                        <p>step 5</p>
+                        
+                        @for ($i = 0; $i < $numberOfLines; $i++)
+                            <div class="vertical_line">
+                                |
+                            </div>
+                        @endfor
+                        </div>
+                        <div class="col-5" >
+                           <p style="margin-top: 20%">Track your Order Status for delivery or in-store pick up.</p>
                         </div>
 
                     </div>

@@ -242,7 +242,7 @@
 
 
               <li class="nav-item">
-                <a href="http://127.0.0.1:8000/dashboard/contactus" class="nav-link">
+                <a href="{{ url('send-email') }}" class="nav-link">
                   <i class="nav-icon far fa-envelope"></i>
                   <p>
                     Mailbox
@@ -259,9 +259,9 @@
         <!-- /.sidebar -->
       </aside>
 
-      {{-- @if(!session('loginname'))
+      @if(!session('loginname'))
         {{redirect()->route('adminLogin')}}
-      @endif --}}
+      @endif
 <!-- Add this script after including jQuery -->
 <!-- Add this script after including jQuery -->
 <script>

@@ -231,6 +231,8 @@
                             {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
+                    </div>
+                 <div class="row">
                     <div class="col-md-6">
                         <div class="blog_img"><img src="../assets/img/gym.PNG"></div>
                     </div>
@@ -244,6 +246,8 @@
                             {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
+                 </div>
+                   <div class="row">
                     <div class="col-md-6">
                         <div class="blog_img"><img src="../assets/img/bricks.PNG"></div>
                     </div>
@@ -259,8 +263,7 @@
                             {{-- <div class="readmore_btn"><a href="#">Read More</a></div> --}}
                         </div>
                     </div>
-                </div>
-            </div>
+                   </div>
         </div>
 
         <!-- contact section start -->

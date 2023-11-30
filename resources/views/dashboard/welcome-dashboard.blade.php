@@ -91,7 +91,7 @@ background-color: #2c3a55;
           <div class="small-box bg-info">
             <div class="inner">
 
-              {{-- <h3>{{ $userCount }}<sup style="font-size: 20px"></sup></h3> --}}
+              <h3>{{ $userCount }}<sup style="font-size: 20px"></sup></h3>
 
 
 
@@ -123,7 +123,7 @@ background-color: #2c3a55;
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              {{-- <h3>{{ $adminCount }}<sup style="font-size: 20px"></sup></h3> --}}
+              <h3>{{ $adminCount }}<sup style="font-size: 20px"></sup></h3>
 
               <p>Admin-Numbers</p>
             </div>

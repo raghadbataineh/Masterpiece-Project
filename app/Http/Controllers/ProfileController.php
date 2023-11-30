@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Order;
 
 class ProfileController extends Controller
 {
@@ -16,10 +17,13 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        // dd('edit');
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $user = auth()->user();
+        $orders = $user->orders()->paginate(10);
+
+        // $orders = Order::with('user')->paginate(10); 
+        return view('profile.edit', compact('orders' , 'user'));
+        // return view('profile.edit', [ 'user' => $request->user(),
+        // ]);
     }
 
     /**
@@ -46,6 +50,14 @@ class ProfileController extends Controller
         return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
     
+    public function show_order(){
+
+        $user = auth()->user();
+        $orders = $user->orders()->paginate(10);
+
+        // $orders = Order::with('user')->paginate(10); 
+        return view('profile.edit', compact('orders'));
+    }
 
     /**
      * Delete the user's account.
